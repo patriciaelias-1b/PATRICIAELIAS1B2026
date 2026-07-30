@@ -32,17 +32,19 @@
 </a>
 
 
+
 <h1>
 Sketchbook.log
 </h1>
+
 
 
 <input 
 id="pesquisa"
 type="search"
 placeholder="Pesquisar..."
-onkeyup="pesquisar()"
 >
+
 
 
 </div>
@@ -50,8 +52,8 @@ onkeyup="pesquisar()"
 
 
 
+<div id="menu" class="menu">
 
-<nav id="menu">
 
 <button onclick="abrirPerfil()">
 Meu perfil
@@ -68,12 +70,11 @@ Sair
 </button>
 
 
-</nav>
+</div>
 
 
 
 </header>
-
 
 
 
@@ -88,8 +89,8 @@ Sair
 
 
 
-<!-- MENU LATERAL -->
 
+<!-- TÓPICOS -->
 
 <aside class="sidebar">
 
@@ -105,14 +106,17 @@ Desenhos
 </button>
 
 
+
 <button onclick="abrirAba('estudos')">
 Estudos
 </button>
 
 
+
 <button onclick="abrirAba('blog')">
 Blog
 </button>
+
 
 
 <button onclick="abrirAba('materiais')">
@@ -122,7 +126,7 @@ Materiais
 
 
 <button onclick="abrirAba('sobre')">
-Sobre
+Sobre mim
 </button>
 
 
@@ -143,17 +147,19 @@ Sobre
 <main class="conteudo">
 
 
+
 <section class="post">
 
 
 <h2>
-Bem-vindo ao Sketchbook.log
+Meu Sketchbook Online
 </h2>
+
 
 
 <p>
 
-Um blog pessoal para guardar desenhos,
+Um blog pessoal para guardar meus desenhos,
 ideias e estudos de arte.
 
 </p>
@@ -164,13 +170,13 @@ ideias e estudos de arte.
 
 
 
-<div class="data">
+<p class="data">
 Atualização: 2026
-</div>
+</p>
+
 
 
 </section>
-
 
 
 
@@ -189,16 +195,18 @@ Escolha um tópico
 
 
 <p>
-
-Clique nos tópicos ao lado para ver informações.
-
+Clique nos tópicos para ver mais.
 </p>
+
 
 
 </div>
 
 
+
 </section>
+
+
 
 
 
@@ -218,11 +226,11 @@ Clique nos tópicos ao lado para ver informações.
 <aside class="perfil">
 
 
+
 <div class="card">
 
 
-<img src="images/eu.jpg" alt="foto">
-
+<img src="images/eu.jpg" alt="perfil">
 
 
 <h2 id="nomeUsuario">
@@ -232,8 +240,14 @@ Visitante
 
 
 <p>
-ID: #001
+Status:
 </p>
+
+
+<p id="statusUsuario">
+Criando arte ✎
+</p>
+
 
 
 <p>
@@ -241,14 +255,6 @@ Contas:
 <span id="contador">
 0
 </span>
-</p>
-
-
-
-<p>
-Status:
-<br>
-Desenhando ✎
 </p>
 
 
@@ -262,7 +268,8 @@ Desenhando ✎
 
 
 
-<!-- CHAT -->
+
+<!-- COMENTÁRIOS -->
 
 
 <section class="chat">
@@ -281,8 +288,7 @@ Comentários
 
 
 
-
-<textarea 
+<textarea
 id="textoComentario"
 placeholder="Escreva um comentário..."
 ></textarea>
@@ -295,13 +301,15 @@ Enviar
 
 
 
-
 </section>
 
 
 
-</aside>
 
+
+
+
+</aside>
 
 
 
@@ -315,39 +323,106 @@ Enviar
 
 
 
-<!-- JANELA PERFIL -->
+<!-- PERFIL POPUP -->
 
 
 <div id="janelaPerfil" class="popup">
 
 
+
 <div class="popup-box">
 
 
+<button class="fechar"
+onclick="fecharPerfil()">
+
+X
+
+</button>
+
+
+
 <h2>
-Criar conta simbólica
+Meu perfil
 </h2>
 
 
+
+
+<div id="loginArea">
+
+
 <p>
-
-Use apenas um nome.
-Não são necessários dados pessoais.
-
+Criar conta simbólica:
 </p>
 
 
-
-<input 
+<input
 id="novoNome"
-placeholder="Nome"
+placeholder="Nome de usuário"
+>
+
+
+<input
+id="novoStatus"
+placeholder="Status"
 >
 
 
 
 <button onclick="criarUsuario()">
-Criar
+Criar conta
 </button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="editarArea">
+
+
+<p>
+Nome:
+</p>
+
+
+<input
+id="editarNome"
+>
+
+
+
+<p>
+Status:
+</p>
+
+
+<input
+id="editarStatus"
+>
+
+
+
+<button onclick="editarUsuario()">
+Salvar alterações
+</button>
+
+
+
+<button onclick="deletarConta()">
+Deletar conta
+</button>
+
+
+
+</div>
+
 
 
 </div>
@@ -368,6 +443,7 @@ Criar
 Sketchbook.log © 2026
 
 </footer>
+
 
 
 
