@@ -1,6 +1,6 @@
-/* =====================
-   RESET
-===================== */
+/* =========================
+   CONFIGURAÇÃO GERAL
+========================= */
 
 *{
     margin:0;
@@ -11,7 +11,12 @@
 
 body{
 
-    background:#dcdcdc;
+    background-color:#eeeeee;
+
+    background-image:
+    radial-gradient(#111 1px, transparent 1px);
+
+    background-size:16px 16px;
 
     color:#222;
 
@@ -23,75 +28,26 @@ body{
 
 
 
-/* =====================
-   SITE
-===================== */
-
-
-.site{
-
-    width:1000px;
-
-    margin:20px auto;
-
-    background:#f8f8f8;
-
-    border:2px solid #111;
-
-}
-
-
-
-/* =====================
-   HEADER
-===================== */
+/* =========================
+   CORPO DO SITE
+========================= */
 
 
 header{
 
-    height:140px;
+    width:950px;
 
-    padding:15px;
+    margin:20px auto 0;
 
-    border-bottom:2px solid #111;
+    background:#fff;
 
-    background:#eeeeee;
+    border:2px solid #111;
 
-}
+    padding:20px;
 
+    text-align:center;
 
-
-header button{
-
-    position:absolute;
-
-    top:35px;
-
-    left:calc(50% - 470px);
-
-}
-
-
-
-button{
-
-    background:#e5e5e5;
-
-    border:1px solid #111;
-
-    padding:6px 12px;
-
-    font-family:Verdana;
-
-    cursor:pointer;
-
-}
-
-
-
-button:hover{
-
-    background:#cccccc;
+    position:relative;
 
 }
 
@@ -99,21 +55,16 @@ button:hover{
 
 header h1{
 
-    text-align:center;
-
-    margin-top:20px;
-
-    font-size:35px;
-
     font-family:"Times New Roman", serif;
+
+    font-size:42px;
+
+    margin-bottom:10px;
 
 }
 
 
-
 header p{
-
-    text-align:center;
 
     color:#555;
 
@@ -121,36 +72,83 @@ header p{
 
 
 
+/* BOTÃO REFRESH */
 
-/* =====================
-   COLUNAS
-===================== */
+.refresh{
 
+    position:absolute;
 
-.layout{
+    left:15px;
 
-    display:grid;
-
-    grid-template-columns:200px 1fr 220px;
-
-    min-height:600px;
+    top:15px;
 
 }
 
 
 
-/* =====================
-   MENU
-===================== */
+
+
+button{
+
+    background:#ddd;
+
+    border:1px solid #111;
+
+    padding:7px 12px;
+
+    cursor:pointer;
+
+    font-family:Verdana;
+
+}
+
+
+
+button:hover{
+
+    background:#bbb;
+
+}
+
+
+
+
+
+/* =========================
+   COLUNAS
+========================= */
+
+
+.layout{
+
+    width:950px;
+
+    margin:20px auto;
+
+    display:grid;
+
+    grid-template-columns:180px 1fr 220px;
+
+    gap:15px;
+
+}
+
+
+
+/* =========================
+   MENU ESQUERDA
+========================= */
 
 
 .menu{
 
-    border-right:2px solid #111;
+    background:#fff;
+
+    border:2px solid #111;
 
     padding:15px;
 
-    background:#e8e8e8;
+    height:max-content;
 
 }
 
@@ -162,13 +160,13 @@ header p{
 
     margin-bottom:15px;
 
+    border-bottom:1px solid #111;
+
 }
 
 
 
 .menu button{
-
-    display:block;
 
     width:100%;
 
@@ -180,26 +178,40 @@ header p{
 
 
 
-/* =====================
-   POSTS
-===================== */
 
 
-main{
+/* =========================
+   CENTRO
+========================= */
 
-    padding:20px;
+
+.conteudo{
+
+    background:#fff;
+
+    border:2px solid #111;
+
+    padding:25px;
+
+    min-height:600px;
 
 }
 
 
 
-article{
+.conteudo h2{
 
-    background:white;
+    font-family:"Times New Roman", serif;
 
-    border:1px solid #111;
+    font-size:28px;
 
-    padding:20px;
+    margin-bottom:15px;
+
+}
+
+
+
+.conteudo p{
 
     margin-bottom:20px;
 
@@ -207,50 +219,48 @@ article{
 
 
 
-article h2{
-
-    font-family:"Times New Roman",serif;
-
-    font-size:25px;
-
-}
-
-
-
-article span{
-
-    color:#666;
-
-    font-size:12px;
-
-}
-
-
-
-article img{
+.conteudo img{
 
     width:100%;
 
-    margin:15px 0;
-
     border:1px solid #111;
+
+    margin:15px 0;
 
 }
 
 
 
-/* =====================
+
+
+hr{
+
+    border:0;
+
+    border-top:1px dashed #111;
+
+    margin:25px 0;
+
+}
+
+
+
+
+
+/* =========================
    ID CARD
-===================== */
+========================= */
 
 
-.id{
+.perfil{
 
-    border-left:2px solid #111;
+    background:#fff;
+
+    border:2px solid #111;
 
     padding:15px;
 
-    background:#e8e8e8;
+    height:max-content;
 
 }
 
@@ -258,9 +268,7 @@ article img{
 
 .id-card{
 
-    background:white;
-
-    border:2px solid #111;
+    border:1px solid #111;
 
     padding:15px;
 
@@ -288,15 +296,29 @@ article img{
 
     margin:15px 0;
 
-    font-size:18px;
+    font-size:20px;
+
+    font-family:"Times New Roman",serif;
 
 }
 
 
 
-/* =====================
-   JANELA POPUP
-===================== */
+.id-card p{
+
+    text-align:left;
+
+    margin:12px 0;
+
+}
+
+
+
+
+
+/* =========================
+   JANELA
+========================= */
 
 
 .janela{
@@ -305,11 +327,11 @@ article img{
 
     position:fixed;
 
-    width:300px;
+    width:320px;
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:20px;
 
@@ -319,7 +341,7 @@ article img{
 
     transform:translate(-50%,-50%);
 
-    box-shadow:5px 5px 0 black;
+    box-shadow:5px 5px 0 #111;
 
 }
 
@@ -336,34 +358,43 @@ article img{
 
 
 
-/* =====================
+
+/* =========================
    FOOTER
-===================== */
+========================= */
 
 
 footer{
 
-    border-top:2px solid #111;
+    width:950px;
 
-    text-align:center;
+    margin:20px auto;
+
+    background:white;
+
+    border:2px solid #111;
 
     padding:20px;
 
-    background:#eee;
+    text-align:center;
 
 }
 
 
 
-/* =====================
-   MOBILE
-===================== */
+
+
+/* =========================
+   CELULAR
+========================= */
 
 
 @media(max-width:1000px){
 
 
-.site{
+header,
+.layout,
+footer{
 
     width:95%;
 
@@ -377,19 +408,11 @@ footer{
 }
 
 
-.menu,
-.id{
-
-    border:0;
-
-    border-bottom:2px solid #111;
-
-}
-
-
-header button{
+.refresh{
 
     position:static;
+
+    margin-bottom:15px;
 
 }
 
