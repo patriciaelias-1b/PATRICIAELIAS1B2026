@@ -16,21 +16,65 @@
 <body>
 
 
-<header>
+<header class="topo">
 
-<button class="refresh" onclick="location.reload()">
-refresh page
+
+<div class="menu-area">
+
+
+<button class="menu-btn" onclick="abrirMenu()">
+☰
 </button>
 
 
-<h1>✎ Sketchbook.log</h1>
 
-<p>
-meu diário de desenhos e ideias
-</p>
+<div id="menuDropdown" class="dropdown">
+
+
+<button onclick="abrirPerfil()">
+Meu perfil
+</button>
+
+
+<button onclick="modoNoturno()">
+Modo noturno
+</button>
+
+
+<button onclick="sairSite()">
+Sair
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<a class="home" href="index.html">
+🏠
+</a>
+
+
+
+<div class="pesquisa">
+
+<input 
+type="text"
+placeholder="🔍 pesquisar..."
+id="pesquisa"
+>
+
+</div>
+
 
 
 </header>
+
+
 
 
 
@@ -40,7 +84,10 @@ meu diário de desenhos e ideias
 
 
 
-<!-- TÓPICOS -->
+
+
+<!-- MENU ESQUERDO -->
+
 
 <aside class="menu">
 
@@ -68,11 +115,6 @@ Materiais
 </button>
 
 
-<button onclick="abrirJanela('redes')">
-Redes sociais
-</button>
-
-
 </aside>
 
 
@@ -82,58 +124,52 @@ Redes sociais
 
 
 
-<!-- ÁREA CENTRAL -->
+<!-- CENTRO -->
+
 
 <main class="conteudo">
 
 
-<h2>Bem-vindo!</h2>
-
-
-<p>
-
-Olá! Esse é meu espaço pessoal na internet.
-
-Aqui eu vou colocar meus desenhos,
-estudos, pensamentos e qualquer coisa
-relacionada à arte.
-
-</p>
-
-
-
-<img src="images/desenho1.jpg" alt="meu desenho">
+<h1>
+Bem-vindo ao Sketchbook.log
+</h1>
 
 
 
 <p>
 
-Hoje eu fiz um novo desenho e resolvi
-registrar aqui.
+Esse é meu espaço pessoal na internet.
 
-Ainda estou aprendendo, mas gosto de
-guardar cada etapa da minha evolução.
+Aqui coloco desenhos, ideias,
+estudos e coisas que quero guardar.
 
 </p>
 
 
 
-<hr>
+
+<img src="images/desenho1.jpg" alt="desenho">
 
 
 
-<h2>Atualizações</h2>
+
+
+<h2>
+Última atualização
+</h2>
+
 
 
 <p>
 
-30/07/2026
+Novo desenho publicado.
 
-<br>
-
-Novo desenho publicado no blog.
+Ainda estou aprendendo e melhorando
+minhas habilidades.
 
 </p>
+
+
 
 
 </main>
@@ -145,7 +181,8 @@ Novo desenho publicado no blog.
 
 
 
-<!-- ID CARD -->
+<!-- DIREITA -->
+
 
 <aside class="perfil">
 
@@ -153,40 +190,28 @@ Novo desenho publicado no blog.
 <div class="id-card">
 
 
-<img src="images/eu.jpg" alt="minha foto">
+<img src="images/eu.jpg" alt="foto">
 
 
-<h2>Seu Nome</h2>
+
+<h2>
+Sketchbook.log
+</h2>
 
 
-<p>
-ID: 001
+
+<p id="nomeUsuario">
+Visitante
 </p>
 
 
-<p>
-estudante
-<br>
-
-</p>
 
 <p>
-  
-<br>
-
-<br>
-
-<br>
-✦ Sketchbook
+Contas criadas:
+<span id="contador">
+0
+</span>
 </p>
-
-
-<p>
-Status:
-<br>
-Criando...
-</p>
-
 
 
 </div>
@@ -197,6 +222,44 @@ Criando...
 
 
 
+</div>
+
+
+
+
+
+
+
+<!-- JANELA PERFIL -->
+
+
+<div id="perfilJanela" class="janela">
+
+
+<h2>
+Criar conta
+</h2>
+
+
+
+<p>
+Essa conta é apenas simbólica.
+<br>
+Não precisa colocar informações pessoais.
+</p>
+
+
+<input 
+id="nomeConta"
+placeholder="Seu nome"
+>
+
+
+<button onclick="criarConta()">
+Criar
+</button>
+
+
 
 </div>
 
@@ -205,7 +268,10 @@ Criando...
 
 
 
-<!-- JANELA POPUP -->
+
+
+<!-- JANELA TÓPICOS -->
+
 
 <div id="janela" class="janela">
 
@@ -220,8 +286,9 @@ Texto
 </p>
 
 
+
 <button onclick="fecharJanela()">
-fechar
+Fechar
 </button>
 
 
@@ -231,13 +298,13 @@ fechar
 
 
 
+
 <footer>
 
-<p>
-feito por Patricia ✎
-</p>
+feito por mim ✎
 
 </footer>
+
 
 
 
