@@ -10,35 +10,34 @@
 
 <link rel="stylesheet" href="style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
-
 </head>
 
 
 <body>
 
 
+<div class="site">
+
+
+
 <header>
+
+
+<button onclick="location.reload()">
+refresh page
+</button>
+
 
 <h1>✎ Sketchbook.log</h1>
 
+
 <p>
-um arquivo de desenhos, estudos e ideias
+meus desenhos, estudos e arquivos
 </p>
 
 
-<div class="pesquisa">
-
-<input 
-type="text" 
-id="barraPesquisa"
-placeholder="🔍 pesquisar posts..."
->
-
-</div>
-
-
 </header>
+
 
 
 
@@ -47,43 +46,38 @@ placeholder="🔍 pesquisar posts..."
 
 
 
-<!-- ESQUERDA -->
+<!-- MENU ESQUERDO -->
 
-<aside class="esquerda">
-
-
-<h2>Tópicos</h2>
+<aside class="menu">
 
 
-<ul>
-
-<li><a href="#">Desenhos</a></li>
-
-<li><a href="#">Estudos</a></li>
-
-<li><a href="#">Personagens</a></li>
-
-<li><a href="#">Materiais</a></li>
-
-<li><a href="#">Arquivo</a></li>
-
-</ul>
+<h2>MENU</h2>
 
 
-
-<hr>
-
-
-<h2>Links</h2>
+<button onclick="abrirJanela('desenhos')">
+Desenhos
+</button>
 
 
-<ul>
+<button onclick="abrirJanela('estudos')">
+Estudos
+</button>
 
-<li><a href="#">Instagram</a></li>
 
-<li><a href="#">GitHub</a></li>
+<button onclick="abrirJanela('blog')">
+Blog
+</button>
 
-</ul>
+
+<button onclick="abrirJanela('materiais')">
+Materiais
+</button>
+
+
+<button onclick="abrirJanela('redes')">
+Redes sociais
+</button>
+
 
 
 </aside>
@@ -92,33 +86,34 @@ placeholder="🔍 pesquisar posts..."
 
 
 
+
 <!-- CENTRO -->
+
 
 <main>
 
 
 
-
 <article>
 
 
-<h2>Começando meu sketchbook online</h2>
-
-<span>30/07/2026</span>
+<h2>Bem-vindo ao meu blog!</h2>
 
 
-<img src="images/desenho1.jpg" alt="Meu desenho">
+<span>
+30/07/2026
+</span>
+
+
+
+<img src="images/desenho1.jpg" alt="desenho">
 
 
 <p>
 
-Decidi criar esse espaço para guardar meus desenhos,
+Esse é meu espaço para guardar desenhos,
 estudos e pensamentos sobre arte.
 
-Aqui vou registrar minha evolução e tudo que eu aprender
-durante minha jornada desenhando.
-
-
 </p>
 
 
@@ -131,58 +126,16 @@ durante minha jornada desenhando.
 <article>
 
 
-<h2>Estudando anatomia</h2>
-
-<span>25/07/2026</span>
+<h2>Último desenho</h2>
 
 
-<img src="images/desenho2.jpg" alt="Estudo de anatomia">
+<img src="images/desenho2.jpg" alt="desenho">
 
 
 <p>
 
-Estou praticando poses, mãos e expressões.
-Ainda tenho bastante para melhorar, mas cada desenho
-é uma nova tentativa.
-
-
-</p>
-
-
-</article>
-
-
-
-
-
-<article>
-
-
-<h2>Materiais que estou usando</h2>
-
-<span>10/07/2026</span>
-
-
-<p>
-
-Meus materiais atuais:
-
-<br><br>
-
-✦ lápis HB, 2B e 6B
-
-<br>
-
-✦ sketchbook
-
-<br>
-
-✦ canetas finas
-
-<br>
-
-✦ referências de estudo
-
+Aqui eu conto como fiz esse desenho
+e o que aprendi com ele.
 
 </p>
 
@@ -201,43 +154,37 @@ Meus materiais atuais:
 
 <!-- DIREITA -->
 
-<aside class="direita">
+
+<aside class="id">
 
 
 <div class="id-card">
 
 
-<img class="perfil" src="images/eu.jpg" alt="Minha foto">
+<img src="images/eu.jpg" alt="foto">
 
 
-<h2>Seu Nome</h2>
-
-
-<p class="cargo">
-Desenhista
-</p>
-
-
-<hr>
+<h2>SEU NOME</h2>
 
 
 <p>
-<b>ID:</b> 001
+ID: 001
 </p>
 
 
 <p>
-<b>Foco:</b> Ilustrações
+Status: Desenhando
 </p>
 
 
 <p>
-<b>Estilo:</b> Seu estilo aqui
-</p>
-
-
-<p>
-<b>Status:</b> Criando ✦
+Interesses:
+<br>
+✦ Arte
+<br>
+✦ Personagens
+<br>
+✦ Sketches
 </p>
 
 
@@ -250,6 +197,32 @@ Desenhista
 
 
 
+</div>
+
+
+
+
+
+<!-- JANELAS -->
+
+
+<div id="janela" class="janela">
+
+
+<h2 id="tituloJanela">
+Título
+</h2>
+
+
+<p id="textoJanela">
+Texto
+</p>
+
+
+<button onclick="fecharJanela()">
+fechar
+</button>
+
 
 </div>
 
@@ -260,12 +233,11 @@ Desenhista
 <footer>
 
 <p>
-feito por Seu Nome ✎
+© 2026 - Sketchbook.log
 </p>
 
 
 </footer>
-
 
 
 
