@@ -19,7 +19,7 @@
 <header class="topo">
 
 
-<div class="menu-area">
+<div class="barra">
 
 
 <button class="menu-btn" onclick="abrirMenu()">
@@ -27,9 +27,28 @@
 </button>
 
 
+<a class="home" href="index.html">
+🏠
+</a>
 
-<div id="menuDropdown" class="dropdown">
 
+<h1>
+Sketchbook.log
+</h1>
+
+
+<input 
+type="text"
+placeholder="pesquisar..."
+id="pesquisa"
+>
+
+
+</div>
+
+
+
+<div id="menu" class="menu">
 
 <button onclick="abrirPerfil()">
 Meu perfil
@@ -41,7 +60,7 @@ Modo noturno
 </button>
 
 
-<button onclick="sairSite()">
+<button onclick="sair()">
 Sair
 </button>
 
@@ -49,31 +68,7 @@ Sair
 </div>
 
 
-</div>
-
-
-
-
-<a class="home" href="index.html">
-🏠
-</a>
-
-
-
-<div class="pesquisa">
-
-<input 
-type="text"
-placeholder="🔍 pesquisar..."
-id="pesquisa"
->
-
-</div>
-
-
-
 </header>
-
 
 
 
@@ -84,35 +79,34 @@ id="pesquisa"
 
 
 
+<!-- ESQUERDA -->
 
 
-<!-- MENU ESQUERDO -->
-
-
-<aside class="menu">
+<aside class="esquerda">
 
 
 <h2>Tópicos</h2>
 
 
-<button onclick="abrirJanela('desenhos')">
+<button>
 Desenhos
 </button>
 
 
-<button onclick="abrirJanela('estudos')">
+<button>
 Estudos
 </button>
 
 
-<button onclick="abrirJanela('blog')">
-Blog
+<button>
+Personagens
 </button>
 
 
-<button onclick="abrirJanela('materiais')">
+<button>
 Materiais
 </button>
+
 
 
 </aside>
@@ -123,53 +117,93 @@ Materiais
 
 
 
-
 <!-- CENTRO -->
 
 
-<main class="conteudo">
+<main>
 
 
-<h1>
-Bem-vindo ao Sketchbook.log
-</h1>
-
-
-
-<p>
-
-Esse é meu espaço pessoal na internet.
-
-Aqui coloco desenhos, ideias,
-estudos e coisas que quero guardar.
-
-</p>
-
-
-
-
-<img src="images/desenho1.jpg" alt="desenho">
-
-
-
+<section class="post">
 
 
 <h2>
-Última atualização
+Meu sketchbook online
+</h2>
+
+
+<p>
+Esse é meu espaço para colocar desenhos,
+ideias e pensamentos.
+</p>
+
+
+<img src="images/desenho1.jpg">
+
+
+</section>
+
+
+
+
+
+<section class="chat">
+
+
+<h2>
+Comentários
 </h2>
 
 
 
+<div class="comentario">
+
+
+<div>
+
+<b>Visitante01</b>
+
 <p>
-
-Novo desenho publicado.
-
-Ainda estou aprendendo e melhorando
-minhas habilidades.
-
+Seu desenho ficou muito bom!
 </p>
 
+</div>
 
+
+
+<button class="tres"
+onclick="abrirOpcoes(this)">
+⋮
+</button>
+
+
+
+<div class="opcoes">
+
+
+<button>
+💬 Responder
+</button>
+
+
+<button>
+🔒 Bloquear
+</button>
+
+
+<button class="reportar">
+🚩 Reportar
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</section>
 
 
 </main>
@@ -184,44 +218,44 @@ minhas habilidades.
 <!-- DIREITA -->
 
 
-<aside class="perfil">
+<aside class="direita">
 
 
 <div class="id-card">
 
 
-<img src="images/eu.jpg" alt="foto">
+<img src="images/eu.jpg">
 
 
-
-<h2>
-Sketchbook.log
+<h2 id="nomePerfil">
+Visitante
 </h2>
 
 
-
-<p id="nomeUsuario">
-Visitante
-</p>
-
-
-
 <p>
-Contas criadas:
-<span id="contador">
+Contas:
+<span id="contas">
 0
 </span>
 </p>
 
 
+
+<p>
+Status:
+Criando ✦
+</p>
+
+
+
 </div>
+
 
 
 </aside>
 
 
 
-
 </div>
 
 
@@ -229,30 +263,23 @@ Contas criadas:
 
 
 
+<!-- CRIAR CONTA -->
 
-<!-- JANELA PERFIL -->
 
-
-<div id="perfilJanela" class="janela">
+<div id="perfil" class="janela">
 
 
 <h2>
-Criar conta
+Criar conta simbólica
 </h2>
 
 
-
 <p>
-Essa conta é apenas simbólica.
-<br>
-Não precisa colocar informações pessoais.
+Não precisa colocar dados pessoais.
 </p>
 
 
-<input 
-id="nomeConta"
-placeholder="Seu nome"
->
+<input id="nomeInput" placeholder="Seu nome">
 
 
 <button onclick="criarConta()">
@@ -268,43 +295,11 @@ Criar
 
 
 
-
-
-<!-- JANELA TÓPICOS -->
-
-
-<div id="janela" class="janela">
-
-
-<h2 id="tituloJanela">
-Título
-</h2>
-
-
-<p id="textoJanela">
-Texto
-</p>
-
-
-
-<button onclick="fecharJanela()">
-Fechar
-</button>
-
-
-</div>
-
-
-
-
-
-
 <footer>
 
-feito por mim ✎
+Sketchbook.log ©
 
 </footer>
-
 
 
 
