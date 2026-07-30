@@ -1,10 +1,10 @@
-// ==========================
+// ===============================
 // MENU
-// ==========================
+// ===============================
 
 function abrirMenu(){
 
-    const menu = document.getElementById("menu");
+    let menu = document.getElementById("menu");
 
     if(menu.style.display === "block"){
 
@@ -22,119 +22,84 @@ function abrirMenu(){
 
 
 
-// ==========================
+
+// ===============================
 // TÓPICOS
-// ==========================
+// ===============================
 
-function abrirAba(aba){
-
-    const janela =
-    document.getElementById("janelaAba");
+function abrirAba(nome){
 
 
-    const conteudos = {
+    let aba = document.getElementById("janelaAba");
 
-        desenhos:
-        `
+
+    let textos = {
+
+
+        desenhos:`
+
         <h2>Desenhos</h2>
+
         <p>
-        Aqui ficam minhas artes,
-        ilustrações e rascunhos.
+        Meus desenhos, ilustrações
+        e rascunhos.
         </p>
+
         `,
 
 
-        estudos:
-        `
+        estudos:`
+
         <h2>Estudos</h2>
+
         <p>
-        Anatomia, perspectiva,
-        cores e exercícios.
+        Exercícios de anatomia,
+        perspectiva e técnicas.
         </p>
+
         `,
 
 
-        blog:
-        `
+        blog:`
+
         <h2>Blog</h2>
+
         <p>
-        Meus pensamentos sobre
-        arte e criação.
+        Textos sobre meu processo
+        artístico.
         </p>
+
         `,
 
 
-        materiais:
-        `
+        materiais:`
+
         <h2>Materiais</h2>
+
         <p>
-        Lápis, papel, mesa digitalizadora
-        e programas usados.
+        Lápis, papel, programas
+        e ferramentas.
         </p>
+
         `,
 
 
-        sobre:
-        `
+        sobre:`
+
         <h2>Sobre mim</h2>
+
         <p>
-        Sou uma pessoa que gosta de
-        desenhar e aprender arte.
+        Um espaço para compartilhar
+        minha evolução na arte.
         </p>
+
         `
+
 
     };
 
 
-    janela.innerHTML =
-    conteudos[aba];
-
-}
-
-
-
-
-
-
-
-// ==========================
-// PESQUISA
-// ==========================
-
-function pesquisar(){
-
-    let valor =
-    document.getElementById("pesquisa")
-    .value
-    .toLowerCase();
-
-
-
-    let posts =
-    document.querySelectorAll(".post");
-
-
-
-    posts.forEach(post=>{
-
-
-        let texto =
-        post.innerText.toLowerCase();
-
-
-
-        if(texto.includes(valor)){
-
-            post.style.display="block";
-
-        }else{
-
-            post.style.display="none";
-
-        }
-
-
-    });
+    aba.innerHTML = textos[nome];
 
 
 }
@@ -145,9 +110,9 @@ function pesquisar(){
 
 
 
-// ==========================
+// ===============================
 // PERFIL
-// ==========================
+// ===============================
 
 
 function abrirPerfil(){
@@ -155,7 +120,22 @@ function abrirPerfil(){
     document.getElementById("janelaPerfil")
     .style.display="flex";
 
+
+    atualizarPerfil();
+
 }
+
+
+
+
+function fecharPerfil(){
+
+    document.getElementById("janelaPerfil")
+    .style.display="none";
+
+}
+
+
 
 
 
@@ -163,10 +143,27 @@ function abrirPerfil(){
 function criarUsuario(){
 
 
+    if(localStorage.getItem("usuario")){
+
+        alert(
+        "Você já possui uma conta."
+        );
+
+        return;
+
+    }
+
+
+
     let nome =
     document.getElementById("novoNome")
-    .value
-    .trim();
+    .value.trim();
+
+
+
+    let status =
+    document.getElementById("novoStatus")
+    .value.trim();
 
 
 
@@ -178,9 +175,23 @@ function criarUsuario(){
 
 
 
+    if(status===""){
+
+        status="Criando arte ✎";
+
+    }
+
+
+
     localStorage.setItem(
-        "nome",
+        "usuario",
         nome
+    );
+
+
+    localStorage.setItem(
+        "status",
+        status
     );
 
 
@@ -191,19 +202,59 @@ function criarUsuario(){
 
 
 
-    if(!localStorage.getItem("criado")){
+    contas++;
 
-        contas++;
+
+    localStorage.setItem(
+        "contas",
+        contas
+    );
+
+
+
+    atualizarPerfil();
+
+
+}
+
+
+
+
+
+
+
+
+function editarUsuario(){
+
+
+    let nome =
+    document.getElementById("editarNome")
+    .value.trim();
+
+
+
+    let status =
+    document.getElementById("editarStatus")
+    .value.trim();
+
+
+
+    if(nome){
 
         localStorage.setItem(
-            "contas",
-            contas
+            "usuario",
+            nome
         );
 
+    }
+
+
+
+    if(status){
 
         localStorage.setItem(
-            "criado",
-            "true"
+            "status",
+            status
         );
 
     }
@@ -213,11 +264,10 @@ function criarUsuario(){
     atualizarPerfil();
 
 
-
-    document.getElementById("janelaPerfil")
-    .style.display="none";
-
 }
+
+
+
 
 
 
@@ -225,23 +275,120 @@ function criarUsuario(){
 function atualizarPerfil(){
 
 
+    let usuario =
+    localStorage.getItem("usuario")
+    ||
+    "Visitante";
+
+
+
+    let status =
+    localStorage.getItem("status")
+    ||
+    "Criando arte ✎";
+
+
+
     document.getElementById("nomeUsuario")
     .innerHTML =
-    localStorage.getItem("nome")
-    || "Visitante";
+    usuario;
+
+
+
+    document.getElementById("statusUsuario")
+    .innerHTML =
+    status;
 
 
 
     document.getElementById("contador")
     .innerHTML =
     localStorage.getItem("contas")
-    || 0;
+    ||
+    0;
+
+
+
+
+
+
+    if(localStorage.getItem("usuario")){
+
+
+        document.getElementById("loginArea")
+        .style.display="none";
+
+
+        document.getElementById("editarArea")
+        .style.display="block";
+
+
+
+        document.getElementById("editarNome")
+        .value =
+        usuario;
+
+
+
+        document.getElementById("editarStatus")
+        .value =
+        status;
+
+
+
+    }else{
+
+
+        document.getElementById("loginArea")
+        .style.display="block";
+
+
+        document.getElementById("editarArea")
+        .style.display="none";
+
+
+    }
 
 
 }
 
 
-atualizarPerfil();
+
+
+
+
+
+
+function deletarConta(){
+
+
+    let confirmar =
+    confirm(
+    "Deseja apagar sua conta?"
+    );
+
+
+
+    if(confirmar){
+
+
+        localStorage.removeItem("usuario");
+
+        localStorage.removeItem("status");
+
+
+
+        atualizarPerfil();
+
+
+
+        fecharPerfil();
+
+
+    }
+
+
+}
 
 
 
@@ -250,16 +397,18 @@ atualizarPerfil();
 
 
 
-// ==========================
+// ===============================
 // COMENTÁRIOS
-// ==========================
+// ===============================
 
 
 let comentarios =
 JSON.parse(
 localStorage.getItem("comentarios")
 )
-|| [];
+||
+[];
+
 
 
 
@@ -267,27 +416,37 @@ localStorage.getItem("comentarios")
 function enviarComentario(){
 
 
+
     let texto =
     document.getElementById("textoComentario")
-    .value
-    .trim();
+    .value.trim();
 
 
 
-    if(texto==="") return;
+    if(texto===""){
+
+        return;
+
+    }
+
+
+
+    let nome =
+    localStorage.getItem("usuario")
+    ||
+    "Visitante";
 
 
 
     comentarios.push({
 
+
         id:Date.now(),
 
-        nome:
-        localStorage.getItem("nome")
-        ||
-        "Visitante",
+        nome:nome,
 
         texto:texto
+
 
     });
 
@@ -305,7 +464,10 @@ function enviarComentario(){
     mostrarComentarios();
 
 
+
 }
+
+
 
 
 
@@ -314,11 +476,17 @@ function enviarComentario(){
 function salvarComentarios(){
 
     localStorage.setItem(
+
         "comentarios",
+
         JSON.stringify(comentarios)
+
     );
 
 }
+
+
+
 
 
 
@@ -328,6 +496,7 @@ function mostrarComentarios(){
 
     let area =
     document.getElementById("comentarios");
+
 
 
     area.innerHTML="";
@@ -346,14 +515,7 @@ function mostrarComentarios(){
 
 
 
-        let dono =
-        localStorage.getItem("nome");
-
-
-
-        div.innerHTML =
-
-        `
+        div.innerHTML=`
 
         <b>${c.nome}</b>
 
@@ -361,12 +523,7 @@ function mostrarComentarios(){
 
 
         <button onclick="responder('${c.nome}')">
-        💬
-        </button>
-
-
-        <button onclick="bloquear(${c.id},'${c.nome}')">
-        🔒
+        responder
         </button>
 
 
@@ -375,16 +532,22 @@ function mostrarComentarios(){
         </button>
 
 
-        ${
-        c.nome===dono ?
 
-        `<button onclick="apagar(${c.id})">
+        ${
+        c.nome === localStorage.getItem("usuario")
+
+        ?
+
+        `<button onclick="apagarComentario(${c.id})">
         apagar
         </button>`
 
-        :""
+        :
+
+        ""
 
         }
+
 
         `;
 
@@ -393,16 +556,32 @@ function mostrarComentarios(){
         area.appendChild(div);
 
 
-    });
 
+    });
 
 
 }
 
 
 
-mostrarComentarios();
 
+
+function apagarComentario(id){
+
+
+    comentarios =
+    comentarios.filter(
+    c=>c.id!==id
+    );
+
+
+    salvarComentarios();
+
+
+    mostrarComentarios();
+
+
+}
 
 
 
@@ -410,6 +589,7 @@ mostrarComentarios();
 
 
 function responder(nome){
+
 
     document.getElementById("textoComentario")
     .value =
@@ -423,43 +603,6 @@ function responder(nome){
 
 
 
-
-function apagar(id){
-
-
-    comentarios =
-    comentarios.filter(
-        c=>c.id!==id
-    );
-
-
-    salvarComentarios();
-
-    mostrarComentarios();
-
-
-}
-
-
-
-
-
-function bloquear(id,nome){
-
-
-    alert(
-    `Você bloqueou "${nome}"`
-    );
-
-
-    apagar(id);
-
-
-}
-
-
-
-
 function reportar(id){
 
 
@@ -468,7 +611,7 @@ function reportar(id){
     );
 
 
-    apagar(id);
+    apagarComentario(id);
 
 
 }
@@ -479,12 +622,13 @@ function reportar(id){
 
 
 
-// ==========================
+// ===============================
 // TEMA
-// ==========================
+// ===============================
 
 
 function alternarTema(){
+
 
     document.body
     .classList
@@ -501,6 +645,7 @@ function alternarTema(){
 
     );
 
+
 }
 
 
@@ -508,7 +653,9 @@ function alternarTema(){
 
 if(localStorage.getItem("tema")==="true"){
 
+
     document.body.classList.add("escuro");
+
 
 }
 
@@ -517,16 +664,22 @@ if(localStorage.getItem("tema")==="true"){
 
 
 
-
-
-// ==========================
+// ===============================
 // SAIR
-// ==========================
+// ===============================
 
 
 function sair(){
 
-    window.location.href=
+    window.location.href =
     "https://www.google.com";
 
 }
+
+
+
+
+
+atualizarPerfil();
+
+mostrarComentarios();
