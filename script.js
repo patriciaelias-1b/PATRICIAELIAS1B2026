@@ -1,85 +1,73 @@
-// =============================
-// Animação de entrada das seções
-// =============================
+// ============================
+// Animação ao aparecer na tela
+// ============================
 
-const secoes = document.querySelectorAll("section");
+const elementos = document.querySelectorAll(
+    "article, .esquerda, .direita"
+);
 
-const observer = new IntersectionObserver((entradas) => {
 
-    entradas.forEach((entrada) => {
+const observador = new IntersectionObserver((entradas)=>{
+
+    entradas.forEach((entrada)=>{
 
         if(entrada.isIntersecting){
 
-            entrada.target.classList.add("aparecer");
+            entrada.target.classList.add("visivel");
 
         }
 
     });
+
 
 }, {
     threshold: 0.15
 });
 
 
-secoes.forEach((secao)=>{
-    observer.observe(secao);
-});
+elementos.forEach((elemento)=>{
 
-
-
-// =============================
-// Botão com mensagem de artista
-// =============================
-
-const botao = document.querySelector("button");
-
-
-if(botao){
-
-botao.addEventListener("click",()=>{
-
-    console.log("Bem-vindo ao meu sketchbook ✎");
+    observador.observe(elemento);
 
 });
+
+
+
+
+// ============================
+// Ano automático no rodapé
+// ============================
+
+const footer = document.querySelector("footer p");
+
+
+if(footer){
+
+    footer.innerHTML =
+    `feito por [seu nome] ✎ ${new Date().getFullYear()}`;
 
 }
 
 
 
-// =============================
-// Menu suave
-// =============================
 
-document.querySelectorAll("nav a").forEach(link=>{
+// ============================
+// Abrir imagens ao clicar
+// ============================
 
-    link.addEventListener("click",(evento)=>{
+const imagens = document.querySelectorAll("article img");
 
-        evento.preventDefault();
 
-        const destino = document.querySelector(
-            link.getAttribute("href")
-        );
+imagens.forEach((imagem)=>{
 
-        destino.scrollIntoView({
-            behavior:"smooth"
-        });
+
+    imagem.addEventListener("click",()=>{
+
+
+        imagem.classList.toggle("ampliada");
+
 
     });
 
+
 });
-
-
-
-// =============================
-// Ano automático no rodapé
-// =============================
-
-const ano = document.querySelector("footer p");
-
-
-if(ano){
-
-ano.innerHTML =
-`Feito por mim ✦ ${new Date().getFullYear()}`;
-
-}
