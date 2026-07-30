@@ -1,118 +1,448 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sketch Bloom</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Sketch</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Manrope,sans-serif;
+background:#f6f5f2;
+color:#2b2b2b;
+}
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(246,245,242,.85);
+backdrop-filter:blur(12px);
+z-index:1000;
+
+}
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+font-size:2rem;
+font-weight:bold;
+
+}
+
+nav a{
+
+margin-left:35px;
+text-decoration:none;
+color:#444;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#7b8a70;
+
+}
+
+.hero{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+
+}
+
+.hero h1{
+
+font-family:"Cormorant Garamond",serif;
+font-size:5rem;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:1.2rem;
+max-width:650px;
+margin:auto;
+color:#555;
+
+}
+
+button{
+
+margin-top:40px;
+padding:15px 40px;
+border:none;
+background:#7b8a70;
+color:white;
+cursor:pointer;
+border-radius:40px;
+font-size:16px;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+}
+
+section{
+
+padding:110px 10%;
+
+}
+
+.titulo{
+
+font-family:"Cormorant Garamond",serif;
+font-size:3rem;
+margin-bottom:20px;
+
+}
+
+.sobre{
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+
+}
+
+.caixa{
+
+height:350px;
+border-radius:20px;
+background:#ddd;
+
+background-image:url("https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:18px;
+transition:.4s;
+box-shadow:0 15px 35px rgba(0,0,0,.05);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+
+}
+
+.card h3{
+
+margin:20px 0 10px;
+
+}
+
+.blog{
+
+display:grid;
+gap:20px;
+
+}
+
+.post{
+
+padding:30px;
+background:white;
+border-radius:18px;
+transition:.3s;
+
+}
+
+.post:hover{
+
+transform:translateX(8px);
+
+}
+
+footer{
+
+padding:60px;
+text-align:center;
+background:#ece9e2;
+
+}
+
+.fade{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+.fade.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+@media(max-width:800px){
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.sobre{
+
+grid-template-columns:1fr;
+
+}
+
+nav{
+
+display:none;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
 <header>
-    <h1>Sketch Bloom ✿</h1>
-    <p>Um cantinho para compartilhar desenhos, inspiração e criatividade.</p>
 
-    <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#posts">Posts</a>
-        <a href="#dicas">Dicas</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<div class="logo">
+Sketch Journal
+</div>
+
+<nav>
+
+<a href="#sobre">Sobre</a>
+<a href="#galeria">Galeria</a>
+<a href="#blog">Blog</a>
+
+</nav>
+
 </header>
 
 <section class="hero">
-    <div>
-        <h2>Desenhar é transformar ideias em arte.</h2>
-        <p>Explore técnicas, materiais e acompanhe meu crescimento artístico.</p>
 
-        <button id="mensagem">
-            Uma inspiração ♡
-        </button>
+<div>
 
-        <p id="texto"></p>
-    </div>
-</section>
-
-<section id="sobre" class="container">
-
-<h2>Sobre o Blog</h2>
+<h1>Desenhos que contam histórias.</h1>
 
 <p>
-Este é um espaço dedicado ao universo do desenho. Aqui compartilho estudos,
-ilustrações, materiais favoritos e pequenas dicas para quem ama desenhar.
+
+Um espaço para compartilhar estudos, ilustrações,
+processos criativos e acompanhar minha evolução como artista.
+
 </p>
+
+<button onclick="document.querySelector('#galeria').scrollIntoView()">
+Explorar
+</button>
+
+</div>
 
 </section>
 
-<section id="posts" class="container">
+<section id="sobre" class="fade">
 
-<h2>Últimos Posts</h2>
+<h2 class="titulo">Sobre</h2>
+
+<div class="sobre">
+
+<div>
+
+<p>
+
+Desenhar sempre foi minha forma favorita de transformar ideias em imagens.
+Neste espaço compartilho estudos, personagens, sketchbooks e tudo o que faz
+parte do meu processo artístico.
+
+</p>
+
+<br>
+
+<p>
+
+Acredito que evoluir é desenhar um pouco todos os dias.
+
+</p>
+
+</div>
+
+<div class="caixa"></div>
+
+</div>
+
+</section>
+
+<section id="galeria" class="fade">
+
+<h2 class="titulo">Galeria</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>✎ Como começar a desenhar</h3>
-<p>
-Não espere pela perfeição. Comece com formas simples e pratique todos os dias.
-</p>
+
+<img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=900&q=80">
+
+<h3>Sketchbook</h3>
+
+<p>Estudos rápidos feitos diariamente.</p>
+
 </div>
 
 <div class="card">
-<h3>✿ Meus materiais favoritos</h3>
-<p>
-Lápis HB, 2B, 4B, borracha limpa-tipos e um sketchbook sempre fazem parte da minha mesa.
-</p>
+
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80">
+
+<h3>Personagens</h3>
+
+<p>Criação de personagens originais.</p>
+
 </div>
 
 <div class="card">
-<h3>♡ Inspirações</h3>
-<p>
-Natureza, flores, personagens e fotografias são ótimas fontes de referência.
-</p>
+
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80">
+
+<h3>Ilustrações</h3>
+
+<p>Projetos completos e artes finalizadas.</p>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="dicas" class="container">
+<section id="blog" class="fade">
 
-<h2>Dicas Rápidas</h2>
+<h2 class="titulo">Blog</h2>
 
-<ul>
-<li>🌸 Faça um desenho por dia.</li>
-<li>🌸 Use referências sem medo.</li>
-<li>🌸 Estude luz e sombra.</li>
-<li>🌸 Não compare sua evolução com a dos outros.</li>
-<li>🌸 Divirta-se durante o processo.</li>
-</ul>
+<div class="blog">
+
+<div class="post">
+
+<h3>Como comecei a desenhar</h3>
+
+<p>
+Minha experiência aprendendo do zero e os erros que mais me ensinaram.
+</p>
+
+</div>
+
+<div class="post">
+
+<h3>5 dicas para melhorar seus desenhos</h3>
+
+<p>
+Pequenas mudanças na rotina que fizeram diferença nos meus estudos.
+</p>
+
+</div>
+
+<div class="post">
+
+<h3>Meu processo criativo</h3>
+
+<p>
+Como transformo uma ideia em uma ilustração completa.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
-<footer id="contato">
+<footer>
 
-<h2>Sketch Bloom</h2>
+<h2 class="logo">
+Sketch Journal
+</h2>
 
-<p>
-Feito com ♡ para artistas iniciantes.
-</p>
+<br>
 
-<p>
-© 2026
-</p>
+<p>© 2026 • Portfólio de Arte</p>
 
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+const elementos=document.querySelectorAll(".fade");
+
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+elementos.forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
-</html> 
