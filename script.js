@@ -1,6 +1,6 @@
-// ===============================
+// ==========================
 // MENU
-// ===============================
+// ==========================
 
 function abrirMenu(){
 
@@ -22,77 +22,72 @@ function abrirMenu(){
 
 
 
-// ===============================
+// ==========================
 // TÓPICOS
-// ===============================
+// ==========================
+
+function abrirAba(aba){
+
+    const janela =
+    document.getElementById("janelaAba");
 
 
-function abrirJanela(tipo){
+    const conteudos = {
 
-    const janela = document.getElementById("janela");
-    const titulo = document.getElementById("tituloJanela");
-    const texto = document.getElementById("textoJanela");
-
-
-    janela.style.display = "block";
-
-
-    if(tipo === "desenhos"){
-
-        titulo.innerHTML = "Desenhos";
-
-        texto.innerHTML =
-        "Aqui ficam meus desenhos, ilustrações e rascunhos.";
-
-    }
-
-
-    else if(tipo === "estudos"){
-
-        titulo.innerHTML = "Estudos";
-
-        texto.innerHTML =
-        "Estudos de anatomia, cores, perspectiva e técnicas.";
-
-    }
-
-
-    else if(tipo === "blog"){
-
-        titulo.innerHTML = "Blog";
-
-        texto.innerHTML =
-        "Textos sobre meu processo artístico e minha evolução.";
-
-    }
-
-
-    else if(tipo === "materiais"){
-
-        titulo.innerHTML = "Materiais";
-
-        texto.innerHTML =
-        "Lápis, canetas, sketchbook e ferramentas digitais.";
-
-    }
-
-
-    else if(tipo === "redes"){
-
-        titulo.innerHTML = "Redes sociais";
-
-        texto.innerHTML =
+        desenhos:
         `
-        <a href="https://instagram.com" target="_blank">
-        Instagram
-        </a>
-        <br><br>
-        <a href="https://github.com" target="_blank">
-        GitHub
-        </a>
-        `;
+        <h2>Desenhos</h2>
+        <p>
+        Aqui ficam minhas artes,
+        ilustrações e rascunhos.
+        </p>
+        `,
 
-    }
+
+        estudos:
+        `
+        <h2>Estudos</h2>
+        <p>
+        Anatomia, perspectiva,
+        cores e exercícios.
+        </p>
+        `,
+
+
+        blog:
+        `
+        <h2>Blog</h2>
+        <p>
+        Meus pensamentos sobre
+        arte e criação.
+        </p>
+        `,
+
+
+        materiais:
+        `
+        <h2>Materiais</h2>
+        <p>
+        Lápis, papel, mesa digitalizadora
+        e programas usados.
+        </p>
+        `,
+
+
+        sobre:
+        `
+        <h2>Sobre mim</h2>
+        <p>
+        Sou uma pessoa que gosta de
+        desenhar e aprender arte.
+        </p>
+        `
+
+    };
+
+
+    janela.innerHTML =
+    conteudos[aba];
 
 }
 
@@ -100,9 +95,47 @@ function abrirJanela(tipo){
 
 
 
-function fecharJanela(){
 
-    document.getElementById("janela").style.display="none";
+
+// ==========================
+// PESQUISA
+// ==========================
+
+function pesquisar(){
+
+    let valor =
+    document.getElementById("pesquisa")
+    .value
+    .toLowerCase();
+
+
+
+    let posts =
+    document.querySelectorAll(".post");
+
+
+
+    posts.forEach(post=>{
+
+
+        let texto =
+        post.innerText.toLowerCase();
+
+
+
+        if(texto.includes(valor)){
+
+            post.style.display="block";
+
+        }else{
+
+            post.style.display="none";
+
+        }
+
+
+    });
+
 
 }
 
@@ -112,49 +145,53 @@ function fecharJanela(){
 
 
 
-// ===============================
+// ==========================
 // PERFIL
-// ===============================
+// ==========================
 
 
 function abrirPerfil(){
 
-    document.getElementById("perfil").style.display="block";
+    document.getElementById("janelaPerfil")
+    .style.display="flex";
 
 }
 
 
 
 
+function criarUsuario(){
 
-function criarConta(){
 
     let nome =
-    document.getElementById("nomeInput").value.trim();
+    document.getElementById("novoNome")
+    .value
+    .trim();
 
 
 
-    if(nome === ""){
+    if(nome===""){
 
-        nome = "Visitante";
+        nome="Visitante";
 
     }
 
 
 
     localStorage.setItem(
-        "usuario",
+        "nome",
         nome
     );
 
 
 
     let contas =
-    Number(localStorage.getItem("contas")) || 0;
+    Number(localStorage.getItem("contas"))
+    || 0;
 
 
 
-    if(!localStorage.getItem("usuarioCriado")){
+    if(!localStorage.getItem("criado")){
 
         contas++;
 
@@ -165,8 +202,8 @@ function criarConta(){
 
 
         localStorage.setItem(
-            "usuarioCriado",
-            "sim"
+            "criado",
+            "true"
         );
 
     }
@@ -177,12 +214,10 @@ function criarConta(){
 
 
 
-    document.getElementById("perfil").style.display="none";
+    document.getElementById("janelaPerfil")
+    .style.display="none";
 
 }
-
-
-
 
 
 
@@ -190,25 +225,17 @@ function criarConta(){
 function atualizarPerfil(){
 
 
-    let usuario =
-    localStorage.getItem("usuario")
+    document.getElementById("nomeUsuario")
+    .innerHTML =
+    localStorage.getItem("nome")
     || "Visitante";
 
 
 
-    let contas =
+    document.getElementById("contador")
+    .innerHTML =
     localStorage.getItem("contas")
     || 0;
-
-
-
-    document.getElementById("nomePerfil")
-    .innerHTML = usuario;
-
-
-
-    document.getElementById("contas")
-    .innerHTML = contas;
 
 
 }
@@ -222,48 +249,45 @@ atualizarPerfil();
 
 
 
-// ===============================
+
+// ==========================
 // COMENTÁRIOS
-// ===============================
+// ==========================
 
 
 let comentarios =
-JSON.parse(localStorage.getItem("comentarios"))
+JSON.parse(
+localStorage.getItem("comentarios")
+)
 || [];
 
 
 
 
-function adicionarComentario(){
+function enviarComentario(){
 
 
     let texto =
-    document.getElementById("textoComentario").value;
+    document.getElementById("textoComentario")
+    .value
+    .trim();
 
 
 
-    if(texto.trim()===""){
-
-        return;
-
-    }
-
-
-
-    let usuario =
-    localStorage.getItem("usuario")
-    || "Visitante";
+    if(texto==="") return;
 
 
 
     comentarios.push({
 
-        id: Date.now(),
+        id:Date.now(),
 
-        nome: usuario,
+        nome:
+        localStorage.getItem("nome")
+        ||
+        "Visitante",
 
-        texto: texto
-
+        texto:texto
 
     });
 
@@ -273,10 +297,13 @@ function adicionarComentario(){
 
 
 
-    document.getElementById("textoComentario").value="";
+    document.getElementById("textoComentario")
+    .value="";
+
 
 
     mostrarComentarios();
+
 
 }
 
@@ -287,11 +314,8 @@ function adicionarComentario(){
 function salvarComentarios(){
 
     localStorage.setItem(
-
         "comentarios",
-
         JSON.stringify(comentarios)
-
     );
 
 }
@@ -299,22 +323,18 @@ function salvarComentarios(){
 
 
 
-
-
-
 function mostrarComentarios(){
 
 
-    const area =
-    document.getElementById("listaComentarios");
+    let area =
+    document.getElementById("comentarios");
 
 
     area.innerHTML="";
 
 
 
-    comentarios.forEach((comentario)=>{
-
+    comentarios.forEach(c=>{
 
 
         let div =
@@ -326,8 +346,8 @@ function mostrarComentarios(){
 
 
 
-        let usuarioAtual =
-        localStorage.getItem("usuario");
+        let dono =
+        localStorage.getItem("nome");
 
 
 
@@ -335,53 +355,42 @@ function mostrarComentarios(){
 
         `
 
-        <b>${comentario.nome}</b>
+        <b>${c.nome}</b>
 
-        <p>${comentario.texto}</p>
+        <p>${c.texto}</p>
 
 
-        <button onclick="responder('${comentario.nome}')">
-
+        <button onclick="responder('${c.nome}')">
         💬
-
         </button>
 
 
-        <button onclick="bloquear('${comentario.nome}', ${comentario.id})">
-
+        <button onclick="bloquear(${c.id},'${c.nome}')">
         🔒
-
         </button>
 
 
-        <button class="reportar"
-        onclick="reportar(${comentario.id})">
-
+        <button onclick="reportar(${c.id})">
         🚩
-
         </button>
 
 
         ${
-        comentario.nome === usuarioAtual ?
+        c.nome===dono ?
 
-        `<button onclick="apagarComentario(${comentario.id})">
+        `<button onclick="apagar(${c.id})">
         apagar
         </button>`
 
-        :
-
-        ""
+        :""
 
         }
-
 
         `;
 
 
 
         area.appendChild(div);
-
 
 
     });
@@ -400,19 +409,11 @@ mostrarComentarios();
 
 
 
-// ===============================
-// RESPOSTA
-// ===============================
-
-
 function responder(nome){
 
-
-    document.getElementById("textoComentario").value =
-    "@" + nome + " ";
-
-
-    document.getElementById("textoComentario").focus();
+    document.getElementById("textoComentario")
+    .value =
+    "@"+nome+" ";
 
 
 }
@@ -423,21 +424,13 @@ function responder(nome){
 
 
 
-// ===============================
-// APAGAR PRÓPRIO COMENTÁRIO
-// ===============================
-
-
-function apagarComentario(id){
+function apagar(id){
 
 
     comentarios =
     comentarios.filter(
-
-        comentario => comentario.id !== id
-
+        c=>c.id!==id
     );
-
 
 
     salvarComentarios();
@@ -451,67 +444,31 @@ function apagarComentario(id){
 
 
 
-
-
-// ===============================
-// BLOQUEAR
-// ===============================
-
-
-function bloquear(nome,id){
+function bloquear(id,nome){
 
 
     alert(
-        `Você bloqueou "${nome}"`
+    `Você bloqueou "${nome}"`
     );
 
 
-    comentarios =
-    comentarios.filter(
-
-        comentario => comentario.id !== id
-
-    );
-
-
-    salvarComentarios();
-
-    mostrarComentarios();
+    apagar(id);
 
 
 }
 
 
-
-
-
-
-
-
-// ===============================
-// REPORTAR
-// ===============================
 
 
 function reportar(id){
 
 
     alert(
-        "Usuário reportado para host"
+    "Usuário reportado para host"
     );
 
 
-    comentarios =
-    comentarios.filter(
-
-        comentario => comentario.id !== id
-
-    );
-
-
-    salvarComentarios();
-
-    mostrarComentarios();
+    apagar(id);
 
 
 }
@@ -522,26 +479,36 @@ function reportar(id){
 
 
 
-// ===============================
-// MODO NOTURNO
-// ===============================
+// ==========================
+// TEMA
+// ==========================
 
 
-function modoNoturno(){
+function alternarTema(){
 
-
-    document.body.classList.toggle("dark");
+    document.body
+    .classList
+    .toggle("escuro");
 
 
 
     localStorage.setItem(
 
-        "modo",
+        "tema",
 
-        document.body.classList.contains("dark")
+        document.body.classList
+        .contains("escuro")
 
     );
 
+}
+
+
+
+
+if(localStorage.getItem("tema")==="true"){
+
+    document.body.classList.add("escuro");
 
 }
 
@@ -549,26 +516,17 @@ function modoNoturno(){
 
 
 
-if(localStorage.getItem("modo")==="true"){
-
-    document.body.classList.add("dark");
-
-}
 
 
 
-
-
-
-
-// ===============================
+// ==========================
 // SAIR
-// ===============================
+// ==========================
 
 
 function sair(){
 
-    window.location.href =
+    window.location.href=
     "https://www.google.com";
 
 }
