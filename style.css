@@ -1,5 +1,5 @@
 /* =========================
-   CONFIGURAÇÃO GERAL
+   BASE
 ========================= */
 
 *{
@@ -18,72 +18,80 @@ body{
 
     background-size:16px 16px;
 
-    color:#222;
-
     font-family:Verdana, Arial, sans-serif;
 
-    font-size:14px;
+    color:#222;
 
 }
 
 
 
 /* =========================
-   CORPO DO SITE
+   TOPO
 ========================= */
 
 
-header{
+.topo{
 
-    width:950px;
+    width:1000px;
 
-    margin:20px auto 0;
+    margin:20px auto;
 
-    background:#fff;
+    background:white;
 
-    border:2px solid #111;
-
-    padding:20px;
-
-    text-align:center;
-
-    position:relative;
+    border:2px solid black;
 
 }
 
 
 
-header h1{
+.barra{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:10px;
+
+}
+
+
+
+.barra h1{
 
     font-family:"Times New Roman", serif;
 
-    font-size:42px;
+    flex:1;
 
-    margin-bottom:10px;
-
-}
-
-
-header p{
-
-    color:#555;
+    text-align:center;
 
 }
 
 
 
-/* BOTÃO REFRESH */
+.home{
 
-.refresh{
+    text-decoration:none;
 
-    position:absolute;
-
-    left:15px;
-
-    top:15px;
+    font-size:25px;
 
 }
 
+
+
+.barra input{
+
+    width:180px;
+
+    border:1px solid black;
+
+    padding:8px;
+
+}
 
 
 
@@ -92,9 +100,9 @@ button{
 
     background:#ddd;
 
-    border:1px solid #111;
+    border:1px solid black;
 
-    padding:7px 12px;
+    padding:7px;
 
     cursor:pointer;
 
@@ -115,19 +123,56 @@ button:hover{
 
 
 /* =========================
-   COLUNAS
+   MENU
+========================= */
+
+
+.menu{
+
+    display:none;
+
+    position:absolute;
+
+    background:white;
+
+    border:2px solid black;
+
+    padding:10px;
+
+    z-index:10;
+
+}
+
+
+
+.menu button{
+
+    display:block;
+
+    width:150px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+
+
+/* =========================
+   LAYOUT
 ========================= */
 
 
 .layout{
 
-    width:950px;
+    width:1000px;
 
-    margin:20px auto;
+    margin:auto;
 
     display:grid;
 
-    grid-template-columns:180px 1fr 220px;
+    grid-template-columns:180px 1fr 230px;
 
     gap:15px;
 
@@ -135,16 +180,18 @@ button:hover{
 
 
 
+
+
 /* =========================
-   MENU ESQUERDA
+   ESQUERDA
 ========================= */
 
 
-.menu{
+.esquerda{
 
-    background:#fff;
+    background:white;
 
-    border:2px solid #111;
+    border:2px solid black;
 
     padding:15px;
 
@@ -154,19 +201,19 @@ button:hover{
 
 
 
-.menu h2{
+.esquerda h2{
 
-    font-size:18px;
+    font-family:"Times New Roman",serif;
+
+    border-bottom:1px solid black;
 
     margin-bottom:15px;
-
-    border-bottom:1px solid #111;
 
 }
 
 
 
-.menu button{
+.esquerda button{
 
     width:100%;
 
@@ -181,51 +228,39 @@ button:hover{
 
 
 /* =========================
-   CENTRO
+   POSTS
 ========================= */
 
 
-.conteudo{
+.post{
 
-    background:#fff;
+    background:white;
 
-    border:2px solid #111;
+    border:2px solid black;
 
     padding:25px;
 
-    min-height:600px;
-
 }
 
 
 
-.conteudo h2{
+.post h2{
 
-    font-family:"Times New Roman", serif;
+    font-family:"Times New Roman",serif;
 
     font-size:28px;
 
-    margin-bottom:15px;
-
 }
 
 
 
-.conteudo p{
-
-    margin-bottom:20px;
-
-}
-
-
-
-.conteudo img{
+.post img{
 
     width:100%;
 
-    border:1px solid #111;
+    margin-top:20px;
 
-    margin:15px 0;
+    border:1px solid black;
 
 }
 
@@ -233,13 +268,86 @@ button:hover{
 
 
 
-hr{
+/* =========================
+   CHAT
+========================= */
 
-    border:0;
 
-    border-top:1px dashed #111;
+.chat{
 
-    margin:25px 0;
+    background:white;
+
+    border:2px solid black;
+
+    margin-top:20px;
+
+    padding:20px;
+
+}
+
+
+
+.comentario{
+
+    position:relative;
+
+    border:1px solid black;
+
+    padding:15px;
+
+    background:#fafafa;
+
+}
+
+
+
+.tres{
+
+    position:absolute;
+
+    right:10px;
+
+    top:10px;
+
+}
+
+
+
+.opcoes{
+
+    display:none;
+
+    position:absolute;
+
+    right:10px;
+
+    top:40px;
+
+    background:white;
+
+    border:1px solid black;
+
+    padding:10px;
+
+}
+
+
+
+.opcoes button{
+
+    display:block;
+
+    width:130px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+.reportar{
+
+    color:red;
 
 }
 
@@ -252,11 +360,11 @@ hr{
 ========================= */
 
 
-.perfil{
+.direita{
 
-    background:#fff;
+    background:white;
 
-    border:2px solid #111;
+    border:2px solid black;
 
     padding:15px;
 
@@ -268,7 +376,7 @@ hr{
 
 .id-card{
 
-    border:1px solid #111;
+    border:1px solid black;
 
     padding:15px;
 
@@ -286,7 +394,7 @@ hr{
 
     object-fit:cover;
 
-    border:1px solid #111;
+    border:1px solid black;
 
 }
 
@@ -296,19 +404,7 @@ hr{
 
     margin:15px 0;
 
-    font-size:20px;
-
-    font-family:"Times New Roman",serif;
-
-}
-
-
-
-.id-card p{
-
-    text-align:left;
-
-    margin:12px 0;
+    color:#e7a6bd;
 
 }
 
@@ -317,7 +413,7 @@ hr{
 
 
 /* =========================
-   JANELA
+   JANELA DE CONTA
 ========================= */
 
 
@@ -327,31 +423,33 @@ hr{
 
     position:fixed;
 
-    width:320px;
-
-    background:white;
-
-    border:2px solid #111;
-
-    padding:20px;
-
     top:50%;
 
     left:50%;
 
     transform:translate(-50%,-50%);
 
-    box-shadow:5px 5px 0 #111;
+    background:white;
+
+    border:2px solid black;
+
+    padding:25px;
+
+    box-shadow:5px 5px 0 black;
 
 }
 
 
 
-.janela h2{
+.janela input{
 
-    font-family:"Times New Roman",serif;
+    display:block;
 
-    margin-bottom:15px;
+    border:1px solid black;
+
+    padding:8px;
+
+    margin:15px 0;
 
 }
 
@@ -360,23 +458,67 @@ hr{
 
 
 /* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
 
 
 footer{
 
-    width:950px;
+    width:1000px;
 
     margin:20px auto;
 
     background:white;
 
-    border:2px solid #111;
+    border:2px solid black;
+
+    text-align:center;
 
     padding:20px;
 
-    text-align:center;
+}
+
+
+
+
+
+/* =========================
+   MODO NOTURNO
+========================= */
+
+
+.dark{
+
+    background:#111;
+
+    color:white;
+
+}
+
+
+
+.dark .topo,
+.dark .post,
+.dark .chat,
+.dark .esquerda,
+.dark .direita,
+.dark .id-card,
+.dark .janela,
+.dark footer{
+
+    background:#222;
+
+    color:white;
+
+}
+
+
+
+.dark button{
+
+    background:#333;
+
+    color:white;
 
 }
 
@@ -392,7 +534,7 @@ footer{
 @media(max-width:1000px){
 
 
-header,
+.topo,
 .layout,
 footer{
 
@@ -404,15 +546,6 @@ footer{
 .layout{
 
     grid-template-columns:1fr;
-
-}
-
-
-.refresh{
-
-    position:static;
-
-    margin-bottom:15px;
 
 }
 
