@@ -16,23 +16,17 @@
 <body>
 
 
-<div class="site">
-
-
-
 <header>
 
-
-<button onclick="location.reload()">
-home
+<button class="refresh" onclick="location.reload()">
+refresh page
 </button>
 
 
-<h1>skeeetchboook</h1>
-
+<h1>✎ Sketchbook.log</h1>
 
 <p>
-minhas experiencias com a arte
+meu diário de desenhos e ideias
 </p>
 
 
@@ -46,31 +40,36 @@ minhas experiencias com a arte
 
 
 
-<!-- MENU ESQUERDO -->
+<!-- TÓPICOS -->
 
 <aside class="menu">
 
 
-<h2>adicionais</h2>
+<h2>Tópicos</h2>
 
 
 <button onclick="abrirJanela('desenhos')">
-desenhos
+Desenhos
+</button>
+
+
+<button onclick="abrirJanela('estudos')">
+Estudos
 </button>
 
 
 <button onclick="abrirJanela('blog')">
-blog
+Blog
 </button>
 
 
 <button onclick="abrirJanela('materiais')">
-materiais
+Materiais
 </button>
 
 
 <button onclick="abrirJanela('redes')">
-social
+Redes sociais
 </button>
 
 
@@ -80,55 +79,84 @@ social
 
 
 
-<!-- CENTRO -->
-
-
-<main>
 
 
 
-<article>
+<!-- ÁREA CENTRAL -->
+
+<main class="conteudo">
 
 
-<h2>Bem-vindo ao meu blog!</h2>
-
-
-<span>
-30/07/2026
-</span>
-
-
-
-<img src="images/desenho1.jpg" alt="desenho">
+<h2>Bem-vindo!</h2>
 
 
 <p>
 
-Esse é meu espaço para guardar desenhos,
-estudos e pensamentos sobre arte.
+Olá! Esse é meu espaço pessoal na internet.
+
+Aqui eu vou colocar meus desenhos,
+estudos, pensamentos e qualquer coisa
+relacionada à arte.
 
 </p>
 
 
 
-</aside>
-
-  
-
-  
-<!-- DIREITA -->
+<img src="images/desenho1.jpg" alt="meu desenho">
 
 
-<aside class="id">
+
+<p>
+
+Hoje eu fiz um novo desenho e resolvi
+registrar aqui.
+
+Ainda estou aprendendo, mas gosto de
+guardar cada etapa da minha evolução.
+
+</p>
+
+
+
+<hr>
+
+
+
+<h2>Atualizações</h2>
+
+
+<p>
+
+30/07/2026
+
+<br>
+
+Novo desenho publicado no blog.
+
+</p>
+
+
+</main>
+
+
+
+
+
+
+
+
+<!-- ID CARD -->
+
+<aside class="perfil">
 
 
 <div class="id-card">
 
 
-<img src="images/eu.jpg" alt="foto">
+<img src="images/eu.jpg" alt="minha foto">
 
 
-<h2>SEU NOME</h2>
+<h2>Seu Nome</h2>
 
 
 <p>
@@ -137,18 +165,26 @@ ID: 001
 
 
 <p>
-Status: Desenhando
+estudante
+<br>
+
+</p>
+
+<p>
+  
+<br>
+
+<br>
+
+<br>
+✦ Sketchbook
 </p>
 
 
 <p>
-Interesses:
+Status:
 <br>
-✦ Arte
-<br>
-✦ Personagens
-<br>
-✦ Sketches
+Criando...
 </p>
 
 
@@ -161,14 +197,15 @@ Interesses:
 
 
 
+
 </div>
 
 
 
 
 
-<!-- JANELAS -->
 
+<!-- JANELA POPUP -->
 
 <div id="janela" class="janela">
 
@@ -197,9 +234,8 @@ fechar
 <footer>
 
 <p>
-© 2026 - Sketchbook.log
+feito por Patricia ✎
 </p>
-
 
 </footer>
 
