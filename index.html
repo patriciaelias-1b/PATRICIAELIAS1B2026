@@ -148,65 +148,40 @@ ideias e pensamentos.
 
 <section class="chat">
 
-
-<h2>
-Comentários
-</h2>
+<h2>Comentários</h2>
 
 
-
-<div class="comentario">
-
-
-<div>
-
-<b>Visitante01</b>
-
-<p>
-Seu desenho ficou muito bom!
-</p>
-
-</div>
-
-
-
-<button class="tres"
-onclick="abrirOpcoes(this)">
-⋮
-</button>
-
-
-
-<div class="opcoes">
-
-
-<button>
-💬 Responder
-</button>
-
-
-<button>
-🔒 Bloquear
-</button>
-
-
-<button class="reportar">
-🚩 Reportar
-</button>
+<div id="listaComentarios">
 
 
 </div>
 
 
+
+<div class="novo-comentario">
+
+
+<input 
+id="nomeComentario"
+placeholder="seu nome"
+>
+
+
+<textarea 
+id="textoComentario"
+placeholder="escreva um comentário..."
+></textarea>
+
+
+<button onclick="adicionarComentario()">
+comentar
+</button>
+
+
 </div>
-
-
 
 
 </section>
-
-
-</main>
 
 
 
