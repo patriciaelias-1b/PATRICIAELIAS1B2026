@@ -1,6 +1,42 @@
-// ============================
-// Animação ao aparecer na tela
-// ============================
+// ===============================
+// Pesquisa de posts
+// ===============================
+
+const pesquisa = document.querySelector("#barraPesquisa");
+
+const posts = document.querySelectorAll("article");
+
+
+pesquisa.addEventListener("input", () => {
+
+    const texto = pesquisa.value.toLowerCase();
+
+
+    posts.forEach((post) => {
+
+        const conteudo = post.textContent.toLowerCase();
+
+
+        if(conteudo.includes(texto)){
+
+            post.style.display = "block";
+
+        }else{
+
+            post.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+
+
+// ===============================
+// Animação dos posts aparecendo
+// ===============================
 
 const elementos = document.querySelectorAll(
     "article, .esquerda, .direita"
@@ -13,7 +49,7 @@ const observador = new IntersectionObserver((entradas)=>{
 
         if(entrada.isIntersecting){
 
-            entrada.target.classList.add("visivel");
+            entrada.target.classList.add("aparecer");
 
         }
 
@@ -21,7 +57,7 @@ const observador = new IntersectionObserver((entradas)=>{
 
 
 }, {
-    threshold: 0.15
+    threshold:0.15
 });
 
 
@@ -34,26 +70,9 @@ elementos.forEach((elemento)=>{
 
 
 
-// ============================
-// Ano automático no rodapé
-// ============================
-
-const footer = document.querySelector("footer p");
-
-
-if(footer){
-
-    footer.innerHTML =
-    `feito por [seu nome] ✎ ${new Date().getFullYear()}`;
-
-}
-
-
-
-
-// ============================
-// Abrir imagens ao clicar
-// ============================
+// ===============================
+// Abrir desenhos maiores
+// ===============================
 
 const imagens = document.querySelectorAll("article img");
 
@@ -63,11 +82,26 @@ imagens.forEach((imagem)=>{
 
     imagem.addEventListener("click",()=>{
 
-
-        imagem.classList.toggle("ampliada");
-
+        imagem.classList.toggle("grande");
 
     });
 
 
 });
+
+
+
+
+// ===============================
+// Ano automático no rodapé
+// ===============================
+
+const rodape = document.querySelector("footer p");
+
+
+if(rodape){
+
+    rodape.innerHTML =
+    `feito por Seu Nome ✎ ${new Date().getFullYear()}`;
+
+}
