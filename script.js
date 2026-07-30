@@ -26,17 +26,6 @@ function abrirJanela(tipo){
 
 
 
-    if(tipo === "estudos"){
-
-        titulo.innerHTML = "Estudos";
-
-        texto.innerHTML =
-        "Anotações, práticas de anatomia, perspectiva e exercícios.";
-
-    }
-
-
-
     if(tipo === "blog"){
 
         titulo.innerHTML = "Blog";
@@ -53,7 +42,7 @@ function abrirJanela(tipo){
         titulo.innerHTML = "Materiais";
 
         texto.innerHTML =
-        "Lápis, cadernos, canetas e ferramentas que uso.";
+        "estou disponibilizando materiais de arte para vcss<3";
 
     }
 
