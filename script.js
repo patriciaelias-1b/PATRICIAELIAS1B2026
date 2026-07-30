@@ -1,107 +1,136 @@
-// ===============================
-// Pesquisa de posts
-// ===============================
-
-const pesquisa = document.querySelector("#barraPesquisa");
-
-const posts = document.querySelectorAll("article");
+// ==========================
+// JANELAS DO MENU
+// ==========================
 
 
-pesquisa.addEventListener("input", () => {
-
-    const texto = pesquisa.value.toLowerCase();
-
-
-    posts.forEach((post) => {
-
-        const conteudo = post.textContent.toLowerCase();
+const janela = document.getElementById("janela");
+const titulo = document.getElementById("tituloJanela");
+const texto = document.getElementById("textoJanela");
 
 
-        if(conteudo.includes(texto)){
 
-            post.style.display = "block";
+function abrirJanela(tipo){
 
-        }else{
 
-            post.style.display = "none";
+    janela.style.display = "block";
 
-        }
 
-    });
+    if(tipo === "desenhos"){
+
+        titulo.innerHTML = "Desenhos";
+
+        texto.innerHTML =
+        "Aqui ficam minhas ilustrações, rascunhos e desenhos finalizados.";
+
+    }
+
+
+
+    if(tipo === "estudos"){
+
+        titulo.innerHTML = "Estudos";
+
+        texto.innerHTML =
+        "Anotações, práticas de anatomia, perspectiva e exercícios.";
+
+    }
+
+
+
+    if(tipo === "blog"){
+
+        titulo.innerHTML = "Blog";
+
+        texto.innerHTML =
+        "Posts sobre meu processo de desenho e coisas que aprendi.";
+
+    }
+
+
+
+    if(tipo === "materiais"){
+
+        titulo.innerHTML = "Materiais";
+
+        texto.innerHTML =
+        "Lápis, cadernos, canetas e ferramentas que uso.";
+
+    }
+
+
+
+    if(tipo === "redes"){
+
+        titulo.innerHTML = "Redes sociais";
+
+        texto.innerHTML =
+        `
+        <a href="https://instagram.com/" target="_blank">
+        Instagram
+        </a>
+        <br><br>
+
+        <a href="https://github.com/" target="_blank">
+        GitHub
+        </a>
+        `;
+
+    }
+
+
+}
+
+
+
+
+
+// ==========================
+// FECHAR JANELA
+// ==========================
+
+
+function fecharJanela(){
+
+    janela.style.display = "none";
+
+}
+
+
+
+
+
+// ==========================
+// FECHAR CLICANDO FORA
+// ==========================
+
+
+window.addEventListener("click",(evento)=>{
+
+
+    if(evento.target === janela){
+
+        janela.style.display="none";
+
+    }
+
 
 });
 
 
 
 
-// ===============================
-// Animação dos posts aparecendo
-// ===============================
 
-const elementos = document.querySelectorAll(
-    "article, .esquerda, .direita"
-);
+// ==========================
+// EFEITO DE DATA AUTOMÁTICA
+// ==========================
 
 
-const observador = new IntersectionObserver((entradas)=>{
-
-    entradas.forEach((entrada)=>{
-
-        if(entrada.isIntersecting){
-
-            entrada.target.classList.add("aparecer");
-
-        }
-
-    });
+const data = document.querySelector("footer p");
 
 
-}, {
-    threshold:0.15
-});
+if(data){
 
-
-elementos.forEach((elemento)=>{
-
-    observador.observe(elemento);
-
-});
-
-
-
-
-// ===============================
-// Abrir desenhos maiores
-// ===============================
-
-const imagens = document.querySelectorAll("article img");
-
-
-imagens.forEach((imagem)=>{
-
-
-    imagem.addEventListener("click",()=>{
-
-        imagem.classList.toggle("grande");
-
-    });
-
-
-});
-
-
-
-
-// ===============================
-// Ano automático no rodapé
-// ===============================
-
-const rodape = document.querySelector("footer p");
-
-
-if(rodape){
-
-    rodape.innerHTML =
-    `feito por Seu Nome ✎ ${new Date().getFullYear()}`;
+    data.innerHTML =
+    `© ${new Date().getFullYear()} - Sketchbook.log`;
 
 }
