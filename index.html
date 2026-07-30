@@ -18,7 +18,6 @@
 
 <header class="topo">
 
-
 <div class="barra">
 
 
@@ -32,11 +31,9 @@
 </a>
 
 
-
 <h1>
 Sketchbook.log
 </h1>
-
 
 
 <input 
@@ -46,10 +43,7 @@ placeholder="pesquisar..."
 >
 
 
-
 </div>
-
-
 
 
 
@@ -87,16 +81,12 @@ Sair
 
 
 
-
-
-
-<!-- MENU -->
+<!-- TÓPICOS -->
 
 <aside class="esquerda">
 
 
 <h2>Tópicos</h2>
-
 
 
 <button onclick="abrirJanela('desenhos')">
@@ -119,11 +109,9 @@ Materiais
 </button>
 
 
-
 <button onclick="abrirJanela('redes')">
-Redes
+Redes sociais
 </button>
-
 
 
 </aside>
@@ -136,11 +124,9 @@ Redes
 
 
 
-<!-- CENTRO -->
-
+<!-- CONTEÚDO -->
 
 <main>
-
 
 
 <section class="post">
@@ -152,12 +138,8 @@ Meu sketchbook online
 
 
 <p>
-
-Esse é meu cantinho na internet.
-
-Aqui coloco desenhos, estudos,
-ideias e coisas que estou criando.
-
+Bem-vindo ao meu espaço pessoal.
+Aqui posto desenhos, estudos e ideias.
 </p>
 
 
@@ -166,71 +148,14 @@ ideias e coisas que estou criando.
 
 
 <p>
-
-Atualização:
-
-Novo desenho publicado hoje.
-
+Última atualização:
+<br>
+Novo desenho adicionado.
 </p>
 
 
-</section>
-
-
-
-
-
-
-
-
-
-<section class="chat">
-
-
-<h2>
-Comentários
-</h2>
-
-
-
-<div id="listaComentarios">
-
-</div>
-
-
-
-
-
-<div class="novo-comentario">
-
-
-<input
-id="nomeComentario"
-placeholder="seu nome"
->
-
-
-
-<textarea
-id="textoComentario"
-placeholder="escreva um comentário..."
-></textarea>
-
-
-
-<button onclick="adicionarComentario()">
-comentar
-</button>
-
-
-</div>
-
-
 
 </section>
-
-
-
 
 
 
@@ -244,17 +169,16 @@ comentar
 
 
 
-<!-- PERFIL -->
-
+<!-- PERFIL + COMENTÁRIOS -->
 
 <aside class="direita">
+
 
 
 <div class="id-card">
 
 
-<img src="images/eu.jpg">
-
+<img src="images/eu.jpg" alt="foto">
 
 
 <h2 id="nomePerfil">
@@ -283,11 +207,48 @@ Criando ✦
 
 
 
+
+
+
+
+
+
+<section class="chat">
+
+
+<h2>
+Comentários
+</h2>
+
+
+
+<div id="listaComentarios">
+
+<!-- comentários aparecem aqui -->
+
+</div>
+
+
+
+
+<textarea
+id="textoComentario"
+placeholder="escreva um comentário..."
+></textarea>
+
+
+
+<button onclick="adicionarComentario()">
+Enviar comentário
+</button>
+
+
+
+</section>
+
+
+
 </aside>
-
-
-
-
 
 
 
@@ -301,7 +262,7 @@ Criando ✦
 
 
 
-<!-- JANELAS DOS TÓPICOS -->
+<!-- JANELA DOS TÓPICOS -->
 
 
 <div id="janela" class="janela">
@@ -333,8 +294,7 @@ fechar
 
 
 
-<!-- CRIAR PERFIL -->
-
+<!-- CRIAR CONTA -->
 
 <div id="perfil" class="janela">
 
@@ -344,14 +304,10 @@ Criar conta simbólica
 </h2>
 
 
-
 <p>
-
+Essa conta é apenas para identificação no blog.
 Não precisa colocar dados pessoais.
-É apenas um nome para aparecer no blog.
-
 </p>
-
 
 
 <input
@@ -360,14 +316,14 @@ placeholder="nome"
 >
 
 
-
 <button onclick="criarConta()">
-Criar
+Criar conta
 </button>
 
 
 
 </div>
+
 
 
 
@@ -385,11 +341,9 @@ Sketchbook.log ©
 
 
 
-
 <script src="script.js"></script>
 
 
 </body>
-
 
 </html>
