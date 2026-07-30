@@ -1,5 +1,5 @@
 /* =========================
-   BASE
+RESET
 ========================= */
 
 *{
@@ -9,25 +9,29 @@
 }
 
 
+
 body{
 
-    background-color:#eeeeee;
+    background:#eeeeee;
 
     background-image:
     radial-gradient(#111 1px, transparent 1px);
 
     background-size:16px 16px;
 
-    font-family:Verdana, Arial, sans-serif;
-
     color:#222;
+
+    font-family:Verdana, Arial, sans-serif;
 
 }
 
 
 
+
+
+
 /* =========================
-   TOPO
+TOPO
 ========================= */
 
 
@@ -63,11 +67,13 @@ body{
 
 .barra h1{
 
-    font-family:"Times New Roman", serif;
-
     flex:1;
 
     text-align:center;
+
+    font-family:"Times New Roman",serif;
+
+    font-size:38px;
 
 }
 
@@ -87,11 +93,12 @@ body{
 
     width:180px;
 
-    border:1px solid black;
-
     padding:8px;
 
+    border:1px solid black;
+
 }
+
 
 
 
@@ -122,8 +129,10 @@ button:hover{
 
 
 
+
+
 /* =========================
-   MENU
+MENU
 ========================= */
 
 
@@ -139,7 +148,7 @@ button:hover{
 
     padding:10px;
 
-    z-index:10;
+    z-index:20;
 
 }
 
@@ -159,8 +168,11 @@ button:hover{
 
 
 
+
+
+
 /* =========================
-   LAYOUT
+LAYOUT
 ========================= */
 
 
@@ -172,7 +184,7 @@ button:hover{
 
     display:grid;
 
-    grid-template-columns:180px 1fr 230px;
+    grid-template-columns:180px 1fr 260px;
 
     gap:15px;
 
@@ -182,8 +194,11 @@ button:hover{
 
 
 
+
+
+
 /* =========================
-   ESQUERDA
+TÓPICOS
 ========================= */
 
 
@@ -205,8 +220,6 @@ button:hover{
 
     font-family:"Times New Roman",serif;
 
-    border-bottom:1px solid black;
-
     margin-bottom:15px;
 
 }
@@ -227,8 +240,11 @@ button:hover{
 
 
 
+
+
+
 /* =========================
-   POSTS
+POST
 ========================= */
 
 
@@ -248,7 +264,7 @@ button:hover{
 
     font-family:"Times New Roman",serif;
 
-    font-size:28px;
+    font-size:30px;
 
 }
 
@@ -258,105 +274,21 @@ button:hover{
 
     width:100%;
 
-    margin-top:20px;
+    margin:20px 0;
 
     border:1px solid black;
 
 }
+
+
+
 
 
 
 
 
 /* =========================
-   CHAT
-========================= */
-
-
-.chat{
-
-    background:white;
-
-    border:2px solid black;
-
-    margin-top:20px;
-
-    padding:20px;
-
-}
-
-
-
-.comentario{
-
-    position:relative;
-
-    border:1px solid black;
-
-    padding:15px;
-
-    background:#fafafa;
-
-}
-
-
-
-.tres{
-
-    position:absolute;
-
-    right:10px;
-
-    top:10px;
-
-}
-
-
-
-.opcoes{
-
-    display:none;
-
-    position:absolute;
-
-    right:10px;
-
-    top:40px;
-
-    background:white;
-
-    border:1px solid black;
-
-    padding:10px;
-
-}
-
-
-
-.opcoes button{
-
-    display:block;
-
-    width:130px;
-
-    margin-bottom:5px;
-
-}
-
-
-
-.reportar{
-
-    color:red;
-
-}
-
-
-
-
-
-/* =========================
-   ID CARD
+PERFIL
 ========================= */
 
 
@@ -402,9 +334,9 @@ button:hover{
 
 .id-card h2{
 
-    margin:15px 0;
+    margin:15px;
 
-    color:#e7a6bd;
+    color:#e6a3bb;
 
 }
 
@@ -412,8 +344,101 @@ button:hover{
 
 
 
+
+
 /* =========================
-   JANELA DE CONTA
+CHAT
+========================= */
+
+
+.chat{
+
+    margin-top:20px;
+
+    background:white;
+
+    border:1px solid black;
+
+    padding:10px;
+
+}
+
+
+
+.chat h2{
+
+    font-family:"Times New Roman",serif;
+
+    margin-bottom:10px;
+
+}
+
+
+
+#listaComentarios{
+
+    max-height:350px;
+
+    overflow:auto;
+
+}
+
+
+
+
+.comentario{
+
+    border:1px solid black;
+
+    padding:10px;
+
+    margin-bottom:10px;
+
+    background:#fafafa;
+
+}
+
+
+
+.comentario p{
+
+    margin:8px 0;
+
+}
+
+
+
+.reportar{
+
+    color:red;
+
+}
+
+
+
+#textoComentario{
+
+    width:100%;
+
+    height:80px;
+
+    margin-top:10px;
+
+    border:1px solid black;
+
+    resize:none;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+JANELAS
 ========================= */
 
 
@@ -429,11 +454,15 @@ button:hover{
 
     transform:translate(-50%,-50%);
 
+    width:350px;
+
     background:white;
 
     border:2px solid black;
 
     padding:25px;
+
+    z-index:50;
 
     box-shadow:5px 5px 0 black;
 
@@ -441,11 +470,19 @@ button:hover{
 
 
 
+.janela h2{
+
+    font-family:"Times New Roman",serif;
+
+    margin-bottom:15px;
+
+}
+
+
+
 .janela input{
 
-    display:block;
-
-    border:1px solid black;
+    width:100%;
 
     padding:8px;
 
@@ -457,8 +494,11 @@ button:hover{
 
 
 
+
+
+
 /* =========================
-   RODAPÉ
+RODAPÉ
 ========================= */
 
 
@@ -472,9 +512,9 @@ footer{
 
     border:2px solid black;
 
-    text-align:center;
-
     padding:20px;
+
+    text-align:center;
 
 }
 
@@ -482,8 +522,11 @@ footer{
 
 
 
+
+
+
 /* =========================
-   MODO NOTURNO
+MODO NOTURNO
 ========================= */
 
 
@@ -491,24 +534,28 @@ footer{
 
     background:#111;
 
-    color:white;
+    color:#eee;
 
 }
 
 
 
 .dark .topo,
-.dark .post,
-.dark .chat,
+.dark .menu,
 .dark .esquerda,
+.dark .post,
 .dark .direita,
+.dark .chat,
+.dark .comentario,
 .dark .id-card,
 .dark .janela,
 .dark footer{
 
     background:#222;
 
-    color:white;
+    color:#eee;
+
+    border-color:#eee;
 
 }
 
@@ -520,14 +567,32 @@ footer{
 
     color:white;
 
+    border-color:#eee;
+
+}
+
+
+
+.dark input,
+.dark textarea{
+
+    background:#111;
+
+    color:white;
+
+    border-color:white;
+
 }
 
 
 
 
 
+
+
+
 /* =========================
-   CELULAR
+CELULAR
 ========================= */
 
 
@@ -541,6 +606,7 @@ footer{
     width:95%;
 
 }
+
 
 
 .layout{
