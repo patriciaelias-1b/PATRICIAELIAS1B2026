@@ -32,23 +32,29 @@
 </a>
 
 
+
 <h1>
 Sketchbook.log
 </h1>
 
 
+
 <input 
+id="pesquisa"
 type="text"
 placeholder="pesquisar..."
-id="pesquisa"
 >
+
 
 
 </div>
 
 
 
+
+
 <div id="menu" class="menu">
+
 
 <button onclick="abrirPerfil()">
 Meu perfil
@@ -56,7 +62,7 @@ Meu perfil
 
 
 <button onclick="modoNoturno()">
-Modo noturno
+Modo claro/escuro
 </button>
 
 
@@ -75,12 +81,16 @@ Sair
 
 
 
+
+
 <div class="layout">
 
 
 
-<!-- ESQUERDA -->
 
+
+
+<!-- MENU -->
 
 <aside class="esquerda">
 
@@ -88,28 +98,37 @@ Sair
 <h2>Tópicos</h2>
 
 
-<button>
+
+<button onclick="abrirJanela('desenhos')">
 Desenhos
 </button>
 
 
-<button>
+<button onclick="abrirJanela('estudos')">
 Estudos
 </button>
 
 
-<button>
-Personagens
+<button onclick="abrirJanela('blog')">
+Blog
 </button>
 
 
-<button>
+<button onclick="abrirJanela('materiais')">
 Materiais
 </button>
 
 
 
+<button onclick="abrirJanela('redes')">
+Redes
+</button>
+
+
+
 </aside>
+
+
 
 
 
@@ -123,6 +142,7 @@ Materiais
 <main>
 
 
+
 <section class="post">
 
 
@@ -132,12 +152,26 @@ Meu sketchbook online
 
 
 <p>
-Esse é meu espaço para colocar desenhos,
-ideias e pensamentos.
+
+Esse é meu cantinho na internet.
+
+Aqui coloco desenhos, estudos,
+ideias e coisas que estou criando.
+
 </p>
 
 
-<img src="images/desenho1.jpg">
+
+<img src="images/desenho1.jpg" alt="desenho">
+
+
+<p>
+
+Atualização:
+
+Novo desenho publicado hoje.
+
+</p>
 
 
 </section>
@@ -146,31 +180,42 @@ ideias e pensamentos.
 
 
 
+
+
+
+
 <section class="chat">
 
-<h2>Comentários</h2>
+
+<h2>
+Comentários
+</h2>
+
 
 
 <div id="listaComentarios">
 
-
 </div>
+
+
 
 
 
 <div class="novo-comentario">
 
 
-<input 
+<input
 id="nomeComentario"
 placeholder="seu nome"
 >
 
 
-<textarea 
+
+<textarea
 id="textoComentario"
 placeholder="escreva um comentário..."
 ></textarea>
+
 
 
 <button onclick="adicionarComentario()">
@@ -181,6 +226,7 @@ comentar
 </div>
 
 
+
 </section>
 
 
@@ -188,9 +234,17 @@ comentar
 
 
 
+</main>
 
 
-<!-- DIREITA -->
+
+
+
+
+
+
+
+<!-- PERFIL -->
 
 
 <aside class="direita">
@@ -202,9 +256,11 @@ comentar
 <img src="images/eu.jpg">
 
 
+
 <h2 id="nomePerfil">
 Visitante
 </h2>
+
 
 
 <p>
@@ -231,6 +287,10 @@ Criando ✦
 
 
 
+
+
+
+
 </div>
 
 
@@ -238,7 +298,42 @@ Criando ✦
 
 
 
-<!-- CRIAR CONTA -->
+
+
+
+<!-- JANELAS DOS TÓPICOS -->
+
+
+<div id="janela" class="janela">
+
+
+<h2 id="tituloJanela">
+Título
+</h2>
+
+
+<p id="textoJanela">
+Texto
+</p>
+
+
+
+<button onclick="fecharJanela()">
+fechar
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- CRIAR PERFIL -->
 
 
 <div id="perfil" class="janela">
@@ -249,12 +344,21 @@ Criar conta simbólica
 </h2>
 
 
+
 <p>
+
 Não precisa colocar dados pessoais.
+É apenas um nome para aparecer no blog.
+
 </p>
 
 
-<input id="nomeInput" placeholder="Seu nome">
+
+<input
+id="nomeInput"
+placeholder="nome"
+>
+
 
 
 <button onclick="criarConta()">
@@ -270,6 +374,8 @@ Criar
 
 
 
+
+
 <footer>
 
 Sketchbook.log ©
@@ -278,9 +384,12 @@ Sketchbook.log ©
 
 
 
+
+
 <script src="script.js"></script>
 
 
 </body>
+
 
 </html>
