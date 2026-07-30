@@ -1,13 +1,17 @@
 // =============================
-// Animação ao aparecer na tela
+// Animação de entrada das seções
 // =============================
 
-const observer = new IntersectionObserver((entries) => {
+const secoes = document.querySelectorAll("section");
 
-    entries.forEach(entry => {
+const observer = new IntersectionObserver((entradas) => {
 
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+    entradas.forEach((entrada) => {
+
+        if(entrada.isIntersecting){
+
+            entrada.target.classList.add("aparecer");
+
         }
 
     });
@@ -16,48 +20,48 @@ const observer = new IntersectionObserver((entries) => {
     threshold: 0.15
 });
 
-document.querySelectorAll(".fade").forEach(element => {
-    observer.observe(element);
+
+secoes.forEach((secao)=>{
+    observer.observe(secao);
 });
 
 
+
 // =============================
-// Navbar ao rolar
+// Botão com mensagem de artista
 // =============================
 
-const header = document.querySelector("header");
+const botao = document.querySelector("button");
 
-window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 60) {
+if(botao){
 
-        header.style.background = "rgba(245,245,242,.96)";
-        header.style.boxShadow = "0 8px 20px rgba(0,0,0,.05)";
+botao.addEventListener("click",()=>{
 
-    } else {
-
-        header.style.background = "rgba(245,245,242,.85)";
-        header.style.boxShadow = "none";
-
-    }
+    console.log("Bem-vindo ao meu sketchbook ✎");
 
 });
 
+}
+
+
 
 // =============================
-// Scroll suave do menu
+// Menu suave
 // =============================
 
-document.querySelectorAll("nav a").forEach(link => {
+document.querySelectorAll("nav a").forEach(link=>{
 
-    link.addEventListener("click", function(e) {
+    link.addEventListener("click",(evento)=>{
 
-        e.preventDefault();
+        evento.preventDefault();
 
-        const alvo = document.querySelector(this.getAttribute("href"));
+        const destino = document.querySelector(
+            link.getAttribute("href")
+        );
 
-        alvo.scrollIntoView({
-            behavior: "smooth"
+        destino.scrollIntoView({
+            behavior:"smooth"
         });
 
     });
@@ -65,34 +69,17 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 
 
-// =============================
-// Animação dos cards
-// =============================
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card, index) => {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(40px)";
-
-    setTimeout(() => {
-
-        card.style.transition = ".7s";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-
-    }, 200 * index);
-
-});
-
 
 // =============================
 // Ano automático no rodapé
 // =============================
 
-const footerText = document.querySelector("footer p");
+const ano = document.querySelector("footer p");
 
-if (footerText) {
-    footerText.innerHTML = `© ${new Date().getFullYear()} • Portfólio de Arte`;
+
+if(ano){
+
+ano.innerHTML =
+`Feito por mim ✦ ${new Date().getFullYear()}`;
+
 }
