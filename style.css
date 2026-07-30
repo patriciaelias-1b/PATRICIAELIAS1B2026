@@ -9,13 +9,19 @@
 
 body{
 
-    background:#f3efe7;
+    background-color:#f5f3ee;
+
+    background-image:radial-gradient(#222 1px, transparent 1px);
+
+    background-size:18px 18px;
+
     color:#333;
 
     font-family:"Manrope", sans-serif;
 
     line-height:1.7;
 
+}
 }
 
 
