@@ -1,3 +1,456 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background-color:#f4f1ea;
+
+    background-image:radial-gradient(#222 1px, transparent 1px);
+
+    background-size:18px 18px;
+
+    color:#292929;
+
+    font-family:"Manrope", sans-serif;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+
+header{
+
+    background:#fffdf8;
+
+    text-align:center;
+
+    padding:45px 20px;
+
+    border-bottom:2px solid #222;
+
+}
+
+
+header h1{
+
+    font-family:"Libre Baskerville", serif;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+
+header p{
+
+    color:#666;
+
+    font-style:italic;
+
+}
+
+
+
+/* =========================
+   PESQUISA
+========================= */
+
+
+.pesquisa{
+
+    margin-top:25px;
+
+}
+
+
+.pesquisa input{
+
+    width:300px;
+
+    max-width:90%;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    border:2px solid #222;
+
+    background:white;
+
+    font-size:14px;
+
+    outline:none;
+
+}
+
+
+.pesquisa input:focus{
+
+    box-shadow:4px 4px 0 #222;
+
+}
+
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+
+.layout{
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:0 20px;
+
+
+    display:grid;
+
+    grid-template-columns:220px 1fr 260px;
+
+    gap:30px;
+
+}
+
+
+
+/* =========================
+   LATERAIS
+========================= */
+
+
+.esquerda,
+.direita{
+
+    background:#fffdf8;
+
+    padding:25px;
+
+    border:2px solid #222;
+
+    border-radius:15px;
+
+    height:max-content;
+
+    box-shadow:5px 5px 0 #222;
+
+}
+
+
+
+.esquerda h2,
+.direita h2{
+
+    font-family:"Libre Baskerville", serif;
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.esquerda ul{
+
+    list-style:none;
+
+}
+
+
+.esquerda li{
+
+    margin:12px 0;
+
+}
+
+
+.esquerda a{
+
+    color:#333;
+
+    text-decoration:none;
+
+}
+
+
+.esquerda a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+
+hr{
+
+    border:none;
+
+    border-top:1px dashed #555;
+
+    margin:25px 0;
+
+}
+
+
+
+/* =========================
+   POSTS
+========================= */
+
+
+article{
+
+    background:#fffdf8;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    border-radius:15px;
+
+    border:2px solid #222;
+
+    box-shadow:5px 5px 0 #222;
+
+    opacity:0;
+
+}
+
+
+
+article h2{
+
+    font-family:"Libre Baskerville", serif;
+
+    font-size:27px;
+
+    margin-bottom:5px;
+
+}
+
+
+
+article span{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+
+
+article img{
+
+    width:100%;
+
+    max-height:500px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+    margin:25px 0;
+
+    cursor:pointer;
+
+}
+
+
+
+article p{
+
+    color:#444;
+
+}
+
+
+
+/* =========================
+   ID CARD
+========================= */
+
+
+.id-card{
+
+    text-align:center;
+
+}
+
+
+.perfil{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #222;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.id-card h2{
+
+    margin-bottom:5px;
+
+}
+
+
+.cargo{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+
+.id-card p{
+
+    text-align:left;
+
+    font-size:14px;
+
+    margin:12px 0;
+
+}
+
+
+
+/* =========================
+   IMAGEM GRANDE
+========================= */
+
+
+article img.grande{
+
+    position:fixed;
+
+    width:80%;
+
+    height:80%;
+
+    top:10%;
+
+    left:10%;
+
+    object-fit:contain;
+
+    background:white;
+
+    padding:20px;
+
+    z-index:999;
+
+    border:3px solid #222;
+
+}
+
+
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+
+.aparecer{
+
+    animation:entrada .7s forwards;
+
+}
+
+
+
+@keyframes entrada{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+
+footer{
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:35px;
+
+}
+
+
+
+/* =========================
+   CELULAR
+========================= */
+
+
+@media(max-width:900px){
+
+
+    .layout{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    header h1{
+
+        font-size:30px;
+
+    }
+
+
+}
 .aparecer{
     animation:entrada .6s ease;
 }
