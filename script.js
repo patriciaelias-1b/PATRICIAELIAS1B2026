@@ -1,102 +1,18 @@
-// ==========================
-// JANELAS DOS TÓPICOS
-// ==========================
+// ===============================
+// MENU SUPERIOR
+// ===============================
 
-const janela = document.getElementById("janela");
-const titulo = document.getElementById("tituloJanela");
-const texto = document.getElementById("textoJanela");
+function abrirMenu(){
 
+    const menu = document.getElementById("menu");
 
-function abrirJanela(tipo){
+    if(menu.style.display === "block"){
 
-    janela.style.display = "block";
+        menu.style.display = "none";
 
+    }else{
 
-    if(tipo === "desenhos"){
-
-        titulo.innerHTML = "Desenhos";
-
-        texto.innerHTML =
-        `
-        Aqui ficam meus desenhos,
-        ilustrações e rascunhos.
-        <br><br>
-        Um lugar para guardar minha evolução.
-        `;
-
-    }
-
-
-
-    else if(tipo === "estudos"){
-
-        titulo.innerHTML = "Estudos";
-
-        texto.innerHTML =
-        `
-        Estudos de anatomia,
-        perspectiva, cores e técnicas
-        que estou aprendendo.
-        `;
-
-    }
-
-
-
-    else if(tipo === "blog"){
-
-        titulo.innerHTML = "Blog";
-
-        texto.innerHTML =
-        `
-        Aqui escrevo sobre meu processo,
-        ideias, desenhos novos e coisas
-        que estou aprendendo.
-        `;
-
-    }
-
-
-
-    else if(tipo === "materiais"){
-
-        titulo.innerHTML = "Materiais";
-
-        texto.innerHTML =
-        `
-        Meus materiais:
-
-        <br><br>
-
-        ✦ lápis<br>
-        ✦ sketchbook<br>
-        ✦ canetas<br>
-        ✦ ferramentas digitais
-        `;
-
-    }
-
-
-
-    else if(tipo === "redes"){
-
-
-        titulo.innerHTML = "Redes sociais";
-
-
-        texto.innerHTML =
-        `
-        <a href="https://instagram.com/" target="_blank">
-        Instagram
-        </a>
-
-        <br><br>
-
-        <a href="https://github.com/" target="_blank">
-        GitHub
-        </a>
-        `;
-
+        menu.style.display = "block";
 
     }
 
@@ -105,14 +21,100 @@ function abrirJanela(tipo){
 
 
 
-// ==========================
-// FECHAR JANELA
-// ==========================
+// ===============================
+// CRIAR PERFIL SIMBÓLICO
+// ===============================
 
 
-function fecharJanela(){
+function abrirPerfil(){
 
-    janela.style.display="none";
+    document.getElementById("perfil").style.display="block";
+
+}
+
+
+
+
+function criarConta(){
+
+    let nome = document.getElementById("nomeInput").value;
+
+
+    if(nome.trim() === ""){
+
+        nome = "Visitante";
+
+    }
+
+
+
+    localStorage.setItem("nomeUsuario", nome);
+
+
+
+    let contas =
+    Number(localStorage.getItem("contas")) || 0;
+
+
+    contas++;
+
+
+    localStorage.setItem("contas", contas);
+
+
+
+    atualizarPerfil();
+
+
+    document.getElementById("perfil").style.display="none";
+
+}
+
+
+
+
+function atualizarPerfil(){
+
+
+    let nome =
+    localStorage.getItem("nomeUsuario")
+    || "Visitante";
+
+
+    let contas =
+    localStorage.getItem("contas")
+    || 0;
+
+
+
+    document.getElementById("nomePerfil")
+    .innerHTML = nome;
+
+
+
+    document.getElementById("contas")
+    .innerHTML = contas;
+
+
+}
+
+
+
+atualizarPerfil();
+
+
+
+
+
+// ===============================
+// MODO NOTURNO
+// ===============================
+
+
+function modoNoturno(){
+
+    document.body.classList.toggle("dark");
+
 
 }
 
@@ -120,38 +122,74 @@ function fecharJanela(){
 
 
 
-// ==========================
-// FECHAR CLICANDO FORA
-// ==========================
+
+// ===============================
+// SAIR
+// ===============================
+
+
+function sair(){
+
+    window.location.href =
+    "https://www.google.com";
+
+}
+
+
+
+
+
+
+// ===============================
+// MENU DOS COMENTÁRIOS
+// ===============================
+
+
+function abrirOpcoes(botao){
+
+
+    let opcoes =
+    botao.parentElement.querySelector(".opcoes");
+
+
+
+    if(opcoes.style.display === "block"){
+
+        opcoes.style.display="none";
+
+    }else{
+
+        opcoes.style.display="block";
+
+    }
+
+
+}
+
+
+
+
+
+
+// ===============================
+// FECHAR JANELAS CLICANDO FORA
+// ===============================
 
 
 window.addEventListener("click",(evento)=>{
 
 
-    if(evento.target === janela){
+    let perfil =
+    document.getElementById("perfil");
 
-        fecharJanela();
+
+
+    if(evento.target === perfil){
+
+        perfil.style.display="none";
 
     }
 
 
+
 });
-
-
-
-
-
-// ==========================
-// ANO AUTOMÁTICO
-// ==========================
-
-
-const rodape = document.querySelector("footer p");
-
-
-if(rodape){
-
-    rodape.innerHTML =
-    `feito por Seu Nome ✎ ${new Date().getFullYear()}`;
-
-}
