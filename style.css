@@ -1,5 +1,5 @@
 /* =========================
-RESET
+   RESET
 ========================= */
 
 *{
@@ -12,46 +12,43 @@ RESET
 
 body{
 
-    background:#eeeeee;
+    background:#e9e9e9;
 
     background-image:
     radial-gradient(#111 1px, transparent 1px);
 
-    background-size:16px 16px;
-
-    color:#222;
+    background-size:18px 18px;
 
     font-family:Verdana, Arial, sans-serif;
+
+    color:#222;
 
 }
 
 
 
-
-
-
 /* =========================
-TOPO
+   TOPO
 ========================= */
 
 
-.topo{
+.topbar{
 
-    width:1000px;
+    width:1100px;
 
     margin:20px auto;
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #111;
+
+    box-shadow:4px 4px 0 #111;
 
 }
 
 
 
-.barra{
-
-    height:70px;
+.top-menu{
 
     display:flex;
 
@@ -59,13 +56,13 @@ TOPO
 
     gap:15px;
 
-    padding:10px;
+    padding:12px;
 
 }
 
 
 
-.barra h1{
+.top-menu h1{
 
     flex:1;
 
@@ -73,7 +70,7 @@ TOPO
 
     font-family:"Times New Roman",serif;
 
-    font-size:38px;
+    font-size:40px;
 
 }
 
@@ -81,17 +78,17 @@ TOPO
 
 .home{
 
-    text-decoration:none;
+    font-size:28px;
 
-    font-size:25px;
+    text-decoration:none;
 
 }
 
 
 
-.barra input{
+.top-menu input{
 
-    width:180px;
+    width:200px;
 
     padding:8px;
 
@@ -102,18 +99,15 @@ TOPO
 
 
 
-
 button{
 
     background:#ddd;
 
     border:1px solid black;
 
-    padding:7px;
+    padding:7px 10px;
 
     cursor:pointer;
-
-    font-family:Verdana;
 
 }
 
@@ -132,11 +126,11 @@ button:hover{
 
 
 /* =========================
-MENU
+   MENU
 ========================= */
 
 
-.menu{
+#menu{
 
     display:none;
 
@@ -148,17 +142,17 @@ MENU
 
     padding:10px;
 
-    z-index:20;
+    z-index:10;
 
 }
 
 
 
-.menu button{
+#menu button{
 
     display:block;
 
-    width:150px;
+    width:160px;
 
     margin-bottom:8px;
 
@@ -170,21 +164,20 @@ MENU
 
 
 
-
 /* =========================
-LAYOUT
+   ESTRUTURA
 ========================= */
 
 
-.layout{
+.container{
 
-    width:1000px;
+    width:1100px;
 
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:180px 1fr 260px;
+    grid-template-columns:180px 1fr 280px;
 
     gap:15px;
 
@@ -196,13 +189,12 @@ LAYOUT
 
 
 
-
 /* =========================
-TÓPICOS
+   LATERAL
 ========================= */
 
 
-.esquerda{
+.sidebar{
 
     background:white;
 
@@ -216,7 +208,7 @@ TÓPICOS
 
 
 
-.esquerda h2{
+.sidebar h2{
 
     font-family:"Times New Roman",serif;
 
@@ -226,7 +218,7 @@ TÓPICOS
 
 
 
-.esquerda button{
+.sidebar button{
 
     width:100%;
 
@@ -242,13 +234,25 @@ TÓPICOS
 
 
 
-
 /* =========================
-POST
+   CONTEÚDO
 ========================= */
 
 
-.post{
+.conteudo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.post,
+.abas{
 
     background:white;
 
@@ -256,11 +260,14 @@ POST
 
     padding:25px;
 
+    box-shadow:3px 3px 0 #111;
+
 }
 
 
 
-.post h2{
+.post h2,
+.abas h2{
 
     font-family:"Times New Roman",serif;
 
@@ -282,33 +289,42 @@ POST
 
 
 
+.data{
+
+    font-size:12px;
+
+    color:#666;
+
+}
+
+
 
 
 
 
 
 /* =========================
-PERFIL
+   PERFIL
 ========================= */
 
 
-.direita{
+.perfil{
 
-    background:white;
+    display:flex;
 
-    border:2px solid black;
+    flex-direction:column;
 
-    padding:15px;
-
-    height:max-content;
+    gap:15px;
 
 }
 
 
 
-.id-card{
+.card{
 
-    border:1px solid black;
+    background:white;
+
+    border:2px solid black;
 
     padding:15px;
 
@@ -318,11 +334,11 @@ PERFIL
 
 
 
-.id-card img{
+.card img{
 
-    width:100px;
+    width:110px;
 
-    height:100px;
+    height:110px;
 
     object-fit:cover;
 
@@ -332,11 +348,13 @@ PERFIL
 
 
 
-.id-card h2{
+.card h2{
 
     margin:15px;
 
-    color:#e6a3bb;
+    color:#e6a4bd;
+
+    font-family:"Times New Roman",serif;
 
 }
 
@@ -347,19 +365,17 @@ PERFIL
 
 
 /* =========================
-CHAT
+   CHAT
 ========================= */
 
 
 .chat{
 
-    margin-top:20px;
-
     background:white;
 
-    border:1px solid black;
+    border:2px solid black;
 
-    padding:10px;
+    padding:15px;
 
 }
 
@@ -369,24 +385,29 @@ CHAT
 
     font-family:"Times New Roman",serif;
 
-    margin-bottom:10px;
+    margin-bottom:15px;
 
 }
 
 
 
-#listaComentarios{
+#comentarios{
 
-    max-height:350px;
+    height:300px;
 
-    overflow:auto;
+    overflow-y:auto;
+
+    border:1px solid black;
+
+    padding:10px;
 
 }
-
 
 
 
 .comentario{
+
+    background:#f8f8f8;
 
     border:1px solid black;
 
@@ -394,23 +415,13 @@ CHAT
 
     margin-bottom:10px;
 
-    background:#fafafa;
-
 }
 
 
 
-.comentario p{
+.comentario button{
 
-    margin:8px 0;
-
-}
-
-
-
-.reportar{
-
-    color:red;
+    margin-right:5px;
 
 }
 
@@ -420,16 +431,17 @@ CHAT
 
     width:100%;
 
-    height:80px;
+    height:100px;
 
-    margin-top:10px;
+    resize:vertical;
+
+    margin-top:15px;
+
+    padding:10px;
 
     border:1px solid black;
 
-    resize:none;
-
 }
-
 
 
 
@@ -438,53 +450,47 @@ CHAT
 
 
 /* =========================
-JANELAS
+   POPUP
 ========================= */
 
 
-.janela{
+.popup{
 
     display:none;
 
     position:fixed;
 
-    top:50%;
+    inset:0;
 
-    left:50%;
+    background:rgba(0,0,0,0.5);
 
-    transform:translate(-50%,-50%);
+    align-items:center;
 
-    width:350px;
+    justify-content:center;
+
+}
+
+
+
+.popup-box{
 
     background:white;
 
-    border:2px solid black;
+    border:3px solid black;
 
-    padding:25px;
+    padding:30px;
 
-    z-index:50;
-
-    box-shadow:5px 5px 0 black;
+    width:350px;
 
 }
 
 
 
-.janela h2{
-
-    font-family:"Times New Roman",serif;
-
-    margin-bottom:15px;
-
-}
-
-
-
-.janela input{
+.popup input{
 
     width:100%;
 
-    padding:8px;
+    padding:10px;
 
     margin:15px 0;
 
@@ -496,15 +502,14 @@ JANELAS
 
 
 
-
 /* =========================
-RODAPÉ
+   RODAPÉ
 ========================= */
 
 
 footer{
 
-    width:1000px;
+    width:1100px;
 
     margin:20px auto;
 
@@ -524,59 +529,32 @@ footer{
 
 
 
-
 /* =========================
-MODO NOTURNO
+   MODO ESCURO
 ========================= */
 
 
-.dark{
+.escuro{
 
     background:#111;
-
-    color:#eee;
-
-}
-
-
-
-.dark .topo,
-.dark .menu,
-.dark .esquerda,
-.dark .post,
-.dark .direita,
-.dark .chat,
-.dark .comentario,
-.dark .id-card,
-.dark .janela,
-.dark footer{
-
-    background:#222;
-
-    color:#eee;
-
-    border-color:#eee;
-
-}
-
-
-
-.dark button{
-
-    background:#333;
 
     color:white;
 
-    border-color:#eee;
-
 }
 
 
 
-.dark input,
-.dark textarea{
+.escuro .topbar,
+.escuro #menu,
+.escuro .sidebar,
+.escuro .post,
+.escuro .abas,
+.escuro .card,
+.escuro .chat,
+.escuro footer,
+.escuro .popup-box{
 
-    background:#111;
+    background:#222;
 
     color:white;
 
@@ -586,21 +564,53 @@ MODO NOTURNO
 
 
 
+.escuro .comentario{
+
+    background:#333;
+
+    color:white;
+
+}
+
+
+
+.escuro button{
+
+    background:#333;
+
+    color:white;
+
+    border-color:white;
+
+}
+
+
+
+.escuro input,
+.escuro textarea{
+
+    background:#111;
+
+    color:white;
+
+}
+
+
 
 
 
 
 
 /* =========================
-CELULAR
+   RESPONSIVO
 ========================= */
 
 
-@media(max-width:1000px){
+@media(max-width:1100px){
 
 
-.topo,
-.layout,
+.topbar,
+.container,
 footer{
 
     width:95%;
@@ -609,7 +619,7 @@ footer{
 
 
 
-.layout{
+.container{
 
     grid-template-columns:1fr;
 
