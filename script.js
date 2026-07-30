@@ -1,16 +1,13 @@
 // ==========================
-// JANELAS DO MENU
+// JANELAS DOS TÓPICOS
 // ==========================
-
 
 const janela = document.getElementById("janela");
 const titulo = document.getElementById("tituloJanela");
 const texto = document.getElementById("textoJanela");
 
 
-
 function abrirJanela(tipo){
-
 
     janela.style.display = "block";
 
@@ -20,43 +17,79 @@ function abrirJanela(tipo){
         titulo.innerHTML = "Desenhos";
 
         texto.innerHTML =
-        "Aqui ficam minhas ilustrações, rascunhos e desenhos finalizados.";
+        `
+        Aqui ficam meus desenhos,
+        ilustrações e rascunhos.
+        <br><br>
+        Um lugar para guardar minha evolução.
+        `;
 
     }
 
 
 
-    if(tipo === "blog"){
+    else if(tipo === "estudos"){
+
+        titulo.innerHTML = "Estudos";
+
+        texto.innerHTML =
+        `
+        Estudos de anatomia,
+        perspectiva, cores e técnicas
+        que estou aprendendo.
+        `;
+
+    }
+
+
+
+    else if(tipo === "blog"){
 
         titulo.innerHTML = "Blog";
 
         texto.innerHTML =
-        "Posts sobre meu processo de desenho e coisas que aprendi.";
+        `
+        Aqui escrevo sobre meu processo,
+        ideias, desenhos novos e coisas
+        que estou aprendendo.
+        `;
 
     }
 
 
 
-    if(tipo === "materiais"){
+    else if(tipo === "materiais"){
 
         titulo.innerHTML = "Materiais";
 
         texto.innerHTML =
-        "estou disponibilizando materiais de arte para vcss<3";
+        `
+        Meus materiais:
+
+        <br><br>
+
+        ✦ lápis<br>
+        ✦ sketchbook<br>
+        ✦ canetas<br>
+        ✦ ferramentas digitais
+        `;
 
     }
 
 
 
-    if(tipo === "redes"){
+    else if(tipo === "redes"){
+
 
         titulo.innerHTML = "Redes sociais";
+
 
         texto.innerHTML =
         `
         <a href="https://instagram.com/" target="_blank">
         Instagram
         </a>
+
         <br><br>
 
         <a href="https://github.com/" target="_blank">
@@ -64,11 +97,10 @@ function abrirJanela(tipo){
         </a>
         `;
 
+
     }
 
-
 }
-
 
 
 
@@ -80,7 +112,7 @@ function abrirJanela(tipo){
 
 function fecharJanela(){
 
-    janela.style.display = "none";
+    janela.style.display="none";
 
 }
 
@@ -98,7 +130,7 @@ window.addEventListener("click",(evento)=>{
 
     if(evento.target === janela){
 
-        janela.style.display="none";
+        fecharJanela();
 
     }
 
@@ -110,16 +142,16 @@ window.addEventListener("click",(evento)=>{
 
 
 // ==========================
-// EFEITO DE DATA AUTOMÁTICA
+// ANO AUTOMÁTICO
 // ==========================
 
 
-const data = document.querySelector("footer p");
+const rodape = document.querySelector("footer p");
 
 
-if(data){
+if(rodape){
 
-    data.innerHTML =
-    `© ${new Date().getFullYear()} - Sketchbook.log`;
+    rodape.innerHTML =
+    `feito por Seu Nome ✎ ${new Date().getFullYear()}`;
 
 }
