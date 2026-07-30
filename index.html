@@ -16,18 +16,19 @@
 <body>
 
 
-<header class="topo">
-
-<div class="barra">
+<header class="topbar">
 
 
-<button class="menu-btn" onclick="abrirMenu()">
+<div class="top-menu">
+
+
+<button onclick="abrirMenu()">
 ☰
 </button>
 
 
-<a class="home" href="index.html">
-🏠
+<a href="index.html" class="home">
+⌂
 </a>
 
 
@@ -38,8 +39,9 @@ Sketchbook.log
 
 <input 
 id="pesquisa"
-type="text"
-placeholder="pesquisar..."
+type="search"
+placeholder="Pesquisar..."
+onkeyup="pesquisar()"
 >
 
 
@@ -47,15 +49,16 @@ placeholder="pesquisar..."
 
 
 
-<div id="menu" class="menu">
 
+
+<nav id="menu">
 
 <button onclick="abrirPerfil()">
 Meu perfil
 </button>
 
 
-<button onclick="modoNoturno()">
+<button onclick="alternarTema()">
 Modo claro/escuro
 </button>
 
@@ -65,7 +68,8 @@ Sair
 </button>
 
 
-</div>
+</nav>
+
 
 
 </header>
@@ -75,42 +79,50 @@ Sair
 
 
 
-<div class="layout">
+
+
+
+<div class="container">
 
 
 
 
 
-<!-- TÓPICOS -->
-
-<aside class="esquerda">
+<!-- MENU LATERAL -->
 
 
-<h2>Tópicos</h2>
+<aside class="sidebar">
 
 
-<button onclick="abrirJanela('desenhos')">
+<h2>
+Tópicos
+</h2>
+
+
+
+<button onclick="abrirAba('desenhos')">
 Desenhos
 </button>
 
 
-<button onclick="abrirJanela('estudos')">
+<button onclick="abrirAba('estudos')">
 Estudos
 </button>
 
 
-<button onclick="abrirJanela('blog')">
+<button onclick="abrirAba('blog')">
 Blog
 </button>
 
 
-<button onclick="abrirJanela('materiais')">
+<button onclick="abrirAba('materiais')">
 Materiais
 </button>
 
 
-<button onclick="abrirJanela('redes')">
-Redes sociais
+
+<button onclick="abrirAba('sobre')">
+Sobre
 </button>
 
 
@@ -125,26 +137,24 @@ Redes sociais
 
 
 
-<!-- POST PRINCIPAL -->
+<!-- CONTEÚDO -->
 
 
-<main>
+<main class="conteudo">
 
 
 <section class="post">
 
 
 <h2>
-Meu sketchbook online
+Bem-vindo ao Sketchbook.log
 </h2>
 
 
 <p>
 
-Esse é meu cantinho na internet.
-
-Aqui eu posto desenhos, estudos,
-ideias e atualizações.
+Um blog pessoal para guardar desenhos,
+ideias e estudos de arte.
 
 </p>
 
@@ -153,18 +163,43 @@ ideias e atualizações.
 <img src="images/desenho1.jpg" alt="desenho">
 
 
+
+<div class="data">
+Atualização: 2026
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section class="abas">
+
+
+<div id="janelaAba">
+
+
+<h2>
+Escolha um tópico
+</h2>
+
+
 <p>
 
-Última atualização:
-<br>
-
-Novo desenho publicado.
+Clique nos tópicos ao lado para ver informações.
 
 </p>
 
 
+</div>
+
 
 </section>
+
 
 
 </main>
@@ -177,35 +212,43 @@ Novo desenho publicado.
 
 
 
-<!-- PERFIL E CHAT -->
+<!-- PERFIL -->
 
 
-<aside class="direita">
+<aside class="perfil">
 
 
-
-<div class="id-card">
+<div class="card">
 
 
 <img src="images/eu.jpg" alt="foto">
 
 
-<h2 id="nomePerfil">
+
+<h2 id="nomeUsuario">
 Visitante
 </h2>
 
 
+
+<p>
+ID: #001
+</p>
+
+
 <p>
 Contas:
-<span id="contas">
+<span id="contador">
 0
 </span>
 </p>
 
 
+
 <p>
 Status:
-Criando ✦
+<br>
+Desenhando ✎
 </p>
 
 
@@ -217,6 +260,9 @@ Criando ✦
 
 
 
+
+
+<!-- CHAT -->
 
 
 <section class="chat">
@@ -228,7 +274,7 @@ Comentários
 
 
 
-<div id="listaComentarios">
+<div id="comentarios">
 
 </div>
 
@@ -236,24 +282,16 @@ Comentários
 
 
 
-
-<div class="escrever">
-
-
-<textarea
+<textarea 
 id="textoComentario"
 placeholder="Escreva um comentário..."
 ></textarea>
 
 
 
-<button onclick="adicionarComentario()">
-Enviar comentário
+<button onclick="enviarComentario()">
+Enviar
 </button>
-
-
-
-</div>
 
 
 
@@ -267,7 +305,6 @@ Enviar comentário
 
 
 
-
 </div>
 
 
@@ -278,42 +315,13 @@ Enviar comentário
 
 
 
-<!-- JANELA DOS TÓPICOS -->
+<!-- JANELA PERFIL -->
 
 
-<div id="janela" class="janela">
+<div id="janelaPerfil" class="popup">
 
 
-<h2 id="tituloJanela">
-Título
-</h2>
-
-
-<p id="textoJanela">
-Texto
-</p>
-
-
-
-<button onclick="fecharJanela()">
-Fechar
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- CRIAR CONTA -->
-
-
-<div id="perfil" class="janela">
+<div class="popup-box">
 
 
 <h2>
@@ -321,30 +329,32 @@ Criar conta simbólica
 </h2>
 
 
-
 <p>
 
-Não precisa colocar dados pessoais.
-É só um nome para aparecer no blog.
+Use apenas um nome.
+Não são necessários dados pessoais.
 
 </p>
 
 
 
-<input
-id="nomeInput"
-placeholder="Seu nome"
+<input 
+id="novoNome"
+placeholder="Nome"
 >
 
 
 
-<button onclick="criarConta()">
-Criar conta
+<button onclick="criarUsuario()">
+Criar
 </button>
 
 
+</div>
+
 
 </div>
+
 
 
 
@@ -355,7 +365,7 @@ Criar conta
 
 <footer>
 
-Sketchbook.log ©
+Sketchbook.log © 2026
 
 </footer>
 
