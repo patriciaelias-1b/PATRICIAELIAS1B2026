@@ -4,7 +4,7 @@
 
 function abrirMenu(){
 
-    const menu = document.getElementById("menu");
+    let menu = document.getElementById("menu");
 
     if(menu.style.display === "block"){
 
@@ -23,7 +23,6 @@ function abrirMenu(){
 
 
 
-
 // ===============================
 // TÓPICOS
 // ===============================
@@ -31,19 +30,19 @@ function abrirMenu(){
 function abrirAba(nome){
 
 
-    const janela =
-    document.getElementById("janelaAba");
+    let aba = document.getElementById("janelaAba");
 
 
-    const paginas = {
+    let textos = {
+
 
         desenhos:`
 
         <h2>Desenhos</h2>
 
         <p>
-        Meus desenhos, rascunhos
-        e projetos pessoais.
+        Meus desenhos, ilustrações
+        e rascunhos.
         </p>
 
         `,
@@ -54,8 +53,8 @@ function abrirAba(nome){
         <h2>Estudos</h2>
 
         <p>
-        Exercícios de arte,
-        anatomia e técnicas.
+        Exercícios de anatomia,
+        perspectiva e técnicas.
         </p>
 
         `,
@@ -66,8 +65,8 @@ function abrirAba(nome){
         <h2>Blog</h2>
 
         <p>
-        Meus pensamentos sobre
-        criação e desenho.
+        Textos sobre meu processo
+        artístico.
         </p>
 
         `,
@@ -90,21 +89,20 @@ function abrirAba(nome){
         <h2>Sobre mim</h2>
 
         <p>
-        Um espaço para mostrar
-        minha evolução artística.
+        Um espaço para compartilhar
+        minha evolução na arte.
         </p>
 
         `
 
+
     };
 
 
-    janela.innerHTML =
-    paginas[nome];
+    aba.innerHTML = textos[nome];
 
 
 }
-
 
 
 
@@ -129,6 +127,7 @@ function abrirPerfil(){
 
 
 
+
 function fecharPerfil(){
 
     document.getElementById("janelaPerfil")
@@ -146,11 +145,9 @@ function criarUsuario(){
 
     if(localStorage.getItem("usuario")){
 
-
         alert(
         "Você já possui uma conta."
         );
-
 
         return;
 
@@ -192,7 +189,6 @@ function criarUsuario(){
     );
 
 
-
     localStorage.setItem(
         "status",
         status
@@ -201,10 +197,8 @@ function criarUsuario(){
 
 
     let contas =
-    Number(
-    localStorage.getItem("contas")
-    )
-    ||0;
+    Number(localStorage.getItem("contas"))
+    || 0;
 
 
 
@@ -220,7 +214,9 @@ function criarUsuario(){
 
     atualizarPerfil();
 
+
 }
+
 
 
 
@@ -276,27 +272,109 @@ function editarUsuario(){
 
 
 
+function atualizarPerfil(){
+
+
+    let usuario =
+    localStorage.getItem("usuario")
+    ||
+    "Visitante";
+
+
+
+    let status =
+    localStorage.getItem("status")
+    ||
+    "Criando arte ✎";
+
+
+
+    document.getElementById("nomeUsuario")
+    .innerHTML =
+    usuario;
+
+
+
+    document.getElementById("statusUsuario")
+    .innerHTML =
+    status;
+
+
+
+    document.getElementById("contador")
+    .innerHTML =
+    localStorage.getItem("contas")
+    ||
+    0;
+
+
+
+
+
+
+    if(localStorage.getItem("usuario")){
+
+
+        document.getElementById("loginArea")
+        .style.display="none";
+
+
+        document.getElementById("editarArea")
+        .style.display="block";
+
+
+
+        document.getElementById("editarNome")
+        .value =
+        usuario;
+
+
+
+        document.getElementById("editarStatus")
+        .value =
+        status;
+
+
+
+    }else{
+
+
+        document.getElementById("loginArea")
+        .style.display="block";
+
+
+        document.getElementById("editarArea")
+        .style.display="none";
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
 function deletarConta(){
 
 
-    let resposta =
+    let confirmar =
     confirm(
-    "Tem certeza que quer apagar a conta?"
+    "Deseja apagar sua conta?"
     );
 
 
 
-    if(resposta){
+    if(confirmar){
 
 
-        localStorage.removeItem(
-        "usuario"
-        );
+        localStorage.removeItem("usuario");
 
-
-        localStorage.removeItem(
-        "status"
-        );
+        localStorage.removeItem("status");
 
 
 
@@ -319,7 +397,38 @@ function deletarConta(){
 
 
 
-function atualizarPerfil(){
+// ===============================
+// COMENTÁRIOS
+// ===============================
+
+
+let comentarios =
+JSON.parse(
+localStorage.getItem("comentarios")
+)
+||
+[];
+
+
+
+
+
+function enviarComentario(){
+
+
+
+    let texto =
+    document.getElementById("textoComentario")
+    .value.trim();
+
+
+
+    if(texto===""){
+
+        return;
+
+    }
+
 
 
     let nome =
@@ -329,131 +438,15 @@ function atualizarPerfil(){
 
 
 
-    let status =
-    localStorage.getItem("status")
-    ||
-    "Criando arte ✎";
-
-
-
-    document.getElementById("nomeUsuario")
-    .innerHTML =
-    nome;
-
-
-
-    document.getElementById("statusUsuario")
-    .innerHTML =
-    status;
-
-
-
-    document.getElementById("contador")
-    .innerHTML =
-    localStorage.getItem("contas")
-    ||
-    0;
-
-
-
-
-
-    let login =
-    document.getElementById("loginArea");
-
-
-    let editar =
-    document.getElementById("editarArea");
-
-
-
-    if(localStorage.getItem("usuario")){
-
-
-        login.style.display="none";
-
-        editar.style.display="block";
-
-
-        document.getElementById("editarNome")
-        .value =
-        nome;
-
-
-        document.getElementById("editarStatus")
-        .value =
-        status;
-
-
-    }else{
-
-
-        login.style.display="block";
-
-        editar.style.display="none";
-
-
-    }
-
-
-
-}
-
-
-
-
-
-
-
-
-// ===============================
-// COMENTÁRIOS
-// ===============================
-
-
-let comentarios =
-
-JSON.parse(
-
-localStorage.getItem("comentarios")
-
-)
-
-||[];
-
-
-
-
-
-
-
-function enviarComentario(){
-
-
-    let texto =
-
-    document.getElementById(
-    "textoComentario"
-    )
-    .value
-    .trim();
-
-
-
-    if(texto==="") return;
-
-
-
     comentarios.push({
+
 
         id:Date.now(),
 
-        nome:
-        localStorage.getItem("usuario")
-        ||
-        "Visitante",
+        nome:nome,
 
         texto:texto
+
 
     });
 
@@ -462,14 +455,14 @@ function enviarComentario(){
     salvarComentarios();
 
 
-    document.getElementById(
-    "textoComentario"
-    )
+
+    document.getElementById("textoComentario")
     .value="";
 
 
 
     mostrarComentarios();
+
 
 
 }
@@ -479,8 +472,8 @@ function enviarComentario(){
 
 
 
-function salvarComentarios(){
 
+function salvarComentarios(){
 
     localStorage.setItem(
 
@@ -490,8 +483,8 @@ function salvarComentarios(){
 
     );
 
-
 }
+
 
 
 
@@ -501,7 +494,7 @@ function salvarComentarios(){
 function mostrarComentarios(){
 
 
-    const area =
+    let area =
     document.getElementById("comentarios");
 
 
@@ -526,18 +519,18 @@ function mostrarComentarios(){
 
         <b>${c.nome}</b>
 
-
         <p>${c.texto}</p>
 
 
         <button onclick="responder('${c.nome}')">
-        💬
+        responder
         </button>
 
 
         <button onclick="reportar(${c.id})">
         🚩
         </button>
+
 
 
         ${
@@ -563,25 +556,9 @@ function mostrarComentarios(){
         area.appendChild(div);
 
 
+
     });
 
-
-}
-
-
-
-
-
-
-
-function responder(nome){
-
-
-    document.getElementById(
-    "textoComentario"
-    )
-    .value =
-    "@"+nome+" ";
 
 }
 
@@ -593,13 +570,9 @@ function apagarComentario(id){
 
 
     comentarios =
-
     comentarios.filter(
-
     c=>c.id!==id
-
     );
-
 
 
     salvarComentarios();
@@ -614,13 +587,28 @@ function apagarComentario(id){
 
 
 
+
+function responder(nome){
+
+
+    document.getElementById("textoComentario")
+    .value =
+    "@"+nome+" ";
+
+
+}
+
+
+
+
+
+
 function reportar(id){
 
 
     alert(
     "Usuário reportado para host"
     );
-
 
 
     apagarComentario(id);
@@ -642,19 +630,18 @@ function reportar(id){
 function alternarTema(){
 
 
-    document.body.classList.toggle(
-    "escuro"
-    );
+    document.body
+    .classList
+    .toggle("escuro");
 
 
 
     localStorage.setItem(
 
-    "tema",
+        "tema",
 
-    document.body.classList.contains(
-    "escuro"
-    )
+        document.body.classList
+        .contains("escuro")
 
     );
 
@@ -663,20 +650,14 @@ function alternarTema(){
 
 
 
-if(
 
-localStorage.getItem("tema")
-===
-"true"
+if(localStorage.getItem("tema")==="true"){
 
-){
 
-    document.body.classList.add(
-    "escuro"
-    );
+    document.body.classList.add("escuro");
+
 
 }
-
 
 
 
@@ -690,20 +671,14 @@ localStorage.getItem("tema")
 
 function sair(){
 
-
     window.location.href =
     "https://www.google.com";
-
 
 }
 
 
 
 
-
-
-
-// INICIALIZAÇÃO
 
 atualizarPerfil();
 
