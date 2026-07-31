@@ -23,6 +23,38 @@ body{
 
     color:#222;
 
+    transition:0.3s;
+
+}
+
+
+
+
+
+/* =========================
+   TRANSIÇÕES
+========================= */
+
+
+button,
+.post,
+.abas,
+.card,
+.chat,
+.sidebar,
+.comentario,
+.popup-box,
+.topbar,
+footer{
+
+    transition:
+
+    transform .25s ease,
+
+    box-shadow .25s ease,
+
+    background .25s ease;
+
 }
 
 
@@ -30,8 +62,9 @@ body{
 
 
 
+
 /* =========================
-   TOPO RETRÔ
+   TOPO
 ========================= */
 
 
@@ -43,9 +76,11 @@ body{
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #222;
 
-    box-shadow:5px 5px 0 black;
+    border-radius:18px;
+
+    box-shadow:5px 5px 0 #222;
 
 }
 
@@ -83,9 +118,9 @@ body{
 
     text-decoration:none;
 
-    font-size:30px;
-
     color:black;
+
+    font-size:30px;
 
 }
 
@@ -95,9 +130,11 @@ body{
 
     width:200px;
 
-    padding:8px;
+    padding:10px;
 
     border:1px solid black;
+
+    border-radius:10px;
 
 }
 
@@ -105,6 +142,11 @@ body{
 
 
 
+
+
+/* =========================
+   BOTÕES
+========================= */
 
 
 button{
@@ -113,11 +155,11 @@ button{
 
     border:1px solid black;
 
-    padding:7px 10px;
+    padding:8px 12px;
+
+    border-radius:10px;
 
     cursor:pointer;
-
-    font-family:Verdana;
 
 }
 
@@ -125,7 +167,17 @@ button{
 
 button:hover{
 
-    background:#bbb;
+    transform:translateY(-3px);
+
+    box-shadow:3px 3px 0 black;
+
+}
+
+
+
+button:active{
+
+    transform:scale(.95);
 
 }
 
@@ -150,6 +202,8 @@ button:hover{
 
     border:2px solid black;
 
+    border-radius:15px;
+
     padding:10px;
 
     z-index:50;
@@ -167,7 +221,6 @@ button:hover{
     margin-bottom:8px;
 
 }
-
 
 
 
@@ -203,7 +256,7 @@ button:hover{
 
 
 /* =========================
-   TÓPICOS
+   SIDEBAR
 ========================= */
 
 
@@ -213,9 +266,19 @@ button:hover{
 
     border:2px solid black;
 
+    border-radius:18px;
+
     padding:15px;
 
-    height:max-content;
+}
+
+
+
+.sidebar:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:6px 6px 0 black;
 
 }
 
@@ -248,7 +311,7 @@ button:hover{
 
 
 /* =========================
-   POSTS
+   CONTEÚDO
 ========================= */
 
 
@@ -259,9 +322,22 @@ button:hover{
 
     border:2px solid black;
 
+    border-radius:18px;
+
     padding:25px;
 
     box-shadow:3px 3px 0 black;
+
+}
+
+
+
+.post:hover,
+.abas:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:7px 7px 0 black;
 
 }
 
@@ -282,6 +358,8 @@ button:hover{
 
     width:100%;
 
+    border-radius:12px;
+
     margin:20px 0;
 
     border:1px solid black;
@@ -296,16 +374,8 @@ button:hover{
 
     color:#666;
 
-}
-
-
-
-
-
-
-
-/* =========================
-   ID CARD
+   /* =========================
+   PERFIL / ID CARD
 ========================= */
 
 
@@ -327,9 +397,23 @@ button:hover{
 
     border:2px solid black;
 
+    border-radius:18px;
+
     padding:15px;
 
     text-align:center;
+
+    box-shadow:3px 3px 0 black;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:7px 7px 0 black;
 
 }
 
@@ -343,7 +427,9 @@ button:hover{
 
     object-fit:cover;
 
-    border:1px solid black;
+    border-radius:50%;
+
+    border:2px solid black;
 
 }
 
@@ -377,7 +463,19 @@ button:hover{
 
     border:2px solid black;
 
+    border-radius:18px;
+
     padding:15px;
+
+    box-shadow:3px 3px 0 black;
+
+}
+
+
+
+.chat:hover{
+
+    transform:translateY(-5px);
 
 }
 
@@ -401,6 +499,8 @@ button:hover{
 
     border:1px solid black;
 
+    border-radius:12px;
+
     padding:10px;
 
     background:#fafafa;
@@ -415,6 +515,8 @@ button:hover{
 
     border:1px solid black;
 
+    border-radius:12px;
+
     padding:12px;
 
     margin-bottom:10px;
@@ -423,17 +525,19 @@ button:hover{
 
 
 
-.comentario b{
+.comentario:hover{
 
-    font-size:14px;
+    transform:translateX(5px);
 
 }
 
 
 
-.comentario p{
+.comentario button{
 
-    margin:10px 0;
+    margin-right:5px;
+
+    font-size:12px;
 
 }
 
@@ -453,6 +557,8 @@ button:hover{
 
     border:1px solid black;
 
+    border-radius:12px;
+
     font-family:Verdana;
 
 }
@@ -463,9 +569,8 @@ button:hover{
 
 
 
-
 /* =========================
-   PERFIL POPUP
+   POPUP PERFIL
 ========================= */
 
 
@@ -485,6 +590,8 @@ button:hover{
 
     z-index:100;
 
+    animation:aparecer .3s ease;
+
 }
 
 
@@ -499,9 +606,13 @@ button:hover{
 
     border:3px solid black;
 
+    border-radius:20px;
+
     padding:25px;
 
-    box-shadow:5px 5px 0 black;
+    box-shadow:6px 6px 0 black;
+
+    animation:subir .3s ease;
 
 }
 
@@ -515,8 +626,6 @@ button:hover{
 
     top:10px;
 
-    background:white;
-
 }
 
 
@@ -529,6 +638,10 @@ button:hover{
 
     margin:10px 0;
 
+    border-radius:10px;
+
+    border:1px solid black;
+
 }
 
 
@@ -539,7 +652,67 @@ button:hover{
 
 
 /* =========================
-   RODAPÉ
+   ANIMAÇÕES
+========================= */
+
+
+@keyframes aparecer{
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+    }
+
+
+}
+
+
+
+@keyframes subir{
+
+
+    from{
+
+        transform:
+
+        translateY(40px)
+
+        scale(.8);
+
+    }
+
+
+
+    to{
+
+        transform:
+
+        translateY(0)
+
+        scale(1);
+
+    }
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   FOOTER
 ========================= */
 
 
@@ -553,12 +726,40 @@ footer{
 
     border:2px solid black;
 
+    border-radius:18px;
+
     padding:20px;
 
     text-align:center;
 
 }
 
+
+
+
+
+
+
+/* =========================
+   SCROLL
+========================= */
+
+
+#comentarios::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+#comentarios::-webkit-scrollbar-thumb{
+
+    background:#111;
+
+    border-radius:10px;
+
+}
 
 
 
@@ -631,202 +832,13 @@ footer{
 
     border-color:white;
 
-   /* =========================
-   TRANSIÇÕES GERAIS
-========================= */
-
-button,
-.post,
-.abas,
-.card,
-.chat,
-.sidebar,
-.comentario,
-.popup-box{
-
-    transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-
 }
 
 
 
-/* =========================
-   BORDAS ARREDONDADAS
-========================= */
+.escuro .home{
 
-.topbar,
-.sidebar,
-.post,
-.abas,
-.card,
-.chat,
-.comentario,
-.popup-box,
-footer{
-
-    border-radius:18px;
-
-}
-
-
-
-button,
-input,
-textarea{
-
-    border-radius:10px;
-
-}
-
-
-
-/* =========================
-   BOTÕES ANIMADOS
-========================= */
-
-
-button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:
-    3px 3px 0 black;
-
-}
-
-
-
-button:active{
-
-    transform:scale(0.95);
-
-}
-
-
-
-
-
-/* =========================
-   CARDS INTERATIVOS
-========================= */
-
-
-.card:hover,
-.post:hover,
-.chat:hover,
-.sidebar:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-    6px 6px 0 black;
-
-}
-
-
-
-
-
-/* =========================
-   COMENTÁRIOS
-========================= */
-
-
-.comentario:hover{
-
-    transform:translateX(5px);
-
-}
-
-
-
-
-
-/* =========================
-   POPUP APARECENDO
-========================= */
-
-
-.popup{
-
-    animation:
-    aparecer 0.3s ease;
-
-}
-
-
-
-.popup-box{
-
-    animation:
-    subir 0.3s ease;
-
-}
-
-
-
-@keyframes aparecer{
-
-    from{
-
-        opacity:0;
-
-    }
-
-    to{
-
-        opacity:1;
-
-    }
-
-}
-
-
-
-@keyframes subir{
-
-    from{
-
-        transform:translateY(30px) scale(.9);
-
-    }
-
-
-    to{
-
-        transform:translateY(0) scale(1);
-
-    }
-
-}
-
-
-
-
-
-/* =========================
-   SCROLL MAIS BONITO
-========================= */
-
-
-#comentarios::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-
-
-#comentarios::-webkit-scrollbar-thumb{
-
-    background:#111;
-
-    border-radius:10px;
-
-}
+    color:white;
 
 }
 
@@ -837,7 +849,7 @@ button:active{
 
 
 /* =========================
-   CELULAR
+   RESPONSIVO
 ========================= */
 
 
@@ -861,4 +873,22 @@ footer{
 }
 
 
+
+.top-menu{
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.top-menu h1{
+
+    font-size:30px;
+
+}
+
+
+}
+   
 }
