@@ -1,178 +1,118 @@
-/* =========================
-   CONFIGURAÇÃO GERAL
-========================= */
+// ==========================
+// JANELAS DOS TÓPICOS
+// ==========================
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+const janela = document.getElementById("janela");
+const titulo = document.getElementById("tituloJanela");
+const texto = document.getElementById("textoJanela");
 
 
-body{
+function abrirJanela(tipo){
 
-    background-color:#eeeeee;
-
-    background-image:
-    radial-gradient(#111 1px, transparent 1px);
-
-    background-size:16px 16px;
-
-    color:#222;
-
-    font-family:Verdana, Arial, sans-serif;
-
-    font-size:14px;
-
-}
+    janela.style.display = "block";
 
 
+    if(tipo === "desenhos"){
 
-/* =========================
-   CORPO DO SITE
-========================= */
+        titulo.innerHTML = "Desenhos";
 
+        texto.innerHTML =
+        `
+        Aqui ficam meus desenhos,
+        ilustrações e rascunhos.
+        <br><br>
+        Um lugar para guardar minha evolução.
+        `;
 
-header{
-
-    width:950px;
-
-    margin:20px auto 0;
-
-    background:#fff;
-
-    border:2px solid #111;
-
-    padding:20px;
-
-    text-align:center;
-
-    position:relative;
-
-}
+    }
 
 
 
-header h1{
+    else if(tipo === "estudos"){
 
-    font-family:"Times New Roman", serif;
+        titulo.innerHTML = "Estudos";
 
-    font-size:42px;
+        texto.innerHTML =
+        `
+        Estudos de anatomia,
+        perspectiva, cores e técnicas
+        que estou aprendendo.
+        `;
 
-    margin-bottom:10px;
-
-}
-
-
-header p{
-
-    color:#555;
-
-}
+    }
 
 
 
-/* BOTÃO REFRESH */
+    else if(tipo === "blog"){
 
-.refresh{
+        titulo.innerHTML = "Blog";
 
-    position:absolute;
+        texto.innerHTML =
+        `
+        Aqui escrevo sobre meu processo,
+        ideias, desenhos novos e coisas
+        que estou aprendendo.
+        `;
 
-    left:15px;
-
-    top:15px;
-
-}
-
-
-
-
-
-button{
-
-    background:#ddd;
-
-    border:1px solid #111;
-
-    padding:7px 12px;
-
-    cursor:pointer;
-
-    font-family:Verdana;
-
-}
+    }
 
 
 
-button:hover{
+    else if(tipo === "materiais"){
 
-    background:#bbb;
+        titulo.innerHTML = "Materiais";
+
+        texto.innerHTML =
+        `
+        Meus materiais:
+
+        <br><br>
+
+        ✦ lápis<br>
+        ✦ sketchbook<br>
+        ✦ canetas<br>
+        ✦ ferramentas digitais
+        `;
+
+    }
+
+
+
+    else if(tipo === "redes"){
+
+
+        titulo.innerHTML = "Redes sociais";
+
+
+        texto.innerHTML =
+        `
+        <a href="https://instagram.com/" target="_blank">
+        Instagram
+        </a>
+
+        <br><br>
+
+        <a href="https://github.com/" target="_blank">
+        GitHub
+        </a>
+        `;
+
+
+    }
 
 }
 
 
 
 
-
-/* =========================
-   COLUNAS
-========================= */
-
-
-.layout{
-
-    width:950px;
-
-    margin:20px auto;
-
-    display:grid;
-
-    grid-template-columns:180px 1fr 220px;
-
-    gap:15px;
-
-}
+// ==========================
+// FECHAR JANELA
+// ==========================
 
 
+function fecharJanela(){
 
-/* =========================
-   MENU ESQUERDA
-========================= */
-
-
-.menu{
-
-    background:#fff;
-
-    border:2px solid #111;
-
-    padding:15px;
-
-    height:max-content;
-
-}
-
-
-
-.menu h2{
-
-    font-size:18px;
-
-    margin-bottom:15px;
-
-    border-bottom:1px solid #111;
-
-}
-
-
-
-.menu button{
-
-    width:100%;
-
-    margin-bottom:10px;
-
-    text-align:left;
+    janela.style.display="none";
 
 }
 
@@ -180,241 +120,38 @@ button:hover{
 
 
 
-/* =========================
-   CENTRO
-========================= */
+// ==========================
+// FECHAR CLICANDO FORA
+// ==========================
 
 
-.conteudo{
+window.addEventListener("click",(evento)=>{
 
-    background:#fff;
 
-    border:2px solid #111;
+    if(evento.target === janela){
 
-    padding:25px;
+        fecharJanela();
 
-    min-height:600px;
+    }
 
-}
 
+});
 
 
-.conteudo h2{
 
-    font-family:"Times New Roman", serif;
 
-    font-size:28px;
 
-    margin-bottom:15px;
+// ==========================
+// ANO AUTOMÁTICO
+// ==========================
 
-}
 
+const rodape = document.querySelector("footer p");
 
 
-.conteudo p{
+if(rodape){
 
-    margin-bottom:20px;
-
-}
-
-
-
-.conteudo img{
-
-    width:100%;
-
-    border:1px solid #111;
-
-    margin:15px 0;
-
-}
-
-
-
-
-
-hr{
-
-    border:0;
-
-    border-top:1px dashed #111;
-
-    margin:25px 0;
-
-}
-
-
-
-
-
-/* =========================
-   ID CARD
-========================= */
-
-
-.perfil{
-
-    background:#fff;
-
-    border:2px solid #111;
-
-    padding:15px;
-
-    height:max-content;
-
-}
-
-
-
-.id-card{
-
-    border:1px solid #111;
-
-    padding:15px;
-
-    text-align:center;
-
-}
-
-
-
-.id-card img{
-
-    width:100px;
-
-    height:100px;
-
-    object-fit:cover;
-
-    border:1px solid #111;
-
-}
-
-
-
-.id-card h2{
-
-    margin:15px 0;
-
-    font-size:20px;
-
-    font-family:"Times New Roman",serif;
-
-}
-
-
-
-.id-card p{
-
-    text-align:left;
-
-    margin:12px 0;
-
-}
-
-
-
-
-
-/* =========================
-   JANELA
-========================= */
-
-
-.janela{
-
-    display:none;
-
-    position:fixed;
-
-    width:320px;
-
-    background:white;
-
-    border:2px solid #111;
-
-    padding:20px;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    box-shadow:5px 5px 0 #111;
-
-}
-
-
-
-.janela h2{
-
-    font-family:"Times New Roman",serif;
-
-    margin-bottom:15px;
-
-}
-
-
-
-
-
-/* =========================
-   FOOTER
-========================= */
-
-
-footer{
-
-    width:950px;
-
-    margin:20px auto;
-
-    background:white;
-
-    border:2px solid #111;
-
-    padding:20px;
-
-    text-align:center;
-
-}
-
-
-
-
-
-/* =========================
-   CELULAR
-========================= */
-
-
-@media(max-width:1000px){
-
-
-header,
-.layout,
-footer{
-
-    width:95%;
-
-}
-
-
-.layout{
-
-    grid-template-columns:1fr;
-
-}
-
-
-.refresh{
-
-    position:static;
-
-    margin-bottom:15px;
-
-}
-
+    rodape.innerHTML =
+    `feito por Seu Nome ✎ ${new Date().getFullYear()}`;
 
 }
