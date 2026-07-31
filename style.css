@@ -1,5 +1,5 @@
 /* =========================
-   RESET
+   CONFIGURAÇÃO GERAL
 ========================= */
 
 *{
@@ -9,99 +9,80 @@
 }
 
 
-
 body{
 
-    background:#ededed;
+    background-color:#eeeeee;
 
     background-image:
     radial-gradient(#111 1px, transparent 1px);
 
-    background-size:18px 18px;
-
-    font-family:Verdana, Arial, sans-serif;
+    background-size:16px 16px;
 
     color:#222;
 
+    font-family:Verdana, Arial, sans-serif;
+
+    font-size:14px;
+
 }
-
-
-
 
 
 
 /* =========================
-   TOPO RETRÔ
+   CORPO DO SITE
 ========================= */
 
 
-.topbar{
+header{
 
-    width:1100px;
+    width:950px;
 
-    margin:20px auto;
+    margin:20px auto 0;
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
-    box-shadow:5px 5px 0 black;
-
-}
-
-
-
-.top-menu{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    padding:12px;
-
-}
-
-
-
-.top-menu h1{
-
-    flex:1;
+    padding:20px;
 
     text-align:center;
 
-    font-family:"Times New Roman",serif;
-
-    font-size:40px;
+    position:relative;
 
 }
 
 
 
-.home{
+header h1{
 
-    text-decoration:none;
+    font-family:"Times New Roman", serif;
 
-    font-size:30px;
+    font-size:42px;
 
-    color:black;
+    margin-bottom:10px;
+
+}
+
+
+header p{
+
+    color:#555;
 
 }
 
 
 
-.top-menu input{
+/* BOTÃO REFRESH */
 
-    width:200px;
+.refresh{
 
-    padding:8px;
+    position:absolute;
 
-    border:1px solid black;
+    left:15px;
+
+    top:15px;
 
 }
-
-
 
 
 
@@ -111,9 +92,9 @@ button{
 
     background:#ddd;
 
-    border:1px solid black;
+    border:1px solid #111;
 
-    padding:7px 10px;
+    padding:7px 12px;
 
     cursor:pointer;
 
@@ -133,64 +114,20 @@ button:hover{
 
 
 
-
-
 /* =========================
-   MENU
+   COLUNAS
 ========================= */
 
 
-.menu{
+.layout{
 
-    display:none;
+    width:950px;
 
-    position:absolute;
-
-    background:white;
-
-    border:2px solid black;
-
-    padding:10px;
-
-    z-index:50;
-
-}
-
-
-
-.menu button{
-
-    display:block;
-
-    width:160px;
-
-    margin-bottom:8px;
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-   LAYOUT
-========================= */
-
-
-.container{
-
-    width:1100px;
-
-    margin:auto;
+    margin:20px auto;
 
     display:grid;
 
-    grid-template-columns:
-
-    180px 1fr 280px;
+    grid-template-columns:180px 1fr 220px;
 
     gap:15px;
 
@@ -198,20 +135,16 @@ button:hover{
 
 
 
-
-
-
-
 /* =========================
-   TÓPICOS
+   MENU ESQUERDA
 ========================= */
 
 
-.sidebar{
+.menu{
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:15px;
 
@@ -221,17 +154,19 @@ button:hover{
 
 
 
-.sidebar h2{
+.menu h2{
 
-    font-family:"Times New Roman",serif;
+    font-size:18px;
 
     margin-bottom:15px;
+
+    border-bottom:1px solid #111;
 
 }
 
 
 
-.sidebar button{
+.menu button{
 
     width:100%;
 
@@ -245,60 +180,68 @@ button:hover{
 
 
 
-
-
 /* =========================
-   POSTS
+   CENTRO
 ========================= */
 
 
-.post,
-.abas{
+.conteudo{
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:25px;
 
-    box-shadow:3px 3px 0 black;
+    min-height:600px;
 
 }
 
 
 
-.post h2,
-.abas h2{
+.conteudo h2{
 
-    font-family:"Times New Roman",serif;
+    font-family:"Times New Roman", serif;
 
-    font-size:30px;
+    font-size:28px;
+
+    margin-bottom:15px;
 
 }
 
 
 
-.post img{
+.conteudo p{
+
+    margin-bottom:20px;
+
+}
+
+
+
+.conteudo img{
 
     width:100%;
 
-    margin:20px 0;
+    border:1px solid #111;
 
-    border:1px solid black;
-
-}
-
-
-
-.data{
-
-    font-size:12px;
-
-    color:#666;
+    margin:15px 0;
 
 }
 
 
+
+
+
+hr{
+
+    border:0;
+
+    border-top:1px dashed #111;
+
+    margin:25px 0;
+
+}
 
 
 
@@ -311,21 +254,21 @@ button:hover{
 
 .perfil{
 
-    display:flex;
+    background:#fff;
 
-    flex-direction:column;
+    border:2px solid #111;
 
-    gap:15px;
+    padding:15px;
+
+    height:max-content;
 
 }
 
 
 
-.card{
+.id-card{
 
-    background:white;
-
-    border:2px solid black;
+    border:1px solid #111;
 
     padding:15px;
 
@@ -335,25 +278,25 @@ button:hover{
 
 
 
-.card img{
+.id-card img{
 
-    width:110px;
+    width:100px;
 
-    height:110px;
+    height:100px;
 
     object-fit:cover;
 
-    border:1px solid black;
+    border:1px solid #111;
 
 }
 
 
 
-.card h2{
+.id-card h2{
 
-    margin:15px;
+    margin:15px 0;
 
-    color:#e4a2bb;
+    font-size:20px;
 
     font-family:"Times New Roman",serif;
 
@@ -361,29 +304,50 @@ button:hover{
 
 
 
+.id-card p{
+
+    text-align:left;
+
+    margin:12px 0;
+
+}
 
 
 
 
 
 /* =========================
-   CHAT
+   JANELA
 ========================= */
 
 
-.chat{
+.janela{
+
+    display:none;
+
+    position:fixed;
+
+    width:320px;
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #111;
 
-    padding:15px;
+    padding:20px;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:5px 5px 0 #111;
 
 }
 
 
 
-.chat h2{
+.janela h2{
 
     font-family:"Times New Roman",serif;
 
@@ -393,165 +357,22 @@ button:hover{
 
 
 
-#comentarios{
-
-    height:350px;
-
-    overflow-y:auto;
-
-    border:1px solid black;
-
-    padding:10px;
-
-    background:#fafafa;
-
-}
-
-
-
-.comentario{
-
-    background:white;
-
-    border:1px solid black;
-
-    padding:12px;
-
-    margin-bottom:10px;
-
-}
-
-
-
-.comentario b{
-
-    font-size:14px;
-
-}
-
-
-
-.comentario p{
-
-    margin:10px 0;
-
-}
-
-
-
-#textoComentario{
-
-    width:100%;
-
-    height:100px;
-
-    resize:vertical;
-
-    margin-top:15px;
-
-    padding:10px;
-
-    border:1px solid black;
-
-    font-family:Verdana;
-
-}
-
-
-
-
-
-
 
 
 /* =========================
-   PERFIL POPUP
-========================= */
-
-
-.popup{
-
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.5);
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:100;
-
-}
-
-
-
-.popup-box{
-
-    position:relative;
-
-    width:350px;
-
-    background:white;
-
-    border:3px solid black;
-
-    padding:25px;
-
-    box-shadow:5px 5px 0 black;
-
-}
-
-
-
-.fechar{
-
-    position:absolute;
-
-    right:10px;
-
-    top:10px;
-
-    background:white;
-
-}
-
-
-
-.popup input{
-
-    width:100%;
-
-    padding:10px;
-
-    margin:10px 0;
-
-}
-
-
-
-
-
-
-
-
-/* =========================
-   RODAPÉ
+   FOOTER
 ========================= */
 
 
 footer{
 
-    width:1100px;
+    width:950px;
 
     margin:20px auto;
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:20px;
 
@@ -563,92 +384,16 @@ footer{
 
 
 
-
-
-
-/* =========================
-   MODO ESCURO
-========================= */
-
-
-.escuro{
-
-    background:#111;
-
-    color:white;
-
-}
-
-
-
-.escuro .topbar,
-.escuro .menu,
-.escuro .sidebar,
-.escuro .post,
-.escuro .abas,
-.escuro .card,
-.escuro .chat,
-.escuro .comentario,
-.escuro .popup-box,
-.escuro footer{
-
-    background:#222;
-
-    color:white;
-
-    border-color:white;
-
-}
-
-
-
-.escuro .comentario{
-
-    background:#333;
-
-}
-
-
-
-.escuro button{
-
-    background:#333;
-
-    color:white;
-
-    border-color:white;
-
-}
-
-
-
-.escuro input,
-.escuro textarea{
-
-    background:#111;
-
-    color:white;
-
-    border-color:white;
-
-}
-
-
-
-
-
-
-
 /* =========================
    CELULAR
 ========================= */
 
 
-@media(max-width:1100px){
+@media(max-width:1000px){
 
 
-.topbar,
-.container,
+header,
+.layout,
 footer{
 
     width:95%;
@@ -656,10 +401,18 @@ footer{
 }
 
 
-
-.container{
+.layout{
 
     grid-template-columns:1fr;
+
+}
+
+
+.refresh{
+
+    position:static;
+
+    margin-bottom:15px;
 
 }
 
