@@ -9,8 +9,11 @@
 }
 
 
-
 body{
+
+    font-family:Verdana, Arial, sans-serif;
+
+    color:#222;
 
     background:#ededed;
 
@@ -19,46 +22,61 @@ body{
 
     background-size:18px 18px;
 
-    font-family:Verdana, Arial, sans-serif;
-
-    color:#222;
-
-    transition:0.3s;
+    transition:.3s;
 
 }
-
 
 
 
 
 /* =========================
-   TRANSIÇÕES
+   GERAL
 ========================= */
 
 
 button,
-.post,
-.abas,
-.card,
-.chat,
-.sidebar,
-.comentario,
-.popup-box,
-.topbar,
-footer{
+input,
+textarea{
 
-    transition:
-
-    transform .25s ease,
-
-    box-shadow .25s ease,
-
-    background .25s ease;
+    font-family:inherit;
 
 }
 
 
 
+button{
+
+    cursor:pointer;
+
+    background:#eee;
+
+    border:2px solid #222;
+
+    padding:8px 12px;
+
+    border-radius:12px;
+
+    transition:.25s;
+
+}
+
+
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:3px 3px 0 #222;
+
+}
+
+
+
+button:active{
+
+    transform:scale(.95);
+
+}
 
 
 
@@ -78,7 +96,7 @@ footer{
 
     border:2px solid #222;
 
-    border-radius:18px;
+    border-radius:20px;
 
     box-shadow:5px 5px 0 #222;
 
@@ -92,9 +110,9 @@ footer{
 
     align-items:center;
 
-    gap:15px;
+    gap:12px;
 
-    padding:12px;
+    padding:15px;
 
 }
 
@@ -108,7 +126,7 @@ footer{
 
     font-family:"Times New Roman",serif;
 
-    font-size:40px;
+    font-size:42px;
 
 }
 
@@ -118,9 +136,9 @@ footer{
 
     text-decoration:none;
 
-    color:black;
+    color:#222;
 
-    font-size:30px;
+    font-size:32px;
 
 }
 
@@ -132,55 +150,11 @@ footer{
 
     padding:10px;
 
-    border:1px solid black;
+    border:2px solid #222;
 
-    border-radius:10px;
-
-}
-
-
-
-
-
-
-
-/* =========================
-   BOTÕES
-========================= */
-
-
-button{
-
-    background:#ddd;
-
-    border:1px solid black;
-
-    padding:8px 12px;
-
-    border-radius:10px;
-
-    cursor:pointer;
+    border-radius:12px;
 
 }
-
-
-
-button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:3px 3px 0 black;
-
-}
-
-
-
-button:active{
-
-    transform:scale(.95);
-
-}
-
 
 
 
@@ -200,13 +174,13 @@ button:active{
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #222;
 
     border-radius:15px;
 
     padding:10px;
 
-    z-index:50;
+    z-index:20;
 
 }
 
@@ -229,7 +203,7 @@ button:active{
 
 
 /* =========================
-   LAYOUT
+   CORPO
 ========================= */
 
 
@@ -256,7 +230,7 @@ button:active{
 
 
 /* =========================
-   SIDEBAR
+   TÓPICOS
 ========================= */
 
 
@@ -264,21 +238,13 @@ button:active{
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #222;
 
     border-radius:18px;
 
     padding:15px;
 
-}
-
-
-
-.sidebar:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:6px 6px 0 black;
+    height:max-content;
 
 }
 
@@ -310,41 +276,47 @@ button:active{
 
 
 
+
 /* =========================
-   CONTEÚDO
+   POSTS
 ========================= */
 
 
 .post,
-.abas{
+.abas,
+.card,
+.chat{
 
     background:white;
 
-    border:2px solid black;
+    border:2px solid #222;
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:25px;
+    padding:20px;
 
-    box-shadow:3px 3px 0 black;
+    box-shadow:4px 4px 0 #222;
+
+    transition:.25s;
 
 }
 
 
 
 .post:hover,
-.abas:hover{
+.abas:hover,
+.card:hover,
+.chat:hover{
 
     transform:translateY(-5px);
-
-    box-shadow:7px 7px 0 black;
 
 }
 
 
 
 .post h2,
-.abas h2{
+.abas h2,
+.chat h2{
 
     font-family:"Times New Roman",serif;
 
@@ -358,24 +330,19 @@ button:active{
 
     width:100%;
 
-    border-radius:12px;
+    border-radius:15px;
 
-    margin:20px 0;
-
-    border:1px solid black;
+    margin-top:20px;
 
 }
 
 
 
-.data{
 
-    font-size:12px;
 
-    color:#666;
 
-   /* =========================
-   PERFIL / ID CARD
+/* =========================
+   PERFIL
 ========================= */
 
 
@@ -393,27 +360,7 @@ button:active{
 
 .card{
 
-    background:white;
-
-    border:2px solid black;
-
-    border-radius:18px;
-
-    padding:15px;
-
     text-align:center;
-
-    box-shadow:3px 3px 0 black;
-
-}
-
-
-
-.card:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:7px 7px 0 black;
 
 }
 
@@ -429,7 +376,7 @@ button:active{
 
     border-radius:50%;
 
-    border:2px solid black;
+    border:2px solid #222;
 
 }
 
@@ -439,9 +386,7 @@ button:active{
 
     margin:15px;
 
-    color:#e4a2bb;
-
-    font-family:"Times New Roman",serif;
+    color:#e6a5c0;
 
 }
 
@@ -453,37 +398,21 @@ button:active{
 
 
 /* =========================
-   CHAT
+   COMENTÁRIOS
 ========================= */
 
 
-.chat{
+#comentarios{
 
-    background:white;
+    height:320px;
 
-    border:2px solid black;
+    overflow:auto;
 
-    border-radius:18px;
+    border:2px solid #222;
 
-    padding:15px;
+    border-radius:15px;
 
-    box-shadow:3px 3px 0 black;
-
-}
-
-
-
-.chat:hover{
-
-    transform:translateY(-5px);
-
-}
-
-
-
-.chat h2{
-
-    font-family:"Times New Roman",serif;
+    padding:10px;
 
     margin-bottom:15px;
 
@@ -491,35 +420,19 @@ button:active{
 
 
 
-#comentarios{
+.comentario{
 
-    height:350px;
-
-    overflow-y:auto;
-
-    border:1px solid black;
+    border:1px solid #222;
 
     border-radius:12px;
 
     padding:10px;
 
+    margin-bottom:10px;
+
     background:#fafafa;
 
-}
-
-
-
-.comentario{
-
-    background:white;
-
-    border:1px solid black;
-
-    border-radius:12px;
-
-    padding:12px;
-
-    margin-bottom:10px;
+    animation:entrada .3s;
 
 }
 
@@ -533,16 +446,6 @@ button:active{
 
 
 
-.comentario button{
-
-    margin-right:5px;
-
-    font-size:12px;
-
-}
-
-
-
 #textoComentario{
 
     width:100%;
@@ -551,15 +454,11 @@ button:active{
 
     resize:vertical;
 
-    margin-top:15px;
-
-    padding:10px;
-
-    border:1px solid black;
+    border:2px solid #222;
 
     border-radius:12px;
 
-    font-family:Verdana;
+    padding:10px;
 
 }
 
@@ -584,13 +483,9 @@ button:active{
 
     background:rgba(0,0,0,.5);
 
-    align-items:center;
-
     justify-content:center;
 
-    z-index:100;
-
-    animation:aparecer .3s ease;
+    align-items:center;
 
 }
 
@@ -598,21 +493,19 @@ button:active{
 
 .popup-box{
 
-    position:relative;
+    background:white;
 
     width:350px;
 
-    background:white;
+    padding:25px;
 
-    border:3px solid black;
+    border:3px solid #222;
 
     border-radius:20px;
 
-    padding:25px;
+    box-shadow:6px 6px 0 #222;
 
-    box-shadow:6px 6px 0 black;
-
-    animation:subir .3s ease;
+    animation:subir .3s;
 
 }
 
@@ -620,11 +513,7 @@ button:active{
 
 .fechar{
 
-    position:absolute;
-
-    right:10px;
-
-    top:10px;
+    float:right;
 
 }
 
@@ -636,15 +525,13 @@ button:active{
 
     padding:10px;
 
-    margin:10px 0;
+    margin:8px 0;
+
+    border:2px solid #222;
 
     border-radius:10px;
 
-    border:1px solid black;
-
 }
-
-
 
 
 
@@ -656,12 +543,13 @@ button:active{
 ========================= */
 
 
-@keyframes aparecer{
-
+@keyframes entrada{
 
     from{
 
         opacity:0;
+
+        transform:translateY(15px);
 
     }
 
@@ -670,8 +558,9 @@ button:active{
 
         opacity:1;
 
-    }
+        transform:translateY(0);
 
+    }
 
 }
 
@@ -679,29 +568,18 @@ button:active{
 
 @keyframes subir{
 
-
     from{
 
-        transform:
-
-        translateY(40px)
-
-        scale(.8);
+        transform:scale(.8);
 
     }
-
 
 
     to{
 
-        transform:
-
-        translateY(0)
-
-        scale(1);
+        transform:scale(1);
 
     }
-
 
 }
 
@@ -712,7 +590,7 @@ button:active{
 
 
 /* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
 
 
@@ -722,42 +600,15 @@ footer{
 
     margin:20px auto;
 
-    background:white;
-
-    border:2px solid black;
-
-    border-radius:18px;
-
     padding:20px;
 
     text-align:center;
 
-}
+    background:white;
 
+    border:2px solid #222;
 
-
-
-
-
-
-/* =========================
-   SCROLL
-========================= */
-
-
-#comentarios::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-
-
-#comentarios::-webkit-scrollbar-thumb{
-
-    background:#111;
-
-    border-radius:10px;
+    border-radius:20px;
 
 }
 
@@ -789,7 +640,6 @@ footer{
 .escuro .abas,
 .escuro .card,
 .escuro .chat,
-.escuro .comentario,
 .escuro .popup-box,
 .escuro footer{
 
@@ -807,41 +657,9 @@ footer{
 
     background:#333;
 
-}
-
-
-
-.escuro button{
-
-    background:#333;
-
-    color:white;
-
-    border-color:white;
-
-}
-
-
-
-.escuro input,
-.escuro textarea{
-
-    background:#111;
-
-    color:white;
-
-    border-color:white;
-
-}
-
-
-
-.escuro .home{
-
     color:white;
 
 }
-
 
 
 
@@ -849,7 +667,7 @@ footer{
 
 
 /* =========================
-   RESPONSIVO
+   CELULAR
 ========================= */
 
 
@@ -881,14 +699,4 @@ footer{
 }
 
 
-
-.top-menu h1{
-
-    font-size:30px;
-
-}
-
-
-}
-   
 }
