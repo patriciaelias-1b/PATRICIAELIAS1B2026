@@ -12,175 +12,138 @@
 
 </head>
 
-
 <body>
 
+<header class="topo">
 
-<header>
-
-<button class="refresh" onclick="location.reload()">
-refresh page
+<button class="menu-btn" onclick="abrirMenu()">
+☰
 </button>
 
+<a href="index.html" class="home">
+🏠
+</a>
 
-<h1>✎ Sketchbook.log</h1>
+<div class="pesquisa">
 
-<p>
-meu diário de desenhos e ideias
-</p>
+<input
+type="text"
+id="pesquisa"
+placeholder="Pesquisar no blog..."
+>
 
+</div>
 
 </header>
 
+<nav id="menu" class="menu">
 
+<button onclick="abrirPerfil()">
+Meu perfil
+</button>
 
+<button onclick="modoNoturno()">
+Modo noturno
+</button>
 
+<button onclick="sair()">
+Sair
+</button>
+
+</nav>
 
 <div class="layout">
 
+<aside class="topicos">
 
-
-<!-- TÓPICOS -->
-
-<aside class="menu">
-
-
-<h2>Tópicos</h2>
-
+<h2>✦ Tópicos</h2>
 
 <button onclick="abrirJanela('desenhos')">
 Desenhos
 </button>
 
-
 <button onclick="abrirJanela('estudos')">
 Estudos
 </button>
 
-
-<button onclick="abrirJanela('blog')">
-Blog
+<button onclick="abrirJanela('personagens')">
+Personagens
 </button>
-
 
 <button onclick="abrirJanela('materiais')">
 Materiais
 </button>
 
-
 <button onclick="abrirJanela('redes')">
-Redes sociais
+Redes Sociais
 </button>
-
 
 </aside>
 
-
-
-
-
-
-
-
-<!-- ÁREA CENTRAL -->
-
 <main class="conteudo">
 
+<div class="blog">
 
-<h2>Bem-vindo!</h2>
-
-
-<p>
-
-Olá! Esse é meu espaço pessoal na internet.
-
-Aqui eu vou colocar meus desenhos,
-estudos, pensamentos e qualquer coisa
-relacionada à arte.
-
-</p>
-
-
-
-<img src="images/desenho1.jpg" alt="meu desenho">
-
-
+<h1>Sketchbook.log</h1>
 
 <p>
 
-Hoje eu fiz um novo desenho e resolvi
-registrar aqui.
+Bem-vindo ao meu cantinho da internet.
 
-Ainda estou aprendendo, mas gosto de
-guardar cada etapa da minha evolução.
+Aqui vou registrar meus desenhos,
+estudos, ideias, personagens
+e tudo relacionado à arte.
 
 </p>
 
+<img
+src="images/desenho1.jpg"
+alt="Desenho">
 
+<p>
+
+Escreva aqui o texto que quiser.
+
+Você pode adicionar imagens,
+novos parágrafos, listas,
+ou criar um verdadeiro diário.
+
+</p>
 
 <hr>
 
-
-
-<h2>Atualizações</h2>
-
+<h2>Post novo</h2>
 
 <p>
 
-30/07/2026
 
-<br>
-
-Novo desenho publicado no blog.
-
-</p>
-
+</div>
 
 </main>
 
-
-
-
-
-
-
-
-<!-- ID CARD -->
-
 <aside class="perfil">
-
 
 <div class="id-card">
 
-
-<img src="images/eu.jpg" alt="minha foto">
-
+<img
+src="images/eu.jpg"
+alt="Foto de perfil">
 
 <h2>Seu Nome</h2>
 
+<p id="nomeUsuario">
+visitante
+</p>
+
+<hr>
 
 <p>
 ID: 001
 </p>
 
-
 <p>
-Cargo:
-<br>
 Desenhista
 </p>
-
-
-<p>
-Interesses:
-<br>
-✦ Arte
-<br>
-✦ Personagens
-<br>
-✦ Sketchbook
-</p>
-
 
 <p>
 Status:
@@ -188,63 +151,76 @@ Status:
 Criando...
 </p>
 
-
+<p>
+Contas registradas:
+<span id="numeroContas">0</span>
+</p>
 
 </div>
-
 
 </aside>
 
-
-
-
-
 </div>
 
-
-
-
-
-
-<!-- JANELA POPUP -->
-
 <div id="janela" class="janela">
-
 
 <h2 id="tituloJanela">
 Título
 </h2>
 
-
 <p id="textoJanela">
 Texto
 </p>
 
-
 <button onclick="fecharJanela()">
-fechar
+Fechar
 </button>
-
 
 </div>
 
+<div id="perfil" class="janela">
 
+<h2>Criar conta</h2>
 
+<p>
 
+Essa conta é apenas simbólica.
+
+Não precisa colocar informações pessoais,
+e-mail ou senha.
+
+Ela serve apenas para personalizar
+seu nome no blog.
+
+</p>
+
+<input
+type="text"
+id="nome"
+placeholder="Digite um nome">
+
+<button onclick="criarConta()">
+Criar conta
+</button>
+
+<button onclick="fecharPerfil()">
+Cancelar
+</button>
+
+</div>
 
 <footer>
 
 <p>
-feito por Patricia 1°B
+© Sketchbook.log
 </p>
 
 </footer>
 
-
-
 <script src="script.js"></script>
-
 
 </body>
 
 </html>
+
+</p>
