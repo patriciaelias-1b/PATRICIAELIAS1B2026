@@ -631,6 +631,203 @@ footer{
 
     border-color:white;
 
+   /* =========================
+   TRANSIÇÕES GERAIS
+========================= */
+
+button,
+.post,
+.abas,
+.card,
+.chat,
+.sidebar,
+.comentario,
+.popup-box{
+
+    transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+
+}
+
+
+
+/* =========================
+   BORDAS ARREDONDADAS
+========================= */
+
+.topbar,
+.sidebar,
+.post,
+.abas,
+.card,
+.chat,
+.comentario,
+.popup-box,
+footer{
+
+    border-radius:18px;
+
+}
+
+
+
+button,
+input,
+textarea{
+
+    border-radius:10px;
+
+}
+
+
+
+/* =========================
+   BOTÕES ANIMADOS
+========================= */
+
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    3px 3px 0 black;
+
+}
+
+
+
+button:active{
+
+    transform:scale(0.95);
+
+}
+
+
+
+
+
+/* =========================
+   CARDS INTERATIVOS
+========================= */
+
+
+.card:hover,
+.post:hover,
+.chat:hover,
+.sidebar:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    6px 6px 0 black;
+
+}
+
+
+
+
+
+/* =========================
+   COMENTÁRIOS
+========================= */
+
+
+.comentario:hover{
+
+    transform:translateX(5px);
+
+}
+
+
+
+
+
+/* =========================
+   POPUP APARECENDO
+========================= */
+
+
+.popup{
+
+    animation:
+    aparecer 0.3s ease;
+
+}
+
+
+
+.popup-box{
+
+    animation:
+    subir 0.3s ease;
+
+}
+
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+@keyframes subir{
+
+    from{
+
+        transform:translateY(30px) scale(.9);
+
+    }
+
+
+    to{
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+
+
+
+
+/* =========================
+   SCROLL MAIS BONITO
+========================= */
+
+
+#comentarios::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+
+
+#comentarios::-webkit-scrollbar-thumb{
+
+    background:#111;
+
+    border-radius:10px;
+
+}
+
 }
 
 
