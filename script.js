@@ -1,20 +1,86 @@
-// ===============================
-// MENU
-// ===============================
+/* =========================
+   CONFIGURAÇÃO GERAL
+========================= */
 
-function abrirMenu(){
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    let menu = document.getElementById("menu");
 
-    if(menu.style.display === "block"){
+body{
 
-        menu.style.display = "none";
+    background-color:#eeeeee;
 
-    }else{
+    background-image:
+    radial-gradient(#111 1px, transparent 1px);
 
-        menu.style.display = "block";
+    background-size:16px 16px;
 
-    }
+    color:#222;
+
+    font-family:Verdana, Arial, sans-serif;
+
+    font-size:14px;
+
+}
+
+
+
+/* =========================
+   CORPO DO SITE
+========================= */
+
+
+header{
+
+    width:950px;
+
+    margin:20px auto 0;
+
+    background:#fff;
+
+    border:2px solid #111;
+
+    padding:20px;
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+
+
+header h1{
+
+    font-family:"Times New Roman", serif;
+
+    font-size:42px;
+
+    margin-bottom:10px;
+
+}
+
+
+header p{
+
+    color:#555;
+
+}
+
+
+
+/* BOTÃO REFRESH */
+
+.refresh{
+
+    position:absolute;
+
+    left:15px;
+
+    top:15px;
 
 }
 
@@ -22,85 +88,25 @@ function abrirMenu(){
 
 
 
+button{
 
-// ===============================
-// TÓPICOS
-// ===============================
+    background:#ddd;
 
-function abrirAba(nome){
+    border:1px solid #111;
 
+    padding:7px 12px;
 
-    let aba = document.getElementById("janelaAba");
+    cursor:pointer;
 
+    font-family:Verdana;
 
-    let textos = {
-
-
-        desenhos:`
-
-        <h2>Desenhos</h2>
-
-        <p>
-        Meus desenhos, ilustrações
-        e rascunhos.
-        </p>
-
-        `,
+}
 
 
-        estudos:`
 
-        <h2>Estudos</h2>
+button:hover{
 
-        <p>
-        Exercícios de anatomia,
-        perspectiva e técnicas.
-        </p>
-
-        `,
-
-
-        blog:`
-
-        <h2>Blog</h2>
-
-        <p>
-        Textos sobre meu processo
-        artístico.
-        </p>
-
-        `,
-
-
-        materiais:`
-
-        <h2>Materiais</h2>
-
-        <p>
-        Lápis, papel, programas
-        e ferramentas.
-        </p>
-
-        `,
-
-
-        sobre:`
-
-        <h2>Sobre mim</h2>
-
-        <p>
-        Um espaço para compartilhar
-        minha evolução na arte.
-        </p>
-
-        `
-
-
-    };
-
-
-    aba.innerHTML = textos[nome];
-
+    background:#bbb;
 
 }
 
@@ -108,112 +114,65 @@ function abrirAba(nome){
 
 
 
+/* =========================
+   COLUNAS
+========================= */
 
 
-// ===============================
-// PERFIL
-// ===============================
+.layout{
 
+    width:950px;
 
-function abrirPerfil(){
+    margin:20px auto;
 
-    document.getElementById("janelaPerfil")
-    .style.display="flex";
+    display:grid;
 
+    grid-template-columns:180px 1fr 220px;
 
-    atualizarPerfil();
-
-}
-
-
-
-
-function fecharPerfil(){
-
-    document.getElementById("janelaPerfil")
-    .style.display="none";
+    gap:15px;
 
 }
 
 
 
+/* =========================
+   MENU ESQUERDA
+========================= */
+
+
+.menu{
+
+    background:#fff;
+
+    border:2px solid #111;
+
+    padding:15px;
+
+    height:max-content;
+
+}
 
 
 
-function criarUsuario(){
+.menu h2{
 
+    font-size:18px;
 
-    if(localStorage.getItem("usuario")){
+    margin-bottom:15px;
 
-        alert(
-        "Você já possui uma conta."
-        );
+    border-bottom:1px solid #111;
 
-        return;
-
-    }
+}
 
 
 
-    let nome =
-    document.getElementById("novoNome")
-    .value.trim();
+.menu button{
 
+    width:100%;
 
+    margin-bottom:10px;
 
-    let status =
-    document.getElementById("novoStatus")
-    .value.trim();
-
-
-
-    if(nome===""){
-
-        nome="Visitante";
-
-    }
-
-
-
-    if(status===""){
-
-        status="Criando arte ✎";
-
-    }
-
-
-
-    localStorage.setItem(
-        "usuario",
-        nome
-    );
-
-
-    localStorage.setItem(
-        "status",
-        status
-    );
-
-
-
-    let contas =
-    Number(localStorage.getItem("contas"))
-    || 0;
-
-
-
-    contas++;
-
-
-    localStorage.setItem(
-        "contas",
-        contas
-    );
-
-
-
-    atualizarPerfil();
-
+    text-align:left;
 
 }
 
@@ -221,48 +180,52 @@ function criarUsuario(){
 
 
 
+/* =========================
+   CENTRO
+========================= */
+
+
+.conteudo{
+
+    background:#fff;
+
+    border:2px solid #111;
+
+    padding:25px;
+
+    min-height:600px;
+
+}
 
 
 
-function editarUsuario(){
+.conteudo h2{
 
+    font-family:"Times New Roman", serif;
 
-    let nome =
-    document.getElementById("editarNome")
-    .value.trim();
+    font-size:28px;
 
+    margin-bottom:15px;
 
-
-    let status =
-    document.getElementById("editarStatus")
-    .value.trim();
+}
 
 
 
-    if(nome){
+.conteudo p{
 
-        localStorage.setItem(
-            "usuario",
-            nome
-        );
+    margin-bottom:20px;
 
-    }
+}
 
 
 
-    if(status){
+.conteudo img{
 
-        localStorage.setItem(
-            "status",
-            status
-        );
+    width:100%;
 
-    }
+    border:1px solid #111;
 
-
-
-    atualizarPerfil();
-
+    margin:15px 0;
 
 }
 
@@ -270,85 +233,13 @@ function editarUsuario(){
 
 
 
+hr{
 
+    border:0;
 
-function atualizarPerfil(){
+    border-top:1px dashed #111;
 
-
-    let usuario =
-    localStorage.getItem("usuario")
-    ||
-    "Visitante";
-
-
-
-    let status =
-    localStorage.getItem("status")
-    ||
-    "Criando arte ✎";
-
-
-
-    document.getElementById("nomeUsuario")
-    .innerHTML =
-    usuario;
-
-
-
-    document.getElementById("statusUsuario")
-    .innerHTML =
-    status;
-
-
-
-    document.getElementById("contador")
-    .innerHTML =
-    localStorage.getItem("contas")
-    ||
-    0;
-
-
-
-
-
-
-    if(localStorage.getItem("usuario")){
-
-
-        document.getElementById("loginArea")
-        .style.display="none";
-
-
-        document.getElementById("editarArea")
-        .style.display="block";
-
-
-
-        document.getElementById("editarNome")
-        .value =
-        usuario;
-
-
-
-        document.getElementById("editarStatus")
-        .value =
-        status;
-
-
-
-    }else{
-
-
-        document.getElementById("loginArea")
-        .style.display="block";
-
-
-        document.getElementById("editarArea")
-        .style.display="none";
-
-
-    }
-
+    margin:25px 0;
 
 }
 
@@ -356,37 +247,68 @@ function atualizarPerfil(){
 
 
 
+/* =========================
+   ID CARD
+========================= */
+
+
+.perfil{
+
+    background:#fff;
+
+    border:2px solid #111;
+
+    padding:15px;
+
+    height:max-content;
+
+}
 
 
 
-function deletarConta(){
+.id-card{
 
+    border:1px solid #111;
 
-    let confirmar =
-    confirm(
-    "Deseja apagar sua conta?"
-    );
+    padding:15px;
 
+    text-align:center;
 
-
-    if(confirmar){
-
-
-        localStorage.removeItem("usuario");
-
-        localStorage.removeItem("status");
+}
 
 
 
-        atualizarPerfil();
+.id-card img{
+
+    width:100px;
+
+    height:100px;
+
+    object-fit:cover;
+
+    border:1px solid #111;
+
+}
 
 
 
-        fecharPerfil();
+.id-card h2{
+
+    margin:15px 0;
+
+    font-size:20px;
+
+    font-family:"Times New Roman",serif;
+
+}
 
 
-    }
 
+.id-card p{
+
+    text-align:left;
+
+    margin:12px 0;
 
 }
 
@@ -394,76 +316,42 @@ function deletarConta(){
 
 
 
+/* =========================
+   JANELA
+========================= */
+
+
+.janela{
+
+    display:none;
+
+    position:fixed;
+
+    width:320px;
+
+    background:white;
+
+    border:2px solid #111;
+
+    padding:20px;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    box-shadow:5px 5px 0 #111;
+
+}
 
 
 
-// ===============================
-// COMENTÁRIOS
-// ===============================
+.janela h2{
 
+    font-family:"Times New Roman",serif;
 
-let comentarios =
-JSON.parse(
-localStorage.getItem("comentarios")
-)
-||
-[];
-
-
-
-
-
-function enviarComentario(){
-
-
-
-    let texto =
-    document.getElementById("textoComentario")
-    .value.trim();
-
-
-
-    if(texto===""){
-
-        return;
-
-    }
-
-
-
-    let nome =
-    localStorage.getItem("usuario")
-    ||
-    "Visitante";
-
-
-
-    comentarios.push({
-
-
-        id:Date.now(),
-
-        nome:nome,
-
-        texto:texto
-
-
-    });
-
-
-
-    salvarComentarios();
-
-
-
-    document.getElementById("textoComentario")
-    .value="";
-
-
-
-    mostrarComentarios();
-
-
+    margin-bottom:15px;
 
 }
 
@@ -471,94 +359,24 @@ function enviarComentario(){
 
 
 
+/* =========================
+   FOOTER
+========================= */
 
 
-function salvarComentarios(){
+footer{
 
-    localStorage.setItem(
+    width:950px;
 
-        "comentarios",
+    margin:20px auto;
 
-        JSON.stringify(comentarios)
+    background:white;
 
-    );
+    border:2px solid #111;
 
-}
+    padding:20px;
 
-
-
-
-
-
-
-function mostrarComentarios(){
-
-
-    let area =
-    document.getElementById("comentarios");
-
-
-
-    area.innerHTML="";
-
-
-
-    comentarios.forEach(c=>{
-
-
-        let div =
-        document.createElement("div");
-
-
-
-        div.className="comentario";
-
-
-
-        div.innerHTML=`
-
-        <b>${c.nome}</b>
-
-        <p>${c.texto}</p>
-
-
-        <button onclick="responder('${c.nome}')">
-        responder
-        </button>
-
-
-        <button onclick="reportar(${c.id})">
-        🚩
-        </button>
-
-
-
-        ${
-        c.nome === localStorage.getItem("usuario")
-
-        ?
-
-        `<button onclick="apagarComentario(${c.id})">
-        apagar
-        </button>`
-
-        :
-
-        ""
-
-        }
-
-
-        `;
-
-
-
-        area.appendChild(div);
-
-
-
-    });
-
+    text-align:center;
 
 }
 
@@ -566,120 +384,37 @@ function mostrarComentarios(){
 
 
 
-function apagarComentario(id){
+/* =========================
+   CELULAR
+========================= */
 
 
-    comentarios =
-    comentarios.filter(
-    c=>c.id!==id
-    );
+@media(max-width:1000px){
 
 
-    salvarComentarios();
+header,
+.layout,
+footer{
 
-
-    mostrarComentarios();
-
-
-}
-
-
-
-
-
-
-function responder(nome){
-
-
-    document.getElementById("textoComentario")
-    .value =
-    "@"+nome+" ";
-
+    width:95%;
 
 }
 
 
+.layout{
 
-
-
-
-function reportar(id){
-
-
-    alert(
-    "Usuário reportado para host"
-    );
-
-
-    apagarComentario(id);
-
+    grid-template-columns:1fr;
 
 }
 
 
+.refresh{
 
+    position:static;
 
-
-
-
-// ===============================
-// TEMA
-// ===============================
-
-
-function alternarTema(){
-
-
-    document.body
-    .classList
-    .toggle("escuro");
-
-
-
-    localStorage.setItem(
-
-        "tema",
-
-        document.body.classList
-        .contains("escuro")
-
-    );
-
+    margin-bottom:15px;
 
 }
 
 
-
-
-if(localStorage.getItem("tema")==="true"){
-
-
-    document.body.classList.add("escuro");
-
-
 }
-
-
-
-
-
-
-// ===============================
-// SAIR
-// ===============================
-
-
-function sair(){
-
-    window.location.href =
-    "https://www.google.com";
-
-}
-
-
-
-
-
-atualizarPerfil();
-
-mostrarComentarios();
