@@ -1,6 +1,6 @@
-/* ==========================
+/* ===========================
    RESET
-========================== */
+=========================== */
 
 *{
     margin:0;
@@ -10,14 +10,14 @@
 
 body{
 
-    font-family:Verdana, Arial, sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
-    background:#ececec;
+    background:#efefef;
 
     background-image:
     radial-gradient(#111 1px, transparent 1px);
 
-    background-size:16px 16px;
+    background-size:18px 18px;
 
     color:#222;
 
@@ -25,9 +25,9 @@ body{
 
 
 
-/* ==========================
+/* ===========================
    TOPO
-========================== */
+=========================== */
 
 .topo{
 
@@ -35,7 +35,7 @@ body{
 
     margin:20px auto;
 
-    background:white;
+    background:#fff;
 
     border:2px solid #111;
 
@@ -47,8 +47,6 @@ body{
 
     padding:12px;
 
-    position:relative;
-
 }
 
 
@@ -56,21 +54,21 @@ body{
 .menu-btn,
 .home{
 
-    width:40px;
+    width:42px;
 
-    height:40px;
+    height:42px;
 
     border:1px solid #111;
 
-    background:#e8e8e8;
-
-    cursor:pointer;
+    background:#ececec;
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
+
+    cursor:pointer;
 
     text-decoration:none;
 
@@ -83,11 +81,15 @@ body{
 .menu-btn:hover,
 .home:hover{
 
-    background:#d5d5d5;
+    background:#d8d8d8;
 
 }
 
 
+
+/* ===========================
+   PESQUISA
+=========================== */
 
 .pesquisa{
 
@@ -95,27 +97,25 @@ body{
 
 }
 
-
-
 .pesquisa input{
 
     width:100%;
 
     padding:10px;
 
-    border:1px solid #111;
-
-    background:white;
+    border:1px solid black;
 
     outline:none;
+
+    font-size:14px;
 
 }
 
 
 
-/* ==========================
+/* ===========================
    MENU
-========================== */
+=========================== */
 
 .menu{
 
@@ -123,9 +123,9 @@ body{
 
     position:absolute;
 
-    left:20px;
+    left:calc(50% - 500px);
 
-    top:80px;
+    top:82px;
 
     width:220px;
 
@@ -133,13 +133,11 @@ body{
 
     border:2px solid black;
 
-    z-index:999;
-
     box-shadow:5px 5px black;
 
+    z-index:999;
+
 }
-
-
 
 .menu button{
 
@@ -149,17 +147,15 @@ body{
 
     border:none;
 
-    border-bottom:1px solid #111;
+    border-bottom:1px solid black;
 
     background:white;
 
-    text-align:left;
-
     cursor:pointer;
 
+    text-align:left;
+
 }
-
-
 
 .menu button:hover{
 
@@ -169,33 +165,89 @@ body{
 
 
 
-/* ==========================
-   CONTEÚDO
-========================== */
+/* ===========================
+   LAYOUT
+=========================== */
 
-main{
+.layout{
 
     width:1000px;
 
     margin:auto;
 
+    display:grid;
+
+    grid-template-columns:180px 1fr 240px;
+
+    gap:15px;
+
 }
 
 
+
+/* ===========================
+   TÓPICOS
+=========================== */
+
+.topicos{
+
+    background:white;
+
+    border:2px solid black;
+
+    padding:15px;
+
+    height:max-content;
+
+}
+
+.topicos h2{
+
+    margin-bottom:15px;
+
+    font-size:20px;
+
+}
+
+.topicos button{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    padding:10px;
+
+    border:1px solid black;
+
+    background:#efefef;
+
+    cursor:pointer;
+
+}
+
+.topicos button:hover{
+
+    background:#ddd;
+
+}
+
+
+
+/* ===========================
+   BLOG
+=========================== */
 
 .blog{
 
     background:white;
 
-    border:2px solid #111;
+    border:2px solid black;
 
-    padding:30px;
+    padding:25px;
 
-    min-height:650px;
+    min-height:700px;
 
 }
-
-
 
 .blog h1{
 
@@ -207,41 +259,45 @@ main{
 
 }
 
+.blog h2{
 
+    margin-top:30px;
 
-.blog p{
-
-    margin:20px 0;
-
-    line-height:1.8;
+    margin-bottom:10px;
 
 }
 
+.blog p{
 
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
 
 .blog img{
 
     width:100%;
 
+    margin:20px 0;
+
     border:1px solid black;
+
+}
+
+hr{
+
+    margin:25px 0;
 
 }
 
 
 
-/* ==========================
-   CARD
-========================== */
+/* ===========================
+   ID CARD
+=========================== */
 
-.usuario{
-
-    position:fixed;
-
-    right:30px;
-
-    bottom:30px;
-
-    width:220px;
+.perfil{
 
     background:white;
 
@@ -249,39 +305,63 @@ main{
 
     padding:15px;
 
-    box-shadow:5px 5px black;
+    height:max-content;
 
 }
 
+.id-card{
 
+    border:1px solid black;
 
-.usuario h3{
+    padding:15px;
 
-    border-bottom:1px solid #111;
-
-    margin-bottom:12px;
-
-    padding-bottom:8px;
+    text-align:center;
 
 }
 
+.id-card img{
 
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border:1px solid black;
+
+    margin-bottom:15px;
+
+}
+
+.id-card h2{
+
+    margin-bottom:10px;
+
+}
 
 #nomeUsuario{
 
-    color:#e7a6bf;
+    color:#e7a4bd;
 
     font-weight:bold;
 
-    margin-bottom:8px;
+    margin-bottom:15px;
+
+}
+
+.id-card p{
+
+    text-align:left;
+
+    margin-bottom:12px;
 
 }
 
 
 
-/* ==========================
-   JANELA
-========================== */
+/* ===========================
+   JANELAS
+=========================== */
 
 .janela{
 
@@ -301,15 +381,13 @@ main{
 
     border:2px solid black;
 
-    padding:25px;
+    padding:20px;
 
     box-shadow:6px 6px black;
 
-    z-index:1000;
+    z-index:9999;
 
 }
-
-
 
 .janela h2{
 
@@ -317,15 +395,11 @@ main{
 
 }
 
-
-
 .janela p{
 
-    margin-bottom:20px;
+    margin-bottom:15px;
 
 }
-
-
 
 .janela input{
 
@@ -339,11 +413,9 @@ main{
 
 }
 
-
-
 .janela button{
 
-    padding:8px 16px;
+    padding:8px 15px;
 
     border:1px solid black;
 
@@ -351,15 +423,13 @@ main{
 
     cursor:pointer;
 
-    margin-right:8px;
-
 }
 
 
 
-/* ==========================
+/* ===========================
    FOOTER
-========================== */
+=========================== */
 
 footer{
 
@@ -367,21 +437,21 @@ footer{
 
     margin:20px auto;
 
-    text-align:center;
+    padding:15px;
 
     background:white;
 
     border:2px solid black;
 
-    padding:15px;
+    text-align:center;
 
 }
 
 
 
-/* ==========================
+/* ===========================
    MODO ESCURO
-========================== */
+=========================== */
 
 .dark{
 
@@ -390,90 +460,71 @@ footer{
     background-image:
     radial-gradient(#666 1px, transparent 1px);
 
-    background-size:16px 16px;
+    background-size:18px 18px;
 
-    color:#eee;
+    color:white;
 
 }
-
-
 
 .dark .topo,
+.dark .topicos,
 .dark .blog,
-.dark .usuario,
-.dark .janela,
+.dark .perfil,
+.dark .menu,
 .dark footer,
-.dark .menu{
+.dark .janela{
 
     background:#2a2a2a;
 
     color:white;
 
-    border-color:#888;
+    border-color:#777;
 
 }
 
-
-
-.dark .pesquisa input{
-
-    background:#333;
-
-    color:white;
-
-    border-color:#888;
-
-}
-
-
-
-.dark .menu button{
-
-    background:#2a2a2a;
-
-    color:white;
-
-    border-bottom:1px solid #666;
-
-}
-
-
-
-.dark .menu button:hover{
+.dark input{
 
     background:#3a3a3a;
 
+    color:white;
+
+    border-color:#777;
+
+}
+
+.dark button{
+
+    background:#444;
+
+    color:white;
+
 }
 
 
 
-/* ==========================
-   CELULAR
-========================== */
+/* ===========================
+   RESPONSIVO
+=========================== */
 
 @media(max-width:1050px){
 
 .topo,
-main,
+.layout,
 footer{
 
     width:95%;
 
 }
 
-.usuario{
+.layout{
 
-    position:static;
-
-    width:95%;
-
-    margin:20px auto;
+    grid-template-columns:1fr;
 
 }
 
-.janela{
+.menu{
 
-    width:90%;
+    left:20px;
 
 }
 
