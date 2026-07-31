@@ -9,11 +9,8 @@
 }
 
 
+
 body{
-
-    font-family:Verdana, Arial, sans-serif;
-
-    color:#222;
 
     background:#ededed;
 
@@ -22,67 +19,19 @@ body{
 
     background-size:18px 18px;
 
-    transition:.3s;
+    font-family:Verdana, Arial, sans-serif;
+
+    color:#222;
 
 }
+
+
 
 
 
 
 /* =========================
-   GERAL
-========================= */
-
-
-button,
-input,
-textarea{
-
-    font-family:inherit;
-
-}
-
-
-
-button{
-
-    cursor:pointer;
-
-    background:#eee;
-
-    border:2px solid #222;
-
-    padding:8px 12px;
-
-    border-radius:12px;
-
-    transition:.25s;
-
-}
-
-
-
-button:hover{
-
-    transform:translateY(-3px);
-
-    box-shadow:3px 3px 0 #222;
-
-}
-
-
-
-button:active{
-
-    transform:scale(.95);
-
-}
-
-
-
-
-/* =========================
-   TOPO
+   TOPO RETRÔ
 ========================= */
 
 
@@ -94,11 +43,9 @@ button:active{
 
     background:white;
 
-    border:2px solid #222;
+    border:2px solid black;
 
-    border-radius:20px;
-
-    box-shadow:5px 5px 0 #222;
+    box-shadow:5px 5px 0 black;
 
 }
 
@@ -110,9 +57,9 @@ button:active{
 
     align-items:center;
 
-    gap:12px;
+    gap:15px;
 
-    padding:15px;
+    padding:12px;
 
 }
 
@@ -126,7 +73,7 @@ button:active{
 
     font-family:"Times New Roman",serif;
 
-    font-size:42px;
+    font-size:40px;
 
 }
 
@@ -136,9 +83,9 @@ button:active{
 
     text-decoration:none;
 
-    color:#222;
+    font-size:30px;
 
-    font-size:32px;
+    color:black;
 
 }
 
@@ -148,13 +95,40 @@ button:active{
 
     width:200px;
 
-    padding:10px;
+    padding:8px;
 
-    border:2px solid #222;
-
-    border-radius:12px;
+    border:1px solid black;
 
 }
+
+
+
+
+
+
+
+button{
+
+    background:#ddd;
+
+    border:1px solid black;
+
+    padding:7px 10px;
+
+    cursor:pointer;
+
+    font-family:Verdana;
+
+}
+
+
+
+button:hover{
+
+    background:#bbb;
+
+}
+
 
 
 
@@ -174,13 +148,11 @@ button:active{
 
     background:white;
 
-    border:2px solid #222;
-
-    border-radius:15px;
+    border:2px solid black;
 
     padding:10px;
 
-    z-index:20;
+    z-index:50;
 
 }
 
@@ -202,8 +174,9 @@ button:active{
 
 
 
+
 /* =========================
-   CORPO
+   LAYOUT
 ========================= */
 
 
@@ -238,9 +211,7 @@ button:active{
 
     background:white;
 
-    border:2px solid #222;
-
-    border-radius:18px;
+    border:2px solid black;
 
     padding:15px;
 
@@ -276,47 +247,28 @@ button:active{
 
 
 
-
 /* =========================
    POSTS
 ========================= */
 
 
 .post,
-.abas,
-.card,
-.chat{
+.abas{
 
     background:white;
 
-    border:2px solid #222;
+    border:2px solid black;
 
-    border-radius:20px;
+    padding:25px;
 
-    padding:20px;
-
-    box-shadow:4px 4px 0 #222;
-
-    transition:.25s;
-
-}
-
-
-
-.post:hover,
-.abas:hover,
-.card:hover,
-.chat:hover{
-
-    transform:translateY(-5px);
+    box-shadow:3px 3px 0 black;
 
 }
 
 
 
 .post h2,
-.abas h2,
-.chat h2{
+.abas h2{
 
     font-family:"Times New Roman",serif;
 
@@ -330,9 +282,19 @@ button:active{
 
     width:100%;
 
-    border-radius:15px;
+    margin:20px 0;
 
-    margin-top:20px;
+    border:1px solid black;
+
+}
+
+
+
+.data{
+
+    font-size:12px;
+
+    color:#666;
 
 }
 
@@ -341,8 +303,9 @@ button:active{
 
 
 
+
 /* =========================
-   PERFIL
+   ID CARD
 ========================= */
 
 
@@ -360,6 +323,12 @@ button:active{
 
 .card{
 
+    background:white;
+
+    border:2px solid black;
+
+    padding:15px;
+
     text-align:center;
 
 }
@@ -374,9 +343,7 @@ button:active{
 
     object-fit:cover;
 
-    border-radius:50%;
-
-    border:2px solid #222;
+    border:1px solid black;
 
 }
 
@@ -386,7 +353,9 @@ button:active{
 
     margin:15px;
 
-    color:#e6a5c0;
+    color:#e4a2bb;
+
+    font-family:"Times New Roman",serif;
 
 }
 
@@ -398,21 +367,25 @@ button:active{
 
 
 /* =========================
-   COMENTÁRIOS
+   CHAT
 ========================= */
 
 
-#comentarios{
+.chat{
 
-    height:320px;
+    background:white;
 
-    overflow:auto;
+    border:2px solid black;
 
-    border:2px solid #222;
+    padding:15px;
 
-    border-radius:15px;
+}
 
-    padding:10px;
+
+
+.chat h2{
+
+    font-family:"Times New Roman",serif;
 
     margin-bottom:15px;
 
@@ -420,27 +393,47 @@ button:active{
 
 
 
-.comentario{
+#comentarios{
 
-    border:1px solid #222;
+    height:350px;
 
-    border-radius:12px;
+    overflow-y:auto;
+
+    border:1px solid black;
 
     padding:10px;
 
-    margin-bottom:10px;
-
     background:#fafafa;
-
-    animation:entrada .3s;
 
 }
 
 
 
-.comentario:hover{
+.comentario{
 
-    transform:translateX(5px);
+    background:white;
+
+    border:1px solid black;
+
+    padding:12px;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.comentario b{
+
+    font-size:14px;
+
+}
+
+
+
+.comentario p{
+
+    margin:10px 0;
 
 }
 
@@ -454,11 +447,13 @@ button:active{
 
     resize:vertical;
 
-    border:2px solid #222;
-
-    border-radius:12px;
+    margin-top:15px;
 
     padding:10px;
+
+    border:1px solid black;
+
+    font-family:Verdana;
 
 }
 
@@ -468,8 +463,9 @@ button:active{
 
 
 
+
 /* =========================
-   POPUP PERFIL
+   PERFIL POPUP
 ========================= */
 
 
@@ -483,9 +479,11 @@ button:active{
 
     background:rgba(0,0,0,.5);
 
+    align-items:center;
+
     justify-content:center;
 
-    align-items:center;
+    z-index:100;
 
 }
 
@@ -493,19 +491,17 @@ button:active{
 
 .popup-box{
 
-    background:white;
+    position:relative;
 
     width:350px;
 
+    background:white;
+
+    border:3px solid black;
+
     padding:25px;
 
-    border:3px solid #222;
-
-    border-radius:20px;
-
-    box-shadow:6px 6px 0 #222;
-
-    animation:subir .3s;
+    box-shadow:5px 5px 0 black;
 
 }
 
@@ -513,7 +509,13 @@ button:active{
 
 .fechar{
 
-    float:right;
+    position:absolute;
+
+    right:10px;
+
+    top:10px;
+
+    background:white;
 
 }
 
@@ -525,63 +527,10 @@ button:active{
 
     padding:10px;
 
-    margin:8px 0;
-
-    border:2px solid #222;
-
-    border-radius:10px;
+    margin:10px 0;
 
 }
 
-
-
-
-
-
-/* =========================
-   ANIMAÇÕES
-========================= */
-
-
-@keyframes entrada{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(15px);
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-
-
-@keyframes subir{
-
-    from{
-
-        transform:scale(.8);
-
-    }
-
-
-    to{
-
-        transform:scale(1);
-
-    }
-
-}
 
 
 
@@ -600,17 +549,16 @@ footer{
 
     margin:20px auto;
 
+    background:white;
+
+    border:2px solid black;
+
     padding:20px;
 
     text-align:center;
 
-    background:white;
-
-    border:2px solid #222;
-
-    border-radius:20px;
-
 }
+
 
 
 
@@ -640,6 +588,7 @@ footer{
 .escuro .abas,
 .escuro .card,
 .escuro .chat,
+.escuro .comentario,
 .escuro .popup-box,
 .escuro footer{
 
@@ -657,9 +606,33 @@ footer{
 
     background:#333;
 
+}
+
+
+
+.escuro button{
+
+    background:#333;
+
     color:white;
 
+    border-color:white;
+
 }
+
+
+
+.escuro input,
+.escuro textarea{
+
+    background:#111;
+
+    color:white;
+
+    border-color:white;
+
+}
+
 
 
 
@@ -687,14 +660,6 @@ footer{
 .container{
 
     grid-template-columns:1fr;
-
-}
-
-
-
-.top-menu{
-
-    flex-wrap:wrap;
 
 }
 
