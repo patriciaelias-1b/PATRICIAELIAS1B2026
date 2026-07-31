@@ -16,62 +16,18 @@
 <body>
 
 
-<header class="topbar">
+<header>
 
-
-<div class="top-menu">
-
-
-<button onclick="abrirMenu()">
-☰
+<button class="refresh" onclick="location.reload()">
+refresh page
 </button>
 
 
-<a href="index.html" class="home">
-⌂
-</a>
+<h1>✎ Sketchbook.log</h1>
 
-
-
-<h1>
-Sketchbook.log
-</h1>
-
-
-
-<input 
-id="pesquisa"
-type="search"
-placeholder="Pesquisar..."
->
-
-
-
-</div>
-
-
-
-
-<div id="menu" class="menu">
-
-
-<button onclick="abrirPerfil()">
-Meu perfil
-</button>
-
-
-<button onclick="alternarTema()">
-Modo claro/escuro
-</button>
-
-
-<button onclick="sair()">
-Sair
-</button>
-
-
-</div>
-
+<p>
+meu diário de desenhos e ideias
+</p>
 
 
 </header>
@@ -80,55 +36,41 @@ Sair
 
 
 
-
-
-
-<div class="container">
-
-
-
+<div class="layout">
 
 
 
 <!-- TÓPICOS -->
 
-<aside class="sidebar">
+<aside class="menu">
 
 
-<h2>
-Tópicos
-</h2>
+<h2>Tópicos</h2>
 
 
-
-<button onclick="abrirAba('desenhos')">
+<button onclick="abrirJanela('desenhos')">
 Desenhos
 </button>
 
 
-
-<button onclick="abrirAba('estudos')">
+<button onclick="abrirJanela('estudos')">
 Estudos
 </button>
 
 
-
-<button onclick="abrirAba('blog')">
+<button onclick="abrirJanela('blog')">
 Blog
 </button>
 
 
-
-<button onclick="abrirAba('materiais')">
+<button onclick="abrirJanela('materiais')">
 Materiais
 </button>
 
 
-
-<button onclick="abrirAba('sobre')">
-Sobre mim
+<button onclick="abrirJanela('redes')">
+Redes sociais
 </button>
-
 
 
 </aside>
@@ -140,74 +82,58 @@ Sobre mim
 
 
 
-
-<!-- CONTEÚDO -->
-
+<!-- ÁREA CENTRAL -->
 
 <main class="conteudo">
 
 
+<h2>Bem-vindo!</h2>
 
-<section class="post">
+
+<p>
+
+Olá! Esse é meu espaço pessoal na internet.
+
+Aqui eu vou colocar meus desenhos,
+estudos, pensamentos e qualquer coisa
+relacionada à arte.
+
+</p>
 
 
-<h2>
-Meu Sketchbook Online
-</h2>
+
+<img src="images/desenho1.jpg" alt="meu desenho">
 
 
 
 <p>
 
-Um blog pessoal para guardar meus desenhos,
-ideias e estudos de arte.
+Hoje eu fiz um novo desenho e resolvi
+registrar aqui.
+
+Ainda estou aprendendo, mas gosto de
+guardar cada etapa da minha evolução.
 
 </p>
 
 
 
-<img src="images/desenho1.jpg" alt="desenho">
+<hr>
 
 
 
-<p class="data">
-Atualização: 2026
-</p>
-
-
-
-</section>
-
-
-
-
-
-
-<section class="abas">
-
-
-<div id="janelaAba">
-
-
-<h2>
-Escolha um tópico
-</h2>
+<h2>Atualizações</h2>
 
 
 <p>
-Clique nos tópicos para ver mais.
+
+30/07/2026
+
+<br>
+
+Novo desenho publicado no blog.
+
 </p>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
 
 
 </main>
@@ -219,100 +145,60 @@ Clique nos tópicos para ver mais.
 
 
 
-
-<!-- PERFIL -->
-
+<!-- ID CARD -->
 
 <aside class="perfil">
 
 
-
-<div class="card">
-
-
-<img src="images/eu.jpg" alt="perfil">
+<div class="id-card">
 
 
-<h2 id="nomeUsuario">
-Visitante
-</h2>
+<img src="images/eu.jpg" alt="minha foto">
 
+
+<h2>Seu Nome</h2>
+
+
+<p>
+ID: 001
+</p>
+
+
+<p>
+Cargo:
+<br>
+Desenhista
+</p>
+
+
+<p>
+Interesses:
+<br>
+✦ Arte
+<br>
+✦ Personagens
+<br>
+✦ Sketchbook
+</p>
 
 
 <p>
 Status:
-</p>
-
-
-<p id="statusUsuario">
-Criando arte ✎
-</p>
-
-
-
-<p>
-Contas:
-<span id="contador">
-0
-</span>
+<br>
+Criando...
 </p>
 
 
 
 </div>
-
-
-
-
-
-
-
-
-
-<!-- COMENTÁRIOS -->
-
-
-<section class="chat">
-
-
-<h2>
-Comentários
-</h2>
-
-
-
-<div id="comentarios">
-
-</div>
-
-
-
-
-<textarea
-id="textoComentario"
-placeholder="Escreva um comentário..."
-></textarea>
-
-
-
-<button onclick="enviarComentario()">
-Enviar
-</button>
-
-
-
-</section>
-
-
-
-
-
 
 
 </aside>
 
 
 
+
+
 </div>
 
 
@@ -320,119 +206,27 @@ Enviar
 
 
 
+<!-- JANELA POPUP -->
+
+<div id="janela" class="janela">
 
 
-
-<!-- PERFIL POPUP -->
-
-
-<div id="janelaPerfil" class="popup">
-
-
-
-<div class="popup-box">
-
-
-<button class="fechar"
-onclick="fecharPerfil()">
-
-X
-
-</button>
-
-
-
-<h2>
-Meu perfil
+<h2 id="tituloJanela">
+Título
 </h2>
 
 
-
-
-<div id="loginArea">
-
-
-<p>
-Criar conta simbólica:
+<p id="textoJanela">
+Texto
 </p>
 
 
-<input
-id="novoNome"
-placeholder="Nome de usuário"
->
-
-
-<input
-id="novoStatus"
-placeholder="Status"
->
-
-
-
-<button onclick="criarUsuario()">
-Criar conta
+<button onclick="fecharJanela()">
+fechar
 </button>
 
 
-
 </div>
-
-
-
-
-
-
-
-<div id="editarArea">
-
-
-<p>
-Nome:
-</p>
-
-
-<input
-id="editarNome"
->
-
-
-
-<p>
-Status:
-</p>
-
-
-<input
-id="editarStatus"
->
-
-
-
-<button onclick="editarUsuario()">
-Salvar alterações
-</button>
-
-
-
-<button onclick="deletarConta()">
-Deletar conta
-</button>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
 
 
 
@@ -440,11 +234,11 @@ Deletar conta
 
 <footer>
 
-Sketchbook.log © 2026
+<p>
+feito por Patricia 1°B
+</p>
 
 </footer>
-
-
 
 
 
