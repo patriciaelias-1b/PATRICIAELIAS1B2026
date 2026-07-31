@@ -4,7 +4,6 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sketchbook.log</title>
@@ -28,7 +27,6 @@
 </button>
 
 
-
 <a href="index.html" class="home">
 ⌂
 </a>
@@ -48,8 +46,8 @@ placeholder="Pesquisar..."
 >
 
 
-</div>
 
+</div>
 
 
 
@@ -85,8 +83,6 @@ Sair
 
 
 
-
-
 <div class="container">
 
 
@@ -94,9 +90,7 @@ Sair
 
 
 
-
-<!-- MENU DE TÓPICOS -->
-
+<!-- TÓPICOS -->
 
 <aside class="sidebar">
 
@@ -108,31 +102,31 @@ Tópicos
 
 
 <button onclick="abrirAba('desenhos')">
-✎ Desenhos
+Desenhos
 </button>
 
 
 
 <button onclick="abrirAba('estudos')">
-📚 Estudos
+Estudos
 </button>
 
 
 
 <button onclick="abrirAba('blog')">
-☁ Blog
+Blog
 </button>
 
 
 
 <button onclick="abrirAba('materiais')">
-✂ Materiais
+Materiais
 </button>
 
 
 
 <button onclick="abrirAba('sobre')">
-★ Sobre mim
+Sobre mim
 </button>
 
 
@@ -147,7 +141,7 @@ Tópicos
 
 
 
-<!-- ÁREA PRINCIPAL -->
+<!-- CONTEÚDO -->
 
 
 <main class="conteudo">
@@ -158,38 +152,31 @@ Tópicos
 
 
 <h2>
-Bem-vindo ao Sketchbook.log
+Meu Sketchbook Online
 </h2>
 
 
 
 <p>
 
-Meu blog pessoal de desenhos,
-estudos e ideias.
+Um blog pessoal para guardar meus desenhos,
+ideias e estudos de arte.
 
 </p>
 
 
 
-<img 
-src="images/desenho1.jpg"
-alt="Meu desenho"
->
+<img src="images/desenho1.jpg" alt="desenho">
 
 
 
 <p class="data">
-
-Última atualização:
-2026
-
+Atualização: 2026
 </p>
 
 
 
 </section>
-
 
 
 
@@ -207,13 +194,10 @@ Escolha um tópico
 </h2>
 
 
-
 <p>
-
-Clique em um tópico ao lado
-para abrir.
-
+Clique nos tópicos para ver mais.
 </p>
+
 
 
 </div>
@@ -236,7 +220,7 @@ para abrir.
 
 
 
-<!-- PERFIL + CHAT -->
+<!-- PERFIL -->
 
 
 <aside class="perfil">
@@ -246,11 +230,7 @@ para abrir.
 <div class="card">
 
 
-<img 
-src="images/eu.jpg"
-alt="Foto de perfil"
->
-
+<img src="images/eu.jpg" alt="perfil">
 
 
 <h2 id="nomeUsuario">
@@ -264,23 +244,17 @@ Status:
 </p>
 
 
-
 <p id="statusUsuario">
-
 Criando arte ✎
-
 </p>
 
 
 
 <p>
-
 Contas:
-
 <span id="contador">
 0
 </span>
-
 </p>
 
 
@@ -292,6 +266,10 @@ Contas:
 
 
 
+
+
+
+<!-- COMENTÁRIOS -->
 
 
 <section class="chat">
@@ -310,22 +288,15 @@ Comentários
 
 
 
-
 <textarea
-
 id="textoComentario"
-
 placeholder="Escreva um comentário..."
-
 ></textarea>
 
 
 
-
 <button onclick="enviarComentario()">
-
 Enviar
-
 </button>
 
 
@@ -342,8 +313,6 @@ Enviar
 
 
 
-
-
 </div>
 
 
@@ -354,17 +323,17 @@ Enviar
 
 
 
-<!-- JANELA DE PERFIL -->
+<!-- PERFIL POPUP -->
 
 
 <div id="janelaPerfil" class="popup">
 
 
+
 <div class="popup-box">
 
 
-<button 
-class="fechar"
+<button class="fechar"
 onclick="fecharPerfil()">
 
 X
@@ -380,7 +349,6 @@ Meu perfil
 
 
 
-
 <div id="loginArea">
 
 
@@ -389,31 +357,21 @@ Criar conta simbólica:
 </p>
 
 
-
 <input
-
 id="novoNome"
-
 placeholder="Nome de usuário"
-
 >
 
 
-
 <input
-
 id="novoStatus"
-
-placeholder="Seu status"
-
+placeholder="Status"
 >
 
 
 
 <button onclick="criarUsuario()">
-
 Criar conta
-
 </button>
 
 
@@ -452,26 +410,18 @@ id="editarStatus"
 
 
 <button onclick="editarUsuario()">
-
-Salvar
-
+Salvar alterações
 </button>
 
 
 
-
 <button onclick="deletarConta()">
-
 Deletar conta
-
 </button>
 
 
 
 </div>
-
-
-
 
 
 
@@ -493,8 +443,6 @@ Deletar conta
 Sketchbook.log © 2026
 
 </footer>
-
-
 
 
 
