@@ -54,16 +54,6 @@ function abrirJanela(tipo){
         Jhenny Keller
         </a>
         `;
-
-    }
-
-    else if(tipo === "personagens"){
-
-        tituloJanela.innerHTML = "Personagens";
-
-        textoJanela.innerHTML =
-        "Meus personagens originais e conceitos.";
-
     }
 
     else if(tipo === "redes"){
