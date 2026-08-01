@@ -19,17 +19,22 @@
 
 </head>
 
+
 <body>
 
+
 <header class="topo">
+
 
 <button class="menu-btn" onclick="abrirMenu()">
 ☰
 </button>
 
+
 <a href="index.html" class="home" title="Página inicial">
 🏠
 </a>
+
 
 <div class="logo">
 
@@ -41,6 +46,7 @@ visitante
 
 </div>
 
+
 <div class="pesquisa">
 
 <input
@@ -51,25 +57,33 @@ placeholder="Pesquisar..."
 
 </div>
 
+
 </header>
+
 
 
 
 <nav id="menu" class="menu">
 
+
 <button onclick="abrirPerfil()">
 👤 Meu perfil
 </button>
+
 
 <button onclick="modoNoturno()">
 🌙 Modo noturno
 </button>
 
+
 <button onclick="sair()">
 ↩ Sair
 </button>
 
+
 </nav>
+
+
 
 
 
@@ -79,29 +93,38 @@ placeholder="Pesquisar..."
 
 <aside class="topicos">
 
-<h2>✦Adicionais</h2>
+
+<h2>✦ Adicionais</h2>
+
 
 <button onclick="abrirJanela('desenhos')">
 Desenhos
 </button>
 
+
 <button onclick="abrirJanela('estudos')">
 Conteúdos
 </button>
+
 
 <button onclick="abrirJanela('materiais')">
 Materiais
 </button>
 
+
 <button onclick="abrirJanela('redes')">
 Redes sociais
 </button>
-  
+
+
 <button onclick="abrirJanela('mais')">
 Mais+
 </button>
-  
+
+
+
 <hr>
+
 
 <p>
 
@@ -113,40 +136,46 @@ Mais+
 
 </p>
 
+
 </aside>
+
+
 
 
 
 <main class="conteudo">
 
+
 <div class="blog">
 
 
 <p>
-
 Oiii, tudo bem? Bem-vindo ao meu blog!
-
-
 </p>
 
-
-</p>
 
 <hr>
 
+
 <h2>Diário</h2>
 
-<p>
 
-Eu comecei tudo isso à 6 anos atrás.
+<p>
+Eu comecei tudo isso há 6 anos atrás.
+</p>
+
 
 </div>
+
 
 </main>
 
 
 
-<aside class="perfil">
+
+
+<aside class="perfil-card">
+
 
 <div class="id-card">
 
@@ -155,17 +184,21 @@ Eu comecei tudo isso à 6 anos atrás.
 visitante
 </h2>
 
+
 <p class="cargo">
 Membro
 </p>
 
+
 <hr>
-  
+
+
 
 <p>
 <b>Status:</b>
 Online
 </p>
+
 
 
 <p>
@@ -178,89 +211,126 @@ Online
 
 </p>
 
+
 </div>
+
 
 </aside>
 
+
 </div>
+
+
+
 
 
 
 <!-- POPUP DOS TÓPICOS -->
 
+
 <div id="janela" class="janela">
+
 
 <h2 id="tituloJanela">
 Título
 </h2>
 
+
 <p id="textoJanela">
 Texto
 </p>
+
 
 <button onclick="fecharJanela()">
 Fechar
 </button>
 
+
 </div>
+
+
+
 
 
 
 <!-- CRIAR CONTA -->
 
+
 <div id="perfil" class="janela">
 
+
 <h2>
-
 Criar conta
-
 </h2>
+
+
 
 <p>
 
 Essa conta é apenas simbólica!
 
+<br><br>
+
 Não é necessário informar
 e-mail, senha ou dados pessoais.
+
+<br><br>
 
 Ela serve apenas para personalizar
 seu nome dentro do blog.
 
 </p>
 
+
+
+
 <input
 type="text"
 id="nome"
-placeholder="Digite um nome">
+placeholder="Digite um nome"
+>
+
+
 
 <button onclick="criarConta()">
 Criar conta
 </button>
 
+
+
 <button onclick="fecharPerfil()">
 Cancelar
 </button>
 
+
+
 </div>
 
-</p>
+
+
+
 
 
 <footer>
 
+
 <p>
 
-© <span id="ano"></span> feito por Patricia 1°B
+© <span id="ano"></span>
+feito por Patricia 1°B
 
 </p>
+
 
 </footer>
 
 
 
+
+
 <script src="script.js"></script>
+
 
 </body>
 
 </html>
-  
