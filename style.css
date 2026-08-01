@@ -10,7 +10,7 @@
 
 body{
 
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family:"IBM Plex Mono", monospace;
 
     background:#efefef;
 
@@ -72,7 +72,7 @@ body{
 
     text-decoration:none;
 
-    color:black;
+    color:#111;
 
     font-size:20px;
 
@@ -81,7 +81,33 @@ body{
 .menu-btn:hover,
 .home:hover{
 
-    background:#d8d8d8;
+    background:#ddd;
+
+}
+
+
+
+.logo{
+
+    min-width:220px;
+
+}
+
+.logo h1{
+
+    font-family:"VT323", monospace;
+
+    font-size:42px;
+
+    font-weight:normal;
+
+}
+
+#nomeTopo{
+
+    color:#e7a4bd;
+
+    font-size:14px;
 
 }
 
@@ -103,11 +129,11 @@ body{
 
     padding:10px;
 
-    border:1px solid black;
+    border:2px solid #111;
 
     outline:none;
 
-    font-size:14px;
+    font-family:inherit;
 
 }
 
@@ -123,19 +149,25 @@ body{
 
     position:absolute;
 
-    left:calc(50% - 500px);
+    top:80px;
 
-    top:82px;
+    left:calc(50% - 500px);
 
     width:220px;
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
-    box-shadow:5px 5px black;
+    box-shadow:6px 6px #111;
 
-    z-index:999;
+    z-index:9999;
+
+}
+
+.menu.mostrar{
+
+    display:block;
 
 }
 
@@ -145,15 +177,17 @@ body{
 
     padding:12px;
 
+    background:#fff;
+
     border:none;
 
-    border-bottom:1px solid black;
-
-    background:white;
+    border-bottom:1px solid #111;
 
     cursor:pointer;
 
     text-align:left;
+
+    font-family:inherit;
 
 }
 
@@ -177,7 +211,7 @@ body{
 
     display:grid;
 
-    grid-template-columns:180px 1fr 240px;
+    grid-template-columns:190px 1fr 250px;
 
     gap:15px;
 
@@ -191,9 +225,9 @@ body{
 
 .topicos{
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:15px;
 
@@ -205,7 +239,9 @@ body{
 
     margin-bottom:15px;
 
-    font-size:20px;
+    font-family:"VT323", monospace;
+
+    font-size:30px;
 
 }
 
@@ -213,15 +249,19 @@ body{
 
     width:100%;
 
-    margin-bottom:10px;
-
     padding:10px;
 
-    border:1px solid black;
+    margin-bottom:10px;
 
-    background:#efefef;
+    background:#ececec;
+
+    border:1px solid #111;
 
     cursor:pointer;
+
+    text-align:left;
+
+    font-family:inherit;
 
 }
 
@@ -239,11 +279,11 @@ body{
 
 .blog{
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
-    padding:25px;
+    padding:30px;
 
     min-height:700px;
 
@@ -251,11 +291,13 @@ body{
 
 .blog h1{
 
-    font-size:38px;
+    font-family:"VT323", monospace;
 
-    font-family:"Times New Roman", serif;
+    font-size:52px;
 
-    margin-bottom:20px;
+    font-weight:normal;
+
+    margin-bottom:15px;
 
 }
 
@@ -263,13 +305,13 @@ body{
 
     margin-top:30px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
 }
 
 .blog p{
 
-    line-height:1.8;
+    line-height:1.9;
 
     margin-bottom:18px;
 
@@ -281,11 +323,11 @@ body{
 
     margin:20px 0;
 
-    border:1px solid black;
+    border:2px solid #111;
 
 }
 
-hr{
+.blog hr{
 
     margin:25px 0;
 
@@ -299,9 +341,9 @@ hr{
 
 .perfil{
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:15px;
 
@@ -311,7 +353,7 @@ hr{
 
 .id-card{
 
-    border:1px solid black;
+    border:2px dashed #111;
 
     padding:15px;
 
@@ -319,7 +361,7 @@ hr{
 
 }
 
-.id-card img{
+.foto-perfil{
 
     width:120px;
 
@@ -327,23 +369,23 @@ hr{
 
     object-fit:cover;
 
-    border:1px solid black;
+    border:2px solid #111;
 
     margin-bottom:15px;
 
 }
 
-.id-card h2{
+#nomeCard{
+
+    color:#e7a4bd;
 
     margin-bottom:10px;
 
 }
 
-#nomeUsuario{
+.cargo{
 
-    color:#e7a4bd;
-
-    font-weight:bold;
+    color:#666;
 
     margin-bottom:15px;
 
@@ -353,7 +395,7 @@ hr{
 
     text-align:left;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
@@ -377,15 +419,15 @@ hr{
 
     width:420px;
 
-    background:white;
+    background:#fff;
 
-    border:2px solid black;
+    border:2px solid #111;
 
     padding:20px;
 
-    box-shadow:6px 6px black;
+    box-shadow:7px 7px #111;
 
-    z-index:9999;
+    z-index:99999;
 
 }
 
@@ -407,21 +449,49 @@ hr{
 
     padding:10px;
 
-    border:1px solid black;
+    border:2px solid #111;
 
     margin-bottom:15px;
+
+    font-family:inherit;
 
 }
 
 .janela button{
 
-    padding:8px 15px;
+    padding:9px 15px;
 
-    border:1px solid black;
+    border:1px solid #111;
 
     background:#ececec;
 
     cursor:pointer;
+
+}
+
+.janela button:hover{
+
+    background:#ddd;
+
+}
+
+
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    color:#4a5bdc;
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    text-decoration:underline;
 
 }
 
@@ -437,13 +507,13 @@ footer{
 
     margin:20px auto;
 
-    padding:15px;
+    background:#fff;
 
-    background:white;
-
-    border:2px solid black;
+    border:2px solid #111;
 
     text-align:center;
+
+    padding:15px;
 
 }
 
@@ -455,14 +525,14 @@ footer{
 
 .dark{
 
-    background:#1b1b1b;
+    background:#1a1a1a;
 
     background-image:
     radial-gradient(#666 1px, transparent 1px);
 
     background-size:18px 18px;
 
-    color:white;
+    color:#eee;
 
 }
 
@@ -471,12 +541,12 @@ footer{
 .dark .blog,
 .dark .perfil,
 .dark .menu,
-.dark footer,
-.dark .janela{
+.dark .janela,
+.dark footer{
 
     background:#2a2a2a;
 
-    color:white;
+    color:#eee;
 
     border-color:#777;
 
@@ -486,17 +556,29 @@ footer{
 
     background:#3a3a3a;
 
-    color:white;
+    color:#fff;
 
     border-color:#777;
 
 }
 
-.dark button{
+.dark .menu button,
+.dark .topicos button,
+.dark .janela button{
 
     background:#444;
 
-    color:white;
+    color:#fff;
+
+    border-color:#777;
+
+}
+
+.dark .menu button:hover,
+.dark .topicos button:hover,
+.dark .janela button:hover{
+
+    background:#555;
 
 }
 
@@ -506,7 +588,7 @@ footer{
    RESPONSIVO
 =========================== */
 
-@media(max-width:1050px){
+@media (max-width:1050px){
 
 .topo,
 .layout,
@@ -524,7 +606,7 @@ footer{
 
 .menu{
 
-    left:20px;
+    left:15px;
 
 }
 
