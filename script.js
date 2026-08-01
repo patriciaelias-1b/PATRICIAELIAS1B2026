@@ -24,9 +24,9 @@ function abrirMenu(){
 // POPUPS DOS TÓPICOS
 // ==============================
 
+const menu = document.getElementById("menu");
 const janela = document.getElementById("janela");
-const tituloJanela = document.getElementById("tituloJanela");
-const textoJanela = document.getElementById("textoJanela");
+const perfil = document.getElementById("perfil");
 
 function abrirJanela(tipo){
 
