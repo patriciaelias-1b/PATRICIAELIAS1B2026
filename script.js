@@ -33,9 +33,9 @@ function abrirJanela(tipo){
     janela.style.display = "block";
 
 
-    if(tipo === "desenhos"){
+    if(tipo === "conteudos"){
 
-        tituloJanela.innerHTML = "Desenhos";
+        tituloJanela.innerHTML = "Conteúdos";
 
         textoJanela.innerHTML = `
         <p>Canais que eu me inspiro:</p>
