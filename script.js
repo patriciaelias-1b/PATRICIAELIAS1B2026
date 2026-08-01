@@ -69,7 +69,6 @@ function abrirJanela(tipo){
         Instagram
         </a>
 
-        `;
 
         else if(tipo === "mais"){
 
@@ -78,7 +77,7 @@ function abrirJanela(tipo){
         textoJanela.innerHTML =
         "Projeto de Educação Digital.";
 
-        
+        `;
 
     }
 
