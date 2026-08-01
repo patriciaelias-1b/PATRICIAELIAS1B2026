@@ -24,9 +24,9 @@ function abrirMenu(){
 // POPUPS DOS TÓPICOS
 // ==============================
 
-const menu = document.getElementById("menu");
 const janela = document.getElementById("janela");
-const perfil = document.getElementById("perfil");
+const tituloJanela = document.getElementById("tituloJanela");
+const textoJanela = document.getElementById("textoJanela");
 
 function abrirJanela(tipo){
 
@@ -54,6 +54,16 @@ function abrirJanela(tipo){
         Jhenny Keller
         </a>
         `;
+
+    }
+
+    else if(tipo === "personagens"){
+
+        tituloJanela.innerHTML = "Personagens";
+
+        textoJanela.innerHTML =
+        "Meus personagens originais e conceitos.";
+
     }
 
     else if(tipo === "redes"){
@@ -254,4 +264,4 @@ window.addEventListener("click",(event)=>{
 // ==============================
 
 document.getElementById("ano").textContent =
-new Date().getFullYear();
+new Date().getFullYear();           
