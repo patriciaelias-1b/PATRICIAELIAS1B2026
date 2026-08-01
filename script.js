@@ -33,15 +33,27 @@ function abrirJanela(tipo){
     janela.style.display = "block";
 
 
-        if(tipo === "desenhos"){
+    if(tipo === "desenhos"){
 
         tituloJanela.innerHTML = "Desenhos";
 
-        textoJanela.innerHTML =
-        "Canais que eu me inspiro:
-        https://www.youtube.com/@v1ck_arts
-        https://www.youtube.com/@imBecaoficial
-        https://www.youtube.com/@jhennykeller";
+        textoJanela.innerHTML = `
+        <p>Canais que eu me inspiro:</p>
+
+        <a href="https://www.youtube.com/@v1ck_arts" target="_blank">
+        V1ck Arts
+        </a>
+        <br>
+
+        <a href="https://www.youtube.com/@imBecaoficial" target="_blank">
+        Beca
+        </a>
+        <br>
+
+        <a href="https://www.youtube.com/@jhennykeller" target="_blank">
+        Jhenny Keller
+        </a>
+        `;
 
     }
 
@@ -52,7 +64,6 @@ function abrirJanela(tipo){
         textoJanela.innerHTML =
         "Meus personagens originais e conceitos.";
 
-
     }
 
     else if(tipo === "redes"){
@@ -60,28 +71,26 @@ function abrirJanela(tipo){
         tituloJanela.innerHTML = "Redes Sociais";
 
         textoJanela.innerHTML = `
-
         <p>Clique para visitar:</p>
-
-        <br>
 
         <a href="https://instagram.com" target="_blank">
         Instagram
         </a>
+        `;
 
+    }
 
-        else if(tipo === "mais"){
+    else if(tipo === "mais"){
 
         tituloJanela.innerHTML = "Mais+";
 
         textoJanela.innerHTML =
         "Projeto de Educação Digital.";
 
-        `;
-
     }
 
 }
+
 
 function fecharJanela(){
 
@@ -121,7 +130,9 @@ const numeroContas = document.getElementById("numeroContas");
 
 numeroContas.innerHTML = total;
 
+
 const nomeSalvo = localStorage.getItem("nome");
+
 
 if(nomeSalvo){
 
@@ -131,9 +142,11 @@ if(nomeSalvo){
 
 }
 
+
 function criarConta(){
 
     const nome = document.getElementById("nome").value.trim();
+
 
     if(nome === ""){
 
@@ -143,6 +156,7 @@ function criarConta(){
 
     }
 
+
     if(!localStorage.getItem("nome")){
 
         total++;
@@ -151,13 +165,16 @@ function criarConta(){
 
     }
 
+
     localStorage.setItem("nome", nome);
+
 
     document.getElementById("nomeCard").innerHTML = nome;
 
     document.getElementById("nomeTopo").innerHTML = nome;
 
     numeroContas.innerHTML = total;
+
 
     perfil.style.display = "none";
 
@@ -173,9 +190,11 @@ const pesquisa = document.getElementById("pesquisa");
 
 const blog = document.querySelector(".blog");
 
+
 pesquisa.addEventListener("keyup",()=>{
 
     const texto = pesquisa.value.toLowerCase();
+
 
     if(blog.textContent.toLowerCase().includes(texto)){
 
@@ -221,17 +240,20 @@ function sair(){
 
 window.addEventListener("click",(event)=>{
 
+
     if(event.target === janela){
 
         fecharJanela();
 
     }
 
+
     if(event.target === perfil){
 
         fecharPerfil();
 
     }
+
 
 });
 
