@@ -32,21 +32,16 @@ function abrirJanela(tipo){
 
     janela.style.display = "block";
 
-    if(tipo === "desenhos"){
 
-        tituloJanela.innerHTML = "Desenhos";
+        if(tipo === "conteudos"){
 
-        textoJanela.innerHTML =
-        "Aqui ficam meus desenhos, ilustrações, sketches e rabiscos.";
-
-    }
-
-    else if(tipo === "estudos"){
-
-        tituloJanela.innerHTML = "Estudos";
+        tituloJanela.innerHTML = "Conteúdos";
 
         textoJanela.innerHTML =
-        "Estudos de anatomia, perspectiva, pintura, cores e referências.";
+        "Canais que eu me inspiro:
+        https://www.youtube.com/@v1ck_arts
+        https://www.youtube.com/@imBecaoficial
+        https://www.youtube.com/@jhennykeller";
 
     }
 
@@ -57,14 +52,6 @@ function abrirJanela(tipo){
         textoJanela.innerHTML =
         "Meus personagens originais e conceitos.";
 
-    }
-
-    else if(tipo === "materiais"){
-
-        tituloJanela.innerHTML = "Materiais";
-
-        textoJanela.innerHTML =
-        "Sketchbooks, lápis, canetas, mesa digitalizadora e outros materiais.";
 
     }
 
@@ -82,13 +69,16 @@ function abrirJanela(tipo){
         Instagram
         </a>
 
-        <br><br>
-
-        <a href="https://github.com" target="_blank">
-        GitHub
-        </a>
-
         `;
+
+        else if(tipo === "mais"){
+
+        tituloJanela.innerHTML = "Mais+";
+
+        textoJanela.innerHTML =
+        "Projeto de Educação Digital.";
+
+        
 
     }
 
