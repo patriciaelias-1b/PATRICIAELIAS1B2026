@@ -1,13 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sketchbook.log</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="topo">
+
 <button class="menu-btn" onclick="abrirMenu()">
 ☰
 </button>
 
+<a href="index.html" class="home" title="Página inicial">
+🏠
+</a>
+
+<div class="logo">
+
+<h1>Sketchbook.log</h1>
+
+<span id="nomeTopo">
+visitante
+</span>
+
+</div>
+
+<div class="pesquisa">
+
+<input
+type="text"
+id="pesquisa"
+placeholder="Pesquisar..."
+>
+
+</div>
+
+</header>
+
+
+
 <nav id="menu" class="menu">
 
-<button onclick="abrirPerfil()">Meu perfil</button>
+<button onclick="abrirPerfil()">
+👤 Meu perfil
+</button>
 
-<button onclick="modoNoturno()">Modo noturno</button>
+<button onclick="modoNoturno()">
+🌙 Modo noturno
+</button>
 
-<button onclick="sair()">Sair</button>
+<button onclick="sair()">
+↩ Sair
+</button>
 
 </nav>
+
+
+
+<div class="layout">
+
+
+
+<aside class="topicos">
+
+<h2>✦ Tópicos</h2>
+
+<button onclick="abrirJanela('desenhos')">
+Desenhos
+</button>
+
+<button onclick="abrirJanela('estudos')">
+Estudos
+</button>
+
+<button onclick="abrirJanela('personagens')">
+Personagens
+</button>
+
+<button onclick="abrirJanela('materiais')">
+Materiais
+</button>
+
+<button onclick="abrirJanela('redes')">
+Redes sociais
+</button>
+
+<hr>
+
+<p>
+
+Última atualização
+
+<br>
+
+31/07/2026
+
+</p>
+
+</aside>
+
+
+
+<main class="conteudo">
+
+<div class="blog">
+
+<h1>
+Sketchbook.log
+</h1>
+
+<p>
+
+Bem-vindo ao meu diário de desenhos.
+
+Aqui vou guardar estudos,
+ideias, personagens e tudo o que eu criar.
+
+</p>
+
+<img
+src="images/desenho1.jpg"
+alt="Meu desenho">
+
+<p>
+
+Hoje comecei esse blog.
+
+Ainda estou aprendendo,
+mas quero registrar toda a minha evolução.
+
+</p>
+
+<hr>
+
+<h2>Diário</h2>
+
+<p>
+
+Escreva aqui tudo o que você quiser.
+
+Você pode adicionar textos,
+imagens,
+listas,
+GIFs,
+links,
+ou transformar esse espaço em um verdadeiro blog pessoal.
+
+</div>
+
+</main>
+
+
+
+<aside class="perfil">
+
+<div class="id-card">
+
+<img
+src="images/eu.jpg"
+alt="Foto de perfil"
+class="foto-perfil">
+
+<h2 id="nomeCard">
+visitante
+</h2>
+
+<p class="cargo">
+Desenhista
+</p>
+
+<hr>
+
+<p>
+<b>ID:</b> 001
+</p>
+
+<p>
+<b>Status:</b>
+Criando...
+</p>
+
+<p>
+<b>Interesses:</b>
+
+<br>
+
+✦ Ilustração
+
+<br>
+
+✦ Personagens
+
+<br>
+
+✦ Sketchbook
+
+</p>
+
+<p>
+
+<b>Contas registradas:</b>
+
+<span id="numeroContas">
+0
+</span>
+
+</p>
+
+</div>
+
+</aside>
+
+</div>
+
+
+
+<!-- POPUP DOS TÓPICOS -->
+
+<div id="janela" class="janela">
+
+<h2 id="tituloJanela">
+Título
+</h2>
+
+<p id="textoJanela">
+Texto
+</p>
+
+<button onclick="fecharJanela()">
+Fechar
+</button>
+
+</div>
+
+
+
+<!-- CRIAR CONTA -->
+
+<div id="perfil" class="janela">
+
+<h2>
+
+Criar conta
+
+</h2>
+
+<p>
+
+Essa conta é apenas simbólica.
+
+Não é necessário informar
+e-mail, senha ou dados pessoais.
+
+Ela serve apenas para personalizar
+seu nome dentro do blog.
+
+</p>
+
+<input
+type="text"
+id="nome"
+placeholder="Digite um nome">
+
+<button onclick="criarConta()">
+Criar conta
+</button>
+
+<button onclick="fecharPerfil()">
+Cancelar
+</button>
+
+</div>
+
+</p>
+
+
+<footer>
+
+<p>
+
+© <span id="ano"></span> Sketchbook.log
+
+</p>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+  
